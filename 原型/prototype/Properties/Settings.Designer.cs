@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace yuanxing.Properties
+namespace prototype.Properties
 {
 
 

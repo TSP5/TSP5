@@ -1,4 +1,4 @@
-﻿namespace yuanxing
+﻿namespace prototype
 {
     partial class Form1
     {

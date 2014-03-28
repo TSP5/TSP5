@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{21822311-E9B1-4908-B425-CECEB325B728}</ProjectGuid>
+    <ProjectGuid>{15ED6283-DED6-4589-B296-0A25873C65FF}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>yuanxing</RootNamespace>
-    <AssemblyName>yuanxing</AssemblyName>
+    <RootNamespace>prototype</RootNamespace>
+    <AssemblyName>prototype</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
