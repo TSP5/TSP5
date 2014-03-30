@@ -40,5 +40,11 @@ namespace prototype
         {
             label1.Text = account;
         }
+
+        private void PersonalInfoForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+        
     }
 }

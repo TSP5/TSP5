@@ -25,5 +25,11 @@ namespace prototype
         {
             this.Hide();
         }
+
+        private void RForm_Load(object sender, EventArgs e)
+        {
+
+           
+        }
     }
 }

@@ -11,6 +11,7 @@ namespace prototype
 {
     public partial class LoginForm : Form
     {
+        
         public LoginForm()
         {
             InitializeComponent();
@@ -18,7 +19,9 @@ namespace prototype
 
         private void button1_Click(object sender, EventArgs e)
         {
-            String account = AccountTextBox.Text.ToString();
+            String account = String.Empty;
+            
+            account = AccountTextBox.Text.ToString();
             if (!noticeCheckBox.Checked)
             {
                 MessageBox.Show("请阅读使用须知");
@@ -33,5 +36,12 @@ namespace prototype
             myInfoForm.Show();
             this.Hide();
         }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }
