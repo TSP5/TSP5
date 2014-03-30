@@ -14,8 +14,9 @@ D:\Documents\GitHub\TSP5\原型\prototype\obj\x86\Debug\prototype.exe
 D:\Documents\GitHub\TSP5\原型\prototype\obj\x86\Debug\prototype.pdb
 D:\Documents\GitHub\TSP5\原型\prototype\obj\x86\Debug\prototype.Memories.resources
 D:\Documents\GitHub\TSP5\原型\prototype\obj\x86\Debug\prototype.Properties.Resources.resources
-D:\Documents\GitHub\TSP5\原型\prototype\obj\x86\Debug\CYZF.RForm.resources
-D:\Documents\GitHub\TSP5\原型\prototype\obj\x86\Debug\ShuiYuZhengFeng.LForm.resources
 D:\Documents\GitHub\TSP5\原型\prototype\obj\x86\Debug\prototype.csproj.GenerateResource.Cache
 D:\Documents\GitHub\TSP5\原型\prototype\bin\Debug\prototype.exe
 D:\Documents\GitHub\TSP5\原型\prototype\bin\Debug\prototype.pdb
+D:\Documents\GitHub\TSP5\原型\prototype\obj\x86\Debug\prototype.csprojResolveAssemblyReference.cache
+D:\Documents\GitHub\TSP5\原型\prototype\obj\x86\Debug\prototype.RForm.resources
+D:\Documents\GitHub\TSP5\原型\prototype\obj\x86\Debug\prototype.LForm.resources

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace ShuiYuZhengFeng
+namespace prototype
 {
     public partial class LForm : Form
     {

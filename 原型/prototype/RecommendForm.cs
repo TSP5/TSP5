@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace CYZF
+namespace prototype
 {
     public partial class RForm : Form
     {

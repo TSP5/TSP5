@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-using CYZF;
 
 namespace prototype
 {
@@ -17,6 +16,8 @@ namespace prototype
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Memories());
+            Application.Run(new RForm());
+            Application.Run(new LForm());
         }
     }
 }
