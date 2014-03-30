@@ -16,7 +16,7 @@ namespace prototype
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new RForm());
+            Application.Run(new Memories());
         }
     }
 }
