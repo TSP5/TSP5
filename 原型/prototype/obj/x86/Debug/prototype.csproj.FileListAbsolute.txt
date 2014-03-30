@@ -32,3 +32,5 @@ D:\TSP5\原型\prototype\obj\x86\Debug\prototype.Properties.Resources.resources
 D:\TSP5\原型\prototype\obj\x86\Debug\prototype.RForm.resources
 D:\TSP5\原型\prototype\obj\x86\Debug\prototype.LForm.resources
 D:\TSP5\原型\prototype\obj\x86\Debug\prototype.csproj.GenerateResource.Cache
+D:\Documents\GitHub\TSP5\原型\prototype\obj\x86\Debug\prototype.LoginForm.resources
+D:\Documents\GitHub\TSP5\原型\prototype\obj\x86\Debug\prototype.PersonalInfoForm.resources

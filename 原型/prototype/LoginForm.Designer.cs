@@ -40,9 +40,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("幼圆", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label1.Location = new System.Drawing.Point(113, 85);
+            this.label1.Location = new System.Drawing.Point(151, 106);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(447, 35);
+            this.label1.Size = new System.Drawing.Size(548, 44);
             this.label1.TabIndex = 0;
             this.label1.Text = "初次使用，请输入你的信息";
             // 
@@ -51,18 +52,20 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label2.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label2.Location = new System.Drawing.Point(158, 191);
+            this.label2.Location = new System.Drawing.Point(211, 239);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 21);
+            this.label2.Size = new System.Drawing.Size(93, 27);
             this.label2.TabIndex = 1;
             this.label2.Text = "账号：";
             // 
             // AccountTextBox
             // 
             this.AccountTextBox.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.AccountTextBox.Location = new System.Drawing.Point(223, 183);
+            this.AccountTextBox.Location = new System.Drawing.Point(297, 229);
+            this.AccountTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AccountTextBox.Name = "AccountTextBox";
-            this.AccountTextBox.Size = new System.Drawing.Size(216, 29);
+            this.AccountTextBox.Size = new System.Drawing.Size(287, 35);
             this.AccountTextBox.TabIndex = 2;
             this.AccountTextBox.UseWaitCursor = true;
             this.AccountTextBox.WordWrap = false;
@@ -71,9 +74,10 @@
             // 
             this.noticeCheckBox.AutoSize = true;
             this.noticeCheckBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.noticeCheckBox.Location = new System.Drawing.Point(236, 340);
+            this.noticeCheckBox.Location = new System.Drawing.Point(315, 425);
+            this.noticeCheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.noticeCheckBox.Name = "noticeCheckBox";
-            this.noticeCheckBox.Size = new System.Drawing.Size(139, 20);
+            this.noticeCheckBox.Size = new System.Drawing.Size(171, 24);
             this.noticeCheckBox.TabIndex = 3;
             this.noticeCheckBox.Text = "已阅读使用须知";
             this.noticeCheckBox.UseVisualStyleBackColor = true;
@@ -85,9 +89,10 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("幼圆", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(255, 261);
+            this.button1.Location = new System.Drawing.Point(340, 326);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(107, 33);
+            this.button1.Size = new System.Drawing.Size(143, 41);
             this.button1.TabIndex = 4;
             this.button1.Text = "GO";
             this.button1.UseVisualStyleBackColor = false;
@@ -95,17 +100,19 @@
             // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(675, 419);
+            this.ClientSize = new System.Drawing.Size(900, 524);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.noticeCheckBox);
             this.Controls.Add(this.AccountTextBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "LoginForm";
-            this.Text = "谁与争锋";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "谁与争锋v0.1";
             this.ResumeLayout(false);
             this.PerformLayout();
 
