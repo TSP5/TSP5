@@ -36,7 +36,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -53,16 +52,41 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Memories.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Memories.Designer.cs">
+      <DependentUpon>Memories.cs</DependentUpon>
+    </Compile>
     <Compile Include="PersonalInfoForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PersonalInfoForm.Designer.cs">
       <DependentUpon>PersonalInfoForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RecommendForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecommendForm.Designer.cs">
+      <DependentUpon>RecommendForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LearnForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LearnForm.designer.cs">
+      <DependentUpon>LearnForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Memories.resx">
+      <DependentUpon>Memories.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PersonalInfoForm.resx">
       <DependentUpon>PersonalInfoForm.cs</DependentUpon>
@@ -70,21 +94,13 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
+    <EmbeddedResource Include="RecommendForm.resx">
+      <DependentUpon>RecommendForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LearnForm.resx">
+      <DependentUpon>LearnForm.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

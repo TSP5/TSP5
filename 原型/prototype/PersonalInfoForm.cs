@@ -20,17 +20,20 @@ namespace prototype
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            Memories myMemoryForm = new Memories();
+            myMemoryForm.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            LForm learnForm = new LForm();
+            learnForm.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            RForm rcommendForm = new RForm();
+            rcommendForm.Show();
         }
 
         private void PersonalInfoForm_Load(object sender, EventArgs e)

@@ -39,6 +39,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("幼圆", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Highlight;
             this.label1.Location = new System.Drawing.Point(113, 85);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(447, 35);
@@ -49,6 +50,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label2.ForeColor = System.Drawing.SystemColors.Highlight;
             this.label2.Location = new System.Drawing.Point(158, 191);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(73, 21);
@@ -69,7 +71,7 @@
             // 
             this.noticeCheckBox.AutoSize = true;
             this.noticeCheckBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.noticeCheckBox.Location = new System.Drawing.Point(223, 244);
+            this.noticeCheckBox.Location = new System.Drawing.Point(236, 340);
             this.noticeCheckBox.Name = "noticeCheckBox";
             this.noticeCheckBox.Size = new System.Drawing.Size(139, 20);
             this.noticeCheckBox.TabIndex = 3;
@@ -78,19 +80,24 @@
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("幼圆", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button1.Location = new System.Drawing.Point(223, 299);
+            this.button1.BackColor = System.Drawing.SystemColors.Highlight;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("幼圆", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(255, 261);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(107, 33);
             this.button1.TabIndex = 4;
             this.button1.Text = "GO";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(675, 419);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.noticeCheckBox);
