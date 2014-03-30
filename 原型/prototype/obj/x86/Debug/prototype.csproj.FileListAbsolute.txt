@@ -1,0 +1,9 @@
+D:\TSP5\原型\prototype\bin\Debug\prototype.exe
+D:\TSP5\原型\prototype\bin\Debug\prototype.pdb
+D:\TSP5\原型\prototype\obj\x86\Debug\prototype.LoginForm.resources
+D:\TSP5\原型\prototype\obj\x86\Debug\prototype.Properties.Resources.resources
+D:\TSP5\原型\prototype\obj\x86\Debug\prototype.csproj.GenerateResource.Cache
+D:\TSP5\原型\prototype\obj\x86\Debug\prototype.exe
+D:\TSP5\原型\prototype\obj\x86\Debug\prototype.pdb
+D:\TSP5\原型\prototype\obj\x86\Debug\prototype.csprojResolveAssemblyReference.cache
+D:\TSP5\原型\prototype\obj\x86\Debug\prototype.PersonalInfoForm.resources
