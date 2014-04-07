@@ -15,36 +15,22 @@ namespace prototype
         public PersonalInfoForm(String account)
         {
             this.account = account;
+            
             InitializeComponent();
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Memories myMemoryForm = new Memories();
-            myMemoryForm.Show();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            LForm learnForm = new LForm();
-            learnForm.Show();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            RForm rcommendForm = new RForm();
-            rcommendForm.Show();
-        }
-
         private void PersonalInfoForm_Load(object sender, EventArgs e)
         {
             label1.Text = account;
+            int[] yval = { 20, 61, 42, 53, 34, 25, 56, 67, 38, 29, 50, 61 };
+            int[] xval = { 1, 2, 3, 4,5, 6, 7, 8, 9, 10, 11, 12 };
+            chart1.ChartAreas[0].AxisX.Title = "注册后月份";
+            chart1.ChartAreas[0].AxisY.Title = "做题数";
+            chart1.Series["我"].Points.DataBindXY(xval, yval);
         }
 
         private void PersonalInfoForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }
-        
     }
 }
