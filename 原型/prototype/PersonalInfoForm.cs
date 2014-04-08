@@ -20,14 +20,15 @@ namespace prototype
         }
         private void PersonalInfoForm_Load(object sender, EventArgs e)
         {
+            
             label1.Text = account;
             int[] yval = { 20, 61, 42, 53, 34, 25, 56, 67, 38, 29, 50, 61 };
             int[] xval = { 1, 2, 3, 4,5, 6, 7, 8, 9, 10, 11, 12 };
             //chart1
             chart1.ChartAreas[0].AxisX.Title = "注册后月份";
             chart1.ChartAreas[0].AxisY.Title = "做题数";
-            chart1.Series["我"].Points.DataBindXY(xval, yval);
-
+            chart1.Series[0].Points.DataBindXY(xval, yval);
+            chart1.Series[0].LegendText = "我";
             //chart2
             String[] chart2X = { "动态规划", "博弈", "搜索", "模拟" };
             int[] chart2Y = { 20, 15, 30, 50 };
@@ -43,10 +44,11 @@ namespace prototype
             int[] chart3X = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
             chart3.ChartAreas[0].AxisX.Title = "注册后月份";
             chart3.ChartAreas[0].AxisY.Title = "做题数";
-            chart3.Series["我"].Points.DataBindXY(chart3X, chart3Y);
+            chart3.Series[0].Points.DataBindXY(chart3X, chart3Y);
             int[] chart3Y2 = { 40, 81, 92, 103, 64, 75, 86, 117, 128, 99, 60, 71 };
-            chart3.Series["牛人"].Points.DataBindXY(chart3X, chart3Y2);
-
+            chart3.Series[1].Points.DataBindXY(chart3X, chart3Y2);
+            chart3.Series[0].LegendText = "我";
+            chart3.Series[1].LegendText = "牛人";
             //chart4
             String[] chart4X = { "动态规划", "博弈", "搜索", "模拟" };
             int[] chart4Y = { 20, 15, 30, 50 };

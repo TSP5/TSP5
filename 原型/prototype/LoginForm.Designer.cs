@@ -65,11 +65,12 @@
             // AccountTextBox
             // 
             this.AccountTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.AccountTextBox.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.AccountTextBox.Font = new System.Drawing.Font("宋体", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.AccountTextBox.ForeColor = System.Drawing.SystemColors.Highlight;
             this.AccountTextBox.Location = new System.Drawing.Point(315, 274);
             this.AccountTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.AccountTextBox.Name = "AccountTextBox";
-            this.AccountTextBox.Size = new System.Drawing.Size(287, 35);
+            this.AccountTextBox.Size = new System.Drawing.Size(287, 38);
             this.AccountTextBox.TabIndex = 2;
             this.AccountTextBox.WordWrap = false;
             // 
