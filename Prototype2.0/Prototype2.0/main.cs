@@ -95,7 +95,7 @@ namespace Prototype2._0
         //Panel集合
         private List<Panel> panel = new List<Panel>();
         //设置子菜单按钮高度
-        private readonly int buttonHeight = 23;
+        private readonly int buttonHeight = 25;
         //记录已展开的菜单项
         private int menuOpen = -1;
         //初始化左侧菜单项
@@ -129,13 +129,16 @@ namespace Prototype2._0
         //刷新左侧菜单项
         private void RefleshMenu()
         {
-            int top = this.panel_menu.Top + 10;
+            int top = this.panel_menu.Top;
+            int left = this.panel_menu.Left;
             foreach (KeyValuePair<Button, List<Button>> menuItem in this.menu)
             {
                 menuItem.Key.Top = top;
+                menuItem.Key.Left = left+10;
                 top += menuItem.Key.Height + 10;
                 foreach (Button button in menuItem.Value)
                 {
+                    button.Left = left + 30;
                     button.Hide();
                 }
             }
@@ -224,6 +227,7 @@ namespace Prototype2._0
 
         private void button_jiantixitong_Click(object sender, EventArgs e)
         {
+            MenuClick(3);
             ShowPanel(8);
         }
 
@@ -249,9 +253,7 @@ namespace Prototype2._0
 
         private void button1_Click(object sender, EventArgs e)
         {
-            groupBox5.Visible = true;
-            groupBox2.Visible = false;
-            button2.Visible = true;
+            groupBox5.Visible = true;        
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -292,8 +294,13 @@ namespace Prototype2._0
         private void button1_Click_1(object sender, EventArgs e)
         {
             groupBox5.Visible = true;
-            groupBox2.Visible = false;
-            button2.Visible = true;
+
+        }
+
+        private void button_settings_Click(object sender, EventArgs e)
+        {
+            settings setting = new settings();
+            setting.Show();
         }
         
     }
