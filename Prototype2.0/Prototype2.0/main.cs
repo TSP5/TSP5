@@ -25,6 +25,55 @@ namespace Prototype2._0
             InitPanel();
             RefleshPanel();
 
+            int[] yval = { 20, 61, 42, 53, 34, 25, 56, 67, 38, 29, 50, 61 };
+            int[] xval = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
+
+            //chart1
+            chart1.ChartAreas[0].AxisX.Title = "注册后月份";
+            chart1.ChartAreas[0].AxisY.Title = "做题数";
+            chart1.Series[0].Points.DataBindXY(xval, yval);
+            chart1.Series[0].LegendText = "我";
+
+            //chart2
+            String[] chart2X = { "动态规划", "博弈", "搜索", "模拟" };
+            int[] chart2Y = { 20, 15, 30, 50 };
+            chart2.Series[0].LegendText = "#VALX";
+            chart2.Series[0].Label = "#VALY[#PERCENT]";
+            chart2.ChartAreas[0].AxisX.Title = "类型";
+            chart2.ChartAreas[0].AxisY.Title = "做题数";
+            chart2.Series[0].Points.DataBindXY(chart2X, chart2Y);
+            chart2.Series[0]["PieLabelStyle"] = "Outside";
+
+            //chart3
+            int[] chart3Y = { 20, 61, 42, 53, 34, 25, 56, 67, 38, 29, 50, 61 };
+            int[] chart3X = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
+            chart3.ChartAreas[0].AxisX.Title = "注册后月份";
+            chart3.ChartAreas[0].AxisY.Title = "做题数";
+            chart3.Series[0].Points.DataBindXY(chart3X, chart3Y);
+            int[] chart3Y2 = { 40, 81, 92, 103, 64, 75, 86, 117, 128, 99, 60, 71 };
+            chart3.Series[1].Points.DataBindXY(chart3X, chart3Y2);
+            chart3.Series[0].LegendText = "我";
+            chart3.Series[1].LegendText = "牛人";
+
+            //chart4
+            String[] chart4X = { "动态规划", "博弈", "搜索", "模拟" };
+            int[] chart4Y = { 20, 15, 30, 50 };
+            chart4.Series[0].LegendText = "#VALX";
+            chart4.Series[0].Label = "#VALY[#PERCENT]";
+            chart4.ChartAreas[0].AxisX.Title = "类型";
+            chart4.ChartAreas[0].AxisY.Title = "做题数";
+            chart4.Series[0].Points.DataBindXY(chart4X, chart4Y);
+            chart4.Series[0]["PieLabelStyle"] = "Outside";
+
+            //chart5
+            String[] chart5X = { "动态规划", "博弈", "搜索", "模拟" };
+            int[] chart5Y = { 400, 500, 900, 300 };
+            chart5.Series[0].LegendText = "#VALX";
+            chart5.Series[0].Label = "#VALY[#PERCENT]";
+            chart5.ChartAreas[0].AxisX.Title = "类型";
+            chart5.ChartAreas[0].AxisY.Title = "做题数";
+            chart5.Series[0].Points.DataBindXY(chart5X, chart5Y);
+            chart5.Series[0]["PieLabelStyle"] = "Outside";
         }
         //无边框窗口拖动代码
         [DllImport("user32.dll")]
@@ -55,19 +104,27 @@ namespace Prototype2._0
             this.menu.Add(this.button_wodexinxi, new List<Button>());
             this.menu.Add(this.button_jiudehuiyi, new List<Button>());
             this.menu.Add(this.button_xuexiniuren, new List<Button>());
+            this.menu.Add(this.button_jiantixitong, new List<Button>());
             this.menu[this.button_jiudehuiyi].Add(this.button_fendoushi);
             this.menu[this.button_jiudehuiyi].Add(this.button_zuotifenlei);
             this.menu[this.button_jiudehuiyi].Add(this.button_wodeliangdian);
-            this.menu[this.button_xuexiniuren].Add(this.button_niurenduibi);
-            this.menu[this.button_xuexiniuren].Add(this.button_jiantixitong);
+            this.menu[this.button_xuexiniuren].Add(this.button_bingtuduibi);
+            this.menu[this.button_xuexiniuren].Add(this.button_zhexiantuduibi);
+            //this.menu[this.button_xuexiniuren].Add(this.button_jiantixitong);
             firstMenu = this.menu.Keys;
         }
         //初始化Panel
         private void InitPanel()
         {
-            this.panel.Add(this.panel_wodexinxi);
-            this.panel.Add(this.panel_jiudehuiyi);
-            this.panel.Add(this.panel_xuexiniuren);
+            this.panel.Add(this.panel_wodexinxi);       //Index:0
+            this.panel.Add(this.panel_jiudehuiyi);      //Index:1
+            this.panel.Add(this.panel_xuexiniuren);     //Index:2
+            this.panel.Add(this.panel_fendoushi);       //Index:3      
+            this.panel.Add(this.panel_zuotifenlei);     //Index:4
+            this.panel.Add(this.panel_wodeliangdian);   //Index:5
+            this.panel.Add(this.panel_bingtuduibi);     //Index:6
+            this.panel.Add(this.panel_zhexiantuduibi);  //Index:7
+            this.panel.Add(this.panel_jiantixitong);    //Index:8
         }
         //刷新左侧菜单项
         private void RefleshMenu()
@@ -141,7 +198,7 @@ namespace Prototype2._0
         private void button_jiudehuiyi_Click(object sender, EventArgs e)
         {
             MenuClick(1);
-            ShowPanel(1);
+            //ShowPanel(1);
         }
 
         private void button_xuexiniuren_Click(object sender, EventArgs e)
@@ -150,18 +207,94 @@ namespace Prototype2._0
             ShowPanel(2);
         }
 
-        
-
         private void button_exit_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        
+        private void button_fendoushi_Click(object sender, EventArgs e)
+        {
+            ShowPanel(3);
+        }
 
-          
+        private void button_niurenduibi_Click(object sender, EventArgs e)
+        {
+            ShowPanel(6);
+        }
 
+        private void button_jiantixitong_Click(object sender, EventArgs e)
+        {
+            ShowPanel(8);
+        }
 
+        private void button_zuotifenlei_Click(object sender, EventArgs e)
+        {
+            ShowPanel(4);
+        }
+
+        private void button_wodeliangdian_Click(object sender, EventArgs e)
+        {
+            ShowPanel(5);
+        }
+
+        private void button_zhexiantuduibi_Click(object sender, EventArgs e)
+        {
+            ShowPanel(7);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            ShowPanel(7);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            groupBox5.Visible = true;
+            groupBox2.Visible = false;
+            button2.Visible = true;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void radioButton2_MouseClick(object sender, MouseEventArgs e)
+        {
+            textBox2.Focus();
+        }
+
+        private void textBox2_Click(object sender, EventArgs e)
+        {
+            textBox2.Clear();
+        }
+
+        private void textBox1_Click(object sender, EventArgs e)
+        {
+            textBox1.Clear();
+        }
+
+        private void radioButton1_Click(object sender, EventArgs e)
+        {
+            textBox1.Focus();
+        }
+
+        private void radioButton6_Click(object sender, EventArgs e)
+        {
+            textBox4.Focus();
+        }
+
+        private void radioButton4_Click(object sender, EventArgs e)
+        {
+            textBox3.Focus();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            groupBox5.Visible = true;
+            groupBox2.Visible = false;
+            button2.Visible = true;
+        }
         
     }
 }
