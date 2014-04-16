@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
@@ -43,7 +44,7 @@
             this.label1.ForeColor = System.Drawing.Color.DimGray;
             this.label1.Location = new System.Drawing.Point(189, 77);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(265, 32);
+            this.label1.Size = new System.Drawing.Size(212, 27);
             this.label1.TabIndex = 0;
             this.label1.Text = "请输入你的初始账号：";
             // 
@@ -53,7 +54,7 @@
             this.textBox1.ForeColor = System.Drawing.Color.DimGray;
             this.textBox1.Location = new System.Drawing.Point(195, 143);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(189, 27);
+            this.textBox1.Size = new System.Drawing.Size(189, 23);
             this.textBox1.TabIndex = 1;
             // 
             // checkBox1
@@ -63,7 +64,7 @@
             this.checkBox1.ForeColor = System.Drawing.Color.DimGray;
             this.checkBox1.Location = new System.Drawing.Point(248, 198);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(136, 24);
+            this.checkBox1.Size = new System.Drawing.Size(111, 21);
             this.checkBox1.TabIndex = 2;
             this.checkBox1.Text = "已阅读使用需知";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -71,6 +72,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.DimGray;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
@@ -84,35 +86,41 @@
             // 
             // progressBar1
             // 
+            this.progressBar1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.progressBar1.ForeColor = System.Drawing.Color.Black;
-            this.progressBar1.Location = new System.Drawing.Point(104, 244);
+            this.progressBar1.Location = new System.Drawing.Point(0, 279);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(449, 34);
+            this.progressBar1.Size = new System.Drawing.Size(622, 14);
             this.progressBar1.TabIndex = 4;
             this.progressBar1.Visible = false;
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.Red;
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(547, 12);
+            this.button2.ForeColor = System.Drawing.Color.DimGray;
+            this.button2.Location = new System.Drawing.Point(587, 12);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(60, 27);
+            this.button2.Size = new System.Drawing.Size(22, 22);
             this.button2.TabIndex = 5;
-            this.button2.Text = "退出";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(619, 308);
+            this.ClientSize = new System.Drawing.Size(622, 293);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.button1);

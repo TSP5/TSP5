@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Drawing.Drawing2D;
+using System.Windows.Forms.DataVisualization.Charting;
 namespace Prototype2._0
 {
     public partial class main : Form
