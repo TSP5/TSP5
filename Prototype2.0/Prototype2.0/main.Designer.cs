@@ -351,13 +351,14 @@
             this.button_exit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_exit.FlatAppearance.BorderSize = 0;
             this.button_exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_exit.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button_exit.ForeColor = System.Drawing.Color.White;
-            this.button_exit.Location = new System.Drawing.Point(865, 7);
+            this.button_exit.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_exit.ForeColor = System.Drawing.Color.Black;
+            this.button_exit.Location = new System.Drawing.Point(868, 7);
             this.button_exit.Margin = new System.Windows.Forms.Padding(2);
             this.button_exit.Name = "button_exit";
             this.button_exit.Size = new System.Drawing.Size(22, 22);
             this.button_exit.TabIndex = 10;
+            this.button_exit.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button_exit.UseVisualStyleBackColor = false;
             this.button_exit.Click += new System.EventHandler(this.button_exit_Click);
             // 
@@ -1156,12 +1157,12 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(900, 500);
+            this.Controls.Add(this.panel_wodexinxi);
             this.Controls.Add(this.panel_zhexiantuduibi);
             this.Controls.Add(this.panel_fendoushi);
             this.Controls.Add(this.panel_jiudehuiyi);
             this.Controls.Add(this.panel_zuotifenlei);
             this.Controls.Add(this.panel_xuexiniuren);
-            this.Controls.Add(this.panel_wodexinxi);
             this.Controls.Add(this.panel_wodeliangdian);
             this.Controls.Add(this.panel_jiantixitong);
             this.Controls.Add(this.panel_bingtuduibi);

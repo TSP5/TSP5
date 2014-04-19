@@ -13,9 +13,11 @@ namespace Prototype2._0
 {
     public partial class main : Form
     {
-        public main()
+        private User user = new User();
+        public main(User user)
         {
             InitializeComponent();
+            this.user = user;
         }
         //窗口载入时调用
         private void main_Load(object sender, EventArgs e)
@@ -25,6 +27,7 @@ namespace Prototype2._0
             RefleshMenu();
             InitPanel();
             RefleshPanel();
+            RefleshWodexinxiPanel();
 
             int[] yval = { 20, 61, 42, 53, 34, 25, 56, 67, 38, 29, 50, 61 };
             int[] xval = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
@@ -192,6 +195,22 @@ namespace Prototype2._0
                 panel.Hide();
             }
             this.panel[index].Show();
+        }
+        //刷新我的信息panel
+        private void RefleshWodexinxiPanel()
+        {
+            this.label301.Text = user.Name;
+            this.label25.Text = user.Rank.ToString();
+            this.label27.Text = user.ProblemsSubmitted.ToString();
+            this.label29.Text = user.ProblemsSolved.ToString();
+            this.label5.Text = user.Submissions.ToString();
+            this.label6.Text = user.Accepted.ToString();
+            this.listBox1.Items.Clear();
+            foreach (Problem problem in user.Solve)
+            {
+                String s = problem.Id + "  " + problem.AcTime.ToString();
+                listBox1.Items.Add(s);
+            }
         }
         private void button_wodexinxi_Click(object sender, EventArgs e)
         {

@@ -19,8 +19,8 @@ D:\Documents\GitHub\TSP5\Prototype2.0\Prototype2.0\obj\x86\Debug\Prototype2.0.pd
 D:\Documents\GitHub\TSP5\Prototype2.0\Prototype2.0\bin\Debug\Prototype2.0.exe
 D:\Documents\GitHub\TSP5\Prototype2.0\Prototype2.0\bin\Debug\Prototype2.0.pdb
 D:\Documents\GitHub\TSP5\Prototype2.0\Prototype2.0\obj\x86\Debug\Prototype2.0.csprojResolveAssemblyReference.cache
-D:\Documents\GitHub\TSP5\Prototype2.0\Prototype2.0\obj\x86\Debug\Prototype2._0.main.resources
 D:\Documents\GitHub\TSP5\Prototype2.0\Prototype2.0\obj\x86\Debug\Prototype2._0.Properties.Resources.resources
 D:\Documents\GitHub\TSP5\Prototype2.0\Prototype2.0\obj\x86\Debug\Prototype2.0.csproj.GenerateResource.Cache
 D:\Documents\GitHub\TSP5\Prototype2.0\Prototype2.0\obj\x86\Debug\Prototype2._0.settings.resources
 D:\Documents\GitHub\TSP5\Prototype2.0\Prototype2.0\obj\x86\Debug\Prototype2._0.LoginForm.resources
+D:\Documents\GitHub\TSP5\Prototype2.0\Prototype2.0\obj\x86\Debug\Prototype2._0.main.resources
