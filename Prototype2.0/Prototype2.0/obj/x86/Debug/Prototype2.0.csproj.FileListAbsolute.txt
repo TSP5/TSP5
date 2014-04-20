@@ -35,3 +35,14 @@ D:\git_file\yuanxing7\Prototype2.0\Prototype2.0\obj\x86\Debug\Prototype2._0.Prop
 D:\git_file\yuanxing7\Prototype2.0\Prototype2.0\obj\x86\Debug\Prototype2._0.settings.resources
 D:\git_file\yuanxing7\Prototype2.0\Prototype2.0\obj\x86\Debug\GenerateResource.read.1.tlog
 D:\git_file\yuanxing7\Prototype2.0\Prototype2.0\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\git_file\yuanxing8\Prototype2.0\Prototype2.0\obj\x86\Debug\Prototype2.0.exe
+D:\git_file\yuanxing8\Prototype2.0\Prototype2.0\obj\x86\Debug\Prototype2.0.pdb
+D:\git_file\yuanxing8\Prototype2.0\Prototype2.0\bin\Debug\Prototype2.0.exe
+D:\git_file\yuanxing8\Prototype2.0\Prototype2.0\bin\Debug\Prototype2.0.pdb
+D:\git_file\yuanxing8\Prototype2.0\Prototype2.0\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\git_file\yuanxing8\Prototype2.0\Prototype2.0\obj\x86\Debug\Prototype2._0.LoginForm.resources
+D:\git_file\yuanxing8\Prototype2.0\Prototype2.0\obj\x86\Debug\Prototype2._0.main.resources
+D:\git_file\yuanxing8\Prototype2.0\Prototype2.0\obj\x86\Debug\Prototype2._0.Properties.Resources.resources
+D:\git_file\yuanxing8\Prototype2.0\Prototype2.0\obj\x86\Debug\Prototype2._0.settings.resources
+D:\git_file\yuanxing8\Prototype2.0\Prototype2.0\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\git_file\yuanxing8\Prototype2.0\Prototype2.0\obj\x86\Debug\GenerateResource.write.1.tlog

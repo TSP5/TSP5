@@ -105,7 +105,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="FenLei.txt" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\photo.PNG" />
   </ItemGroup>

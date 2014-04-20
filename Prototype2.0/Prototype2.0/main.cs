@@ -9,6 +9,8 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms.DataVisualization.Charting;
+using System.IO;
+using System.Collections;
 namespace Prototype2._0
 {
     public partial class main : Form
@@ -30,17 +32,7 @@ namespace Prototype2._0
             RefleshWodexinxiPanel();
             RefleshFendoushiPanel();
             RefleshZuotifenleiPanel();
-
-            //chart2
-            String[] chart2X = { "动态规划", "博弈", "搜索", "模拟" };
-            int[] chart2Y = { 20, 15, 30, 50 };
-            chart2.Series[0].LegendText = "#VALX";
-            chart2.Series[0].Label = "#VALY[#PERCENT]";
-            chart2.ChartAreas[0].AxisX.Title = "类型";
-            chart2.ChartAreas[0].AxisY.Title = "做题数";
-            chart2.Series[0].Points.DataBindXY(chart2X, chart2Y);
-            chart2.Series[0]["PieLabelStyle"] = "Outside";
-
+            
             //chart3
             int[] chart3Y = { 20, 61, 42, 53, 34, 25, 56, 67, 38, 29, 50, 61 };
             int[] chart3X = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
@@ -241,7 +233,48 @@ namespace Prototype2._0
         //刷新做题分类panel
         private void RefleshZuotifenleiPanel()
         {
+            Dictionary<String, int> dic = new Dictionary<string, int>();
+            //dic.Add("动态规划", 40);
+            //dic.Add("其他", 60);
+            string str = "";
+            int othernum = 0;
+            ArrayList list = new ArrayList();//string类型
+            //ArrayList num = new ArrayList();//int类型
 
+            StreamReader sr = new StreamReader("FenLei.txt",Encoding.Default);
+
+            //读取文件
+            while ((str = sr.ReadLine()) != null)
+            {
+                list.Add(str);
+            }
+            //dic初始化
+            foreach (string al in list)
+            {
+                //这是中文符的：，当时被坑死了
+                dic.Add(al.Substring(0,al.IndexOf('：')), 0);
+            }
+            //遍历
+            foreach (Problem problem in user.Solve)
+            {
+                for (int i = 0; i < list.Count; i++)
+                {
+                    if (list[i].ToString().Contains(problem.Id.ToString()))
+                    {
+                        //listnum++;
+                        dic[list[i].ToString().Substring(0, list[i].ToString().IndexOf('：'))]++;
+                        break;
+                    }
+                }
+                //新题目，其他类型
+                othernum++;
+            }
+            dic.Add("其他类", othernum);
+            //chart2
+            chart2.Series[0].LegendText = "#VALX";
+            chart2.Series[0].Label = "#VALY[#PERCENT]";
+            chart2.Series[0].Points.DataBindXY(dic.Keys, dic.Values);
+            chart2.Series[0]["PieLabelStyle"] = "Outside";
         }
         private void button_wodexinxi_Click(object sender, EventArgs e)
         {
