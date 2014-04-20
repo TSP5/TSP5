@@ -28,15 +28,8 @@ namespace Prototype2._0
             InitPanel();
             RefleshPanel();
             RefleshWodexinxiPanel();
-
-            int[] yval = { 20, 61, 42, 53, 34, 25, 56, 67, 38, 29, 50, 61 };
-            int[] xval = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
-
-            //chart1
-            chart1.ChartAreas[0].AxisX.Title = "注册后月份";
-            chart1.ChartAreas[0].AxisY.Title = "做题数";
-            chart1.Series[0].Points.DataBindXY(xval, yval);
-            chart1.Series[0].LegendText = "我";
+            RefleshFendoushiPanel();
+            RefleshZuotifenleiPanel();
 
             //chart2
             String[] chart2X = { "动态规划", "博弈", "搜索", "模拟" };
@@ -211,6 +204,74 @@ namespace Prototype2._0
                 String s = problem.Id + "  " + problem.AcTime.ToString();
                 listBox1.Items.Add(s);
             }
+        }
+        //刷新奋斗史panel
+        private void RefleshFendoushiPanel()
+        {
+            //12个月份的做题统计
+            int JanCount = 0, FebCount = 0, MarCount = 0, AprCount = 0, 
+                MayCount = 0, JunCount = 0, JulCount = 0, AugCount = 0, 
+                SepCount = 0, OctCount = 0, NovCount = 0, DecCount = 0;
+
+            foreach (Problem problem in user.Solve)
+            {
+                switch (problem.AcTime.Month)
+                {
+                    case 1:
+                        JanCount++;
+                        break;
+                    case 2:
+                        FebCount++;
+                        break;
+                    case 3:
+                        MarCount++;
+                        break;
+                    case 4:
+                        AprCount++;
+                        break;
+                    case 5:
+                        MayCount++;
+                        break;
+                    case 6:
+                        JunCount++;
+                        break;
+                    case 7:
+                        JulCount++;
+                        break;
+                    case 8:
+                        AugCount++;
+                        break;
+                    case 9:
+                        SepCount++;
+                        break;
+                    case 10:
+                        OctCount++;
+                        break;
+                    case 11:
+                        NovCount++;
+                        break;
+                    case 12:
+                        DecCount++;
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            int[] yval = { JanCount, FebCount, MarCount, AprCount, MayCount, JunCount, 
+                             JulCount, AugCount, SepCount, OctCount, NovCount, DecCount };
+            int[] xval = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
+
+            //chart1
+            chart1.ChartAreas[0].AxisX.Title = "注册后月份";
+            chart1.ChartAreas[0].AxisY.Title = "做题数";
+            chart1.Series[0].Points.DataBindXY(xval, yval);
+            chart1.Series[0].LegendText = "我";
+        }
+        //刷新做题分类panel
+        private void RefleshZuotifenleiPanel()
+        {
+
         }
         private void button_wodexinxi_Click(object sender, EventArgs e)
         {

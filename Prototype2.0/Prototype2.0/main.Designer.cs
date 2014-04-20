@@ -754,7 +754,7 @@
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(74, 22);
             this.label15.TabIndex = 1;
-            this.label15.Text = "做题太快";
+            this.label15.Text = "基本上题目都做得很顺，发现题目有点越来越简单了";
             // 
             // label14
             // 
@@ -765,7 +765,7 @@
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(74, 22);
             this.label14.TabIndex = 0;
-            this.label14.Text = "做题很多";
+            this.label14.Text = "题目总共做了1000多道，其中某个月做了120道，各种题目类型都有，AC率达85%";
             // 
             // label13
             // 
