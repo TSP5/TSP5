@@ -85,7 +85,15 @@ namespace Prototype2._0
             ReleaseCapture();
             SendMessage(this.Handle, WM_SYSCOMMAND, SC_MOVE + HTCAPTION, 0);
         }
-        
+        public int getMonthdiff(DateTime date1, DateTime date2)
+        {
+            int year1 = date1.Year;
+            int year2 = date2.Year;
+            int month1 = date1.Month;
+            int month2 = date2.Month;
+            int months = 12 * (year2 - year1) + (month2 - month1);
+            return months;
+        }
         //左侧菜单项集合
         private Dictionary<Button, List<Button>> menu = new Dictionary<Button, List<Button>>();
         private Dictionary<Button, List<Button>>.KeyCollection firstMenu;
@@ -208,65 +216,27 @@ namespace Prototype2._0
         //刷新奋斗史panel
         private void RefleshFendoushiPanel()
         {
-            //12个月份的做题统计
-            int JanCount = 0, FebCount = 0, MarCount = 0, AprCount = 0, 
-                MayCount = 0, JunCount = 0, JulCount = 0, AugCount = 0, 
-                SepCount = 0, OctCount = 0, NovCount = 0, DecCount = 0;
-
-            foreach (Problem problem in user.Solve)
-            {
-                switch (problem.AcTime.Month)
-                {
-                    case 1:
-                        JanCount++;
-                        break;
-                    case 2:
-                        FebCount++;
-                        break;
-                    case 3:
-                        MarCount++;
-                        break;
-                    case 4:
-                        AprCount++;
-                        break;
-                    case 5:
-                        MayCount++;
-                        break;
-                    case 6:
-                        JunCount++;
-                        break;
-                    case 7:
-                        JulCount++;
-                        break;
-                    case 8:
-                        AugCount++;
-                        break;
-                    case 9:
-                        SepCount++;
-                        break;
-                    case 10:
-                        OctCount++;
-                        break;
-                    case 11:
-                        NovCount++;
-                        break;
-                    case 12:
-                        DecCount++;
-                        break;
-                    default:
-                        break;
-                }
-            }
-
-            int[] yval = { JanCount, FebCount, MarCount, AprCount, MayCount, JunCount, 
-                             JulCount, AugCount, SepCount, OctCount, NovCount, DecCount };
-            int[] xval = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
-
             //chart1
             chart1.ChartAreas[0].AxisX.Title = "注册后月份";
             chart1.ChartAreas[0].AxisY.Title = "做题数";
-            chart1.Series[0].Points.DataBindXY(xval, yval);
-            chart1.Series[0].LegendText = "我";
+            chart1.Series[0].LegendText = user.Name;
+            int totalMonth = this.getMonthdiff(user.Solve[user.Solve.Count - 1].AcTime, user.Solve[0].AcTime);
+            Dictionary<int, int> monthAc = new Dictionary<int, int>();
+            for (int i = 0; i <= totalMonth; i++)
+            {
+                monthAc[i] = 0;
+            }
+            for (int i = 0; i < user.Solve.Count; i++)
+            {
+                monthAc[this.getMonthdiff(user.Solve[user.Solve.Count - 1].AcTime, user.Solve[i].AcTime)]++;
+            }
+            //int sum = 0;
+            for (int i = 0; i <= totalMonth; i++)
+            {
+                chart1.Series[0].Points.Add(monthAc[i]);
+                //sum += monthAc[i];
+            }
+            //MessageBox.Show(sum.ToString());
         }
         //刷新做题分类panel
         private void RefleshZuotifenleiPanel()
