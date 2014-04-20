@@ -239,9 +239,17 @@ namespace Prototype2._0
             string str = "";
             int othernum = 0;
             ArrayList list = new ArrayList();//string类型
+            StreamReader sr;
             //ArrayList num = new ArrayList();//int类型
-
-            StreamReader sr = new StreamReader("FenLei.txt",Encoding.Default);
+            try
+            {
+                sr = new StreamReader("分类.txt", Encoding.Default);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("获取分类信息失败!");
+                return;
+            }
 
             //读取文件
             while ((str = sr.ReadLine()) != null)
@@ -251,28 +259,33 @@ namespace Prototype2._0
             //dic初始化
             foreach (string al in list)
             {
-                //这是中文符的：，当时被坑死了
-                dic.Add(al.Substring(0,al.IndexOf('：')), 0);
+                dic.Add(al.Substring(0, al.IndexOf(':')), 0);
             }
             //遍历
             foreach (Problem problem in user.Solve)
             {
+                bool isOther = true;
                 for (int i = 0; i < list.Count; i++)
                 {
                     if (list[i].ToString().Contains(problem.Id.ToString()))
                     {
                         //listnum++;
-                        dic[list[i].ToString().Substring(0, list[i].ToString().IndexOf('：'))]++;
+                        dic[list[i].ToString().Substring(0, list[i].ToString().IndexOf(':'))]++;
+                        isOther = false;
                         break;
                     }
                 }
                 //新题目，其他类型
-                othernum++;
+                if (isOther)
+                {
+                    othernum++;
+                }
             }
-            dic.Add("其他类", othernum);
+            
+            dic.Add("其他", othernum);
             //chart2
             chart2.Series[0].LegendText = "#VALX";
-            chart2.Series[0].Label = "#VALY[#PERCENT]";
+            chart2.Series[0].Label = "#VALX, #VALY[#PERCENT]";
             chart2.Series[0].Points.DataBindXY(dic.Keys, dic.Values);
             chart2.Series[0]["PieLabelStyle"] = "Outside";
         }

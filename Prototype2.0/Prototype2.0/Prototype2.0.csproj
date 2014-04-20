@@ -106,7 +106,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="FenLei.txt" />
+    <Content Include="分类.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\photo.PNG" />

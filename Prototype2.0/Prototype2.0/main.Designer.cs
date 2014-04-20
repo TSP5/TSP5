@@ -752,7 +752,7 @@
             this.label15.ForeColor = System.Drawing.Color.Gray;
             this.label15.Location = new System.Drawing.Point(49, 79);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(74, 22);
+            this.label15.Size = new System.Drawing.Size(378, 22);
             this.label15.TabIndex = 1;
             this.label15.Text = "基本上题目都做得很顺，发现题目有点越来越简单了";
             // 
@@ -763,7 +763,7 @@
             this.label14.ForeColor = System.Drawing.Color.Gray;
             this.label14.Location = new System.Drawing.Point(49, 50);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(74, 22);
+            this.label14.Size = new System.Drawing.Size(602, 22);
             this.label14.TabIndex = 0;
             this.label14.Text = "题目总共做了1000多道，其中某个月做了120道，各种题目类型都有，AC率达85%";
             // 
@@ -1157,11 +1157,11 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(900, 500);
+            this.Controls.Add(this.panel_zuotifenlei);
             this.Controls.Add(this.panel_wodexinxi);
             this.Controls.Add(this.panel_zhexiantuduibi);
             this.Controls.Add(this.panel_fendoushi);
             this.Controls.Add(this.panel_jiudehuiyi);
-            this.Controls.Add(this.panel_zuotifenlei);
             this.Controls.Add(this.panel_xuexiniuren);
             this.Controls.Add(this.panel_wodeliangdian);
             this.Controls.Add(this.panel_jiantixitong);
