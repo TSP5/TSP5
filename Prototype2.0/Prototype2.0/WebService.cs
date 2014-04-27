@@ -5,6 +5,7 @@ using System.Text;
 using System.Net;
 using System.Net.NetworkInformation;
 using System.IO;
+using System.Windows.Forms;
 namespace Prototype2._0
 {
     class WebService
@@ -47,10 +48,30 @@ namespace Prototype2._0
                 return null;
             }
         }
-        
-        //根据账号获取用户信息
-        public User GetUser(String name)
+        //根据排名获取用户名
+        public String GetUserNameByRank(int rank)
         {
+            if (rank < 0)
+            {
+                return null;
+            }
+            String url = "http://acm.hdu.edu.cn/ranklist.php?from=" + rank.ToString();
+            Encoding encode = Encoding.GetEncoding("gb2312");
+            String Page = this.GetWebContent(url, encode);
+            int head, foot;
+            head = Page.IndexOf("<td  height=22>" + rank.ToString() + "</td>");
+            head = Page.IndexOf("<A href=\"userstatus.php?user=", head);
+            head += 29;
+            foot = Page.IndexOf("&PHPSESSID", head);
+            return Page.Substring(head, foot - head);
+        }
+
+
+        //根据账号获取用户信息
+        public User GetUser(String name, ProgressBar progressBar)
+        {
+            progressBar.Value = 0;
+            Application.DoEvents();
             User user = new User();
             user.Name = name;
             String url = "http://acm.hdu.edu.cn/userstatus.php?user=" + name;
@@ -87,10 +108,14 @@ namespace Prototype2._0
             head += 34;
             foot -= 5;
             user.Accepted = System.Int32.Parse(Page.Substring(head, foot - head));
+            progressBar.Maximum = 50 + user.Accepted;
+            Application.DoEvents();
+            progressBar.Value += 50;
+            Application.DoEvents();
             return user;
         }
         //根据账号获取AC题目信息
-        public List<Problem> GetAccepted(String name)
+        public List<Problem> GetAccepted(String name, ProgressBar progressBar)
         {
             List<Problem> Result = new List<Problem>();  
             int ProID = 0;
@@ -103,49 +128,58 @@ namespace Prototype2._0
             String Page = String.Empty;
             int head = 0;
             int foot = 0;
-            
-            while (true)
+            try
             {
-                Page = this.GetWebContent(url, encode);
-                if (!Page.Contains("<font color=red>Accepted</font>"))
-                {
-                    break;
-                }
-                head = Page.IndexOf("</center></form></td>");
-                head = Page.IndexOf("<td>", head);
                 while (true)
                 {
-                    head += 4;
-                    foot = Page.IndexOf("</td>", head);
-                    SubmitTime = Page.Substring(head, foot - head);
-                    head = Page.IndexOf("<a href=", head);
-                    head = Page.IndexOf(">", head);
-                    head += 1;
-                    foot = Page.IndexOf("</a>", head);
-                    ProID = System.Int32.Parse(Page.Substring(head, foot - head));
-                    Problem problem = new Problem();
-                    problem.Id = ProID;
-                    problem.AcTime = Convert.ToDateTime(SubmitTime);
-                    Result.Add(problem);
-                    head = Page.IndexOf("</tr>", head);
-                    if (Page.Substring(head, 13).Equals("</tr></table>"))
+                    Page = this.GetWebContent(url, encode);
+                    if (!Page.Contains("<font color=red>Accepted</font>"))
                     {
                         break;
                     }
+                    head = Page.IndexOf("</center></form></td>");
                     head = Page.IndexOf("<td>", head);
+                    while (true)
+                    {
+                        head += 4;
+                        foot = Page.IndexOf("</td>", head);
+                        SubmitTime = Page.Substring(head, foot - head);
+                        head = Page.IndexOf("<a href=", head);
+                        head = Page.IndexOf(">", head);
+                        head += 1;
+                        foot = Page.IndexOf("</a>", head);
+                        ProID = System.Int32.Parse(Page.Substring(head, foot - head));
+                        Problem problem = new Problem();
+                        problem.Id = ProID;
+                        problem.AcTime = Convert.ToDateTime(SubmitTime);
+                        Result.Add(problem);
+                        progressBar.Value += progressBar.Value == progressBar.Maximum ? 0 : 1;
+                        Application.DoEvents();
+                        head = Page.IndexOf("</tr>", head);
+                        if (Page.Substring(head, 13).Equals("</tr></table>"))
+                        {
+                            break;
+                        }
+                        head = Page.IndexOf("<td>", head);
+                    }
+                    if (!Page.Contains("Next Page"))
+                    {
+                        break;
+                    }
+                    head = Page.IndexOf("Prev Page</a>", head);
+                    head += 48;
+                    foot = Page.IndexOf("Next Page", head);
+                    foot -= 2;
+                    temp = Page.Substring(head, foot - head);
+                    url = "http://acm.hdu.edu.cn" + temp;
                 }
-                if (!Page.Contains("Next Page"))
-                {
-                    break;
-                }
-                head = Page.IndexOf("Prev Page</a>", head);
-                head += 48;
-                foot = Page.IndexOf("Next Page", head);
-                foot -= 2;
-                temp = Page.Substring(head, foot - head);
-                url = "http://acm.hdu.edu.cn" + temp;
+                return Result;
             }
-            return Result;
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+                return null;
+            }
         }
     }
 

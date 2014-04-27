@@ -165,32 +165,6 @@
         lseK9YcSshpHAUvHfkb1BaEVogWh+bszhAIO0MiQtQas80dRazX4BmeS03cXdiFDAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="button_settings.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAABHNCSVQICAgIfAhkiAAAAAFzUkdCAK7O
-        HOkAAAAEZ0FNQQAAsY8L/GEFAAAACXBIWXMAAAsMAAALDAE/QCLIAAAAHHRFWHRTb2Z0d2FyZQBBZG9i
-        ZSBGaXJld29ya3MgQ1M1cbXjNgAAABZ0RVh0Q3JlYXRpb24gVGltZQAxMi8yOS8xMSw86+oAAAH9SURB
-        VFhH1VaLjYMwDO0IjFKJBRiFEToCIzACIzACI3SUbnD1o84pBNtxwsHdVYra4t+LP8/cbgc+bdvOdL6S
-        Mx9wWW9KIHoBTADX13uutCQwgwFoqHSrm1Gwhk5H5y5p1QCCL/bZFAFmw1eUgTF1UAqI9MfIH3yLF90B
-        FcCEvpigzJlD/zyNkkEGnTUT9D0JunlQHCzOTDpBC+lY8lQfurBJn4f/kOvl4/pqxmc979R+4nKdFVjz
-        a/dS0nxng9sNi5gtpQklcGBq8BHoAQe/JfaWbNchcX8yzYgpUlPNpbemcHEDiUZbmyb3zYxM29MlkJ62
-        p55FN/twkJap3pouAED9w9Gc7MrE5Ql2mlzqIcSIY34AZnoldjQ7M7m7eUGjLwDkHe1HDCjDWZtMke7D
-        G6cEUJcAQrq1ywyJLijBdfF/Deiyklnb+Pqm5kn7O2MvkRM14O8So8AvjfEidv3qcBDm5ct1cvIGXjXA
-        R+AZHPzGMw/n+DJNzkanQ0/QnM5oLuvMOsg5r5XvFvI3SE57reNau81K2mSMAFnThYAg0VdBSaFrES/k
-        jadsUtC1CRk0eAqTpmUFMuiswehbGhLE0MslvFrEoHbNxxPl2vYMKh4WP5gAjDOBURZvUQqIQd25T+0y
-        mTVUhDWAauK4bYx9hzL2bkc/qaiw8nwkxhvvd2apw5HTFQAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="button_exit.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABsAAAAbCAYAAACN1PRVAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAAGYktHRAD/AP8A/6C9p5MAAAAHdElNRQfeBBMHAARR7lvS
-        AAAAyElEQVRIS8WWyQ7AIAhE+f+ftktS0wWYRzXtwYMKM44sambWzqO1ZrPGHXudX8m2+QwyD9clGyUM
-        iLYbfCo71t4ozPD2+MwiVDg9GZShUkn8L5lHHDxS6vdIc+p4kFbs3ZqiANSuHyyKhQJS++51Z4FP0zgo
-        mRRvJMuqrQ71QaJQHXqvZ2I0q/AR2WfKCBHtpamyChEhDMlUHal9XGcUiNqFHaQMUHgP/+n6VUX3mBD/
-        b19qciLaZVSnCf8fFYLClf74bxxRpBQu5V3zU2sPmkIAAAAASUVORK5CYII=
-</value>
-  </data>
   <data name="pictureBox2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAOMAAACHCAYAAADk6+4AAAAABGdBTUEAALGOfPtRkwAAACBjSFJNAACH

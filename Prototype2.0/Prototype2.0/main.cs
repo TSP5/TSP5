@@ -11,15 +11,19 @@ using System.Drawing.Drawing2D;
 using System.Windows.Forms.DataVisualization.Charting;
 using System.IO;
 using System.Collections;
+using System.Threading;
 namespace Prototype2._0
 {
     public partial class main : Form
     {
         private User user = new User();
-        public main(User user)
+        private User cowMan = new User();
+        private List<int> recommandProblems = new List<int>();
+        private WebService webService = new WebService();
+        public main()
         {
             InitializeComponent();
-            this.user = user;
+            this.AcceptButton = button3;
         }
         //窗口载入时调用
         private void main_Load(object sender, EventArgs e)
@@ -29,40 +33,8 @@ namespace Prototype2._0
             RefleshMenu();
             InitPanel();
             RefleshPanel();
-            RefleshWodexinxiPanel();
-            RefleshFendoushiPanel();
-            RefleshZuotifenleiPanel();
-            
-            //chart3
-            int[] chart3Y = { 20, 61, 42, 53, 34, 25, 56, 67, 38, 29, 50, 61 };
-            int[] chart3X = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
-            chart3.ChartAreas[0].AxisX.Title = "注册后月份";
-            chart3.ChartAreas[0].AxisY.Title = "做题数";
-            chart3.Series[0].Points.DataBindXY(chart3X, chart3Y);
-            int[] chart3Y2 = { 40, 81, 92, 103, 64, 75, 86, 117, 128, 99, 60, 71 };
-            chart3.Series[1].Points.DataBindXY(chart3X, chart3Y2);
-            chart3.Series[0].LegendText = "我";
-            chart3.Series[1].LegendText = "牛人";
-
-            //chart4
-            String[] chart4X = { "动态规划", "博弈", "搜索", "模拟" };
-            int[] chart4Y = { 20, 15, 30, 50 };
-            chart4.Series[0].LegendText = "#VALX";
-            chart4.Series[0].Label = "#VALY[#PERCENT]";
-            chart4.ChartAreas[0].AxisX.Title = "类型";
-            chart4.ChartAreas[0].AxisY.Title = "做题数";
-            chart4.Series[0].Points.DataBindXY(chart4X, chart4Y);
-            chart4.Series[0]["PieLabelStyle"] = "Outside";
-
-            //chart5
-            String[] chart5X = { "动态规划", "博弈", "搜索", "模拟" };
-            int[] chart5Y = { 400, 500, 900, 300 };
-            chart5.Series[0].LegendText = "#VALX";
-            chart5.Series[0].Label = "#VALY[#PERCENT]";
-            chart5.ChartAreas[0].AxisX.Title = "类型";
-            chart5.ChartAreas[0].AxisY.Title = "做题数";
-            chart5.Series[0].Points.DataBindXY(chart5X, chart5Y);
-            chart5.Series[0]["PieLabelStyle"] = "Outside";
+            ShowPanel(9);
+            panel_menu.Enabled = false;
         }
         //无边框窗口拖动代码
         [DllImport("user32.dll")]
@@ -77,15 +49,7 @@ namespace Prototype2._0
             ReleaseCapture();
             SendMessage(this.Handle, WM_SYSCOMMAND, SC_MOVE + HTCAPTION, 0);
         }
-        public int getMonthdiff(DateTime date1, DateTime date2)
-        {
-            int year1 = date1.Year;
-            int year2 = date2.Year;
-            int month1 = date1.Month;
-            int month2 = date2.Month;
-            int months = 12 * (year2 - year1) + (month2 - month1);
-            return months;
-        }
+        
         //左侧菜单项集合
         private Dictionary<Button, List<Button>> menu = new Dictionary<Button, List<Button>>();
         private Dictionary<Button, List<Button>>.KeyCollection firstMenu;
@@ -105,9 +69,8 @@ namespace Prototype2._0
             this.menu[this.button_jiudehuiyi].Add(this.button_fendoushi);
             this.menu[this.button_jiudehuiyi].Add(this.button_zuotifenlei);
             this.menu[this.button_jiudehuiyi].Add(this.button_wodeliangdian);
-            this.menu[this.button_xuexiniuren].Add(this.button_bingtuduibi);
             this.menu[this.button_xuexiniuren].Add(this.button_zhexiantuduibi);
-            //this.menu[this.button_xuexiniuren].Add(this.button_jiantixitong);
+            this.menu[this.button_xuexiniuren].Add(this.button_bingtuduibi);
             firstMenu = this.menu.Keys;
         }
         //初始化Panel
@@ -122,6 +85,7 @@ namespace Prototype2._0
             this.panel.Add(this.panel_bingtuduibi);     //Index:6
             this.panel.Add(this.panel_zhexiantuduibi);  //Index:7
             this.panel.Add(this.panel_jiantixitong);    //Index:8
+            this.panel.Add(this.panel_Login);
         }
         //刷新左侧菜单项
         private void RefleshMenu()
@@ -178,7 +142,6 @@ namespace Prototype2._0
             {
                 panel.Hide();
             }
-            this.panel[0].Show();
         }
         //显示index指定的panel
         private void ShowPanel(int index)
@@ -208,86 +171,173 @@ namespace Prototype2._0
         //刷新奋斗史panel
         private void RefleshFendoushiPanel()
         {
-            //chart1
-            chart1.ChartAreas[0].AxisX.Title = "注册后月份";
-            chart1.ChartAreas[0].AxisY.Title = "做题数";
-            chart1.Series[0].LegendText = user.Name;
-            int totalMonth = this.getMonthdiff(user.Solve[user.Solve.Count - 1].AcTime, user.Solve[0].AcTime);
-            Dictionary<int, int> monthAc = new Dictionary<int, int>();
-            for (int i = 0; i <= totalMonth; i++)
-            {
-                monthAc[i] = 0;
-            }
-            for (int i = 0; i < user.Solve.Count; i++)
-            {
-                monthAc[this.getMonthdiff(user.Solve[user.Solve.Count - 1].AcTime, user.Solve[i].AcTime)]++;
-            }
-            //int sum = 0;
-            for (int i = 0; i <= totalMonth; i++)
-            {
-                chart1.Series[0].Points.Add(monthAc[i]);
-                //sum += monthAc[i];
-            }
-            //MessageBox.Show(sum.ToString());
+            chart1.Series.Clear();
+            chart3.Series.Clear();
+            user.ToLineChart(chart1);
+            user.ToLineChart(chart3);
+            user.ToPieChart(chart4);
         }
         //刷新做题分类panel
         private void RefleshZuotifenleiPanel()
         {
-            Dictionary<String, int> dic = new Dictionary<string, int>();
-            //dic.Add("动态规划", 40);
-            //dic.Add("其他", 60);
-            string str = "";
-            int othernum = 0;
-            ArrayList list = new ArrayList();//string类型
-            StreamReader sr;
-            //ArrayList num = new ArrayList();//int类型
-            try
+            user.ToPieChart(chart2);
+        }
+        //获取默认用户
+        private void getUser()
+        {
+            panel_Login.Enabled = false;
+            panel_menu.Enabled = false;
+            user = webService.GetUser(textBox3.Text, progressBar1);
+            if (user == null)
             {
-                sr = new StreamReader("分类.txt", Encoding.Default);
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show("获取分类信息失败!");
+                MessageBox.Show("No such user.");
                 return;
             }
-
-            //读取文件
-            while ((str = sr.ReadLine()) != null)
+            user.Solve = webService.GetAccepted(user.Name, progressBar1);
+            RefleshWodexinxiPanel();
+            RefleshFendoushiPanel();
+            RefleshZuotifenleiPanel();
+            panel_menu.Enabled = true;
+            ShowPanel(0);
+            panel_Login.Enabled = true;
+        }
+        //获取牛人
+        private void getCowMan()
+        {
+            groupBox1.Enabled = false;
+            if (radioButton1.Checked == true)
             {
-                list.Add(str);
-            }
-            //dic初始化
-            foreach (string al in list)
-            {
-                dic.Add(al.Substring(0, al.IndexOf(':')), 0);
-            }
-            //遍历
-            foreach (Problem problem in user.Solve)
-            {
-                bool isOther = true;
-                for (int i = 0; i < list.Count; i++)
+                cowMan = webService.GetUser(textBox1.Text, progressBar1);
+                if (cowMan == null)
                 {
-                    if (list[i].ToString().Contains(problem.Id.ToString()))
+                    MessageBox.Show("No such cowMan.");
+                    return;
+                }
+            }
+            else if (radioButton2.Checked == true)
+            {
+                int Rank;
+                try
+                {
+                    Rank = Convert.ToInt32(textBox2.Text);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Number required.");
+                    return;
+                }
+                cowMan = webService.GetUser(webService.GetUserNameByRank(Rank), progressBar1);
+                if (cowMan == null)
+                {
+                    MessageBox.Show("No such cowMan.");
+                    return;
+                }
+            }
+            else if (radioButton3.Checked == true)
+            {
+                Random random = new Random();
+                int rank = random.Next(99);
+                rank += 1;
+                cowMan = webService.GetUser(webService.GetUserNameByRank(rank), progressBar1);
+                while (cowMan.Submissions / cowMan.ProblemsSolved > 20)
+                {
+                    rank = random.Next(99);
+                    rank += 1;
+                    cowMan = webService.GetUser(webService.GetUserNameByRank(rank), progressBar1);
+                }
+            }
+            cowMan.Solve = webService.GetAccepted(cowMan.Name, progressBar1);
+            if (cowMan.Solve == null)
+                return;
+            label33.Text = cowMan.Name;
+            label19.Text = cowMan.Rank.ToString();
+            label17.Text = cowMan.ProblemsSubmitted.ToString();
+            label12.Text = cowMan.ProblemsSolved.ToString();
+            label24.Text = cowMan.Submissions.ToString();
+            label23.Text = cowMan.Accepted.ToString();
+            listBox2.Items.Clear();
+            foreach (Problem problem in cowMan.Solve)
+            {
+                String s = problem.Id + "  " + problem.AcTime.ToString();
+                listBox2.Items.Add(s);
+            }
+            chart3.Series.Clear();
+            user.ToLineChart(chart3);
+            cowMan.ToLineChart(chart3);
+            cowMan.ToPieChart(chart5);
+            groupBox1.Enabled = true;
+            label11.Text = cowMan.Name;
+            radioButton4.Checked = true;
+        }
+        //获取荐题
+        private void getRecommand()
+        {
+            groupBox2.Enabled = false;
+            if (radioButton4.Checked == true)
+            {
+                try
+                {
+                    recommandProblems = user.getProblemDiff(cowMan.Solve);
+                    label9.Text = String.Empty;
+                    foreach (int i in recommandProblems)
                     {
-                        //listnum++;
-                        dic[list[i].ToString().Substring(0, list[i].ToString().IndexOf(':'))]++;
-                        isOther = false;
-                        break;
+                        label9.Text += i.ToString() + " ";
                     }
                 }
-                //新题目，其他类型
-                if (isOther)
+                catch (Exception)
                 {
-                    othernum++;
+                    MessageBox.Show("获取默认牛人失败。");
                 }
             }
-            
-            dic.Add("其他", othernum);
-            //chart2
-            chart2.Series[0].LegendText = "#VALX";
-            chart2.Series[0].Label = "#VALX, #VALY[#PERCENT]";
-            chart2.Series[0].Points.DataBindXY(dic.Keys, dic.Values);
-            chart2.Series[0]["PieLabelStyle"] = "Outside";
+            else if (radioButton5.Checked == true)
+            {
+                Random random = new Random();
+                int rank = random.Next(99);
+                rank += 1;
+                User newCowMan = webService.GetUser(webService.GetUserNameByRank(rank), progressBar1);
+                while (newCowMan.Submissions / newCowMan.ProblemsSolved > 20)
+                {
+                    rank = random.Next(99);
+                    rank += 1;
+                    newCowMan = webService.GetUser(webService.GetUserNameByRank(rank), progressBar1);
+                }
+                newCowMan.Solve = webService.GetAccepted(newCowMan.Name, progressBar1);
+                recommandProblems = user.getProblemDiff(newCowMan.Solve);
+                label9.Text = String.Empty;
+                foreach (int i in recommandProblems)
+                {
+                    label9.Text += i.ToString() + " ";
+                }
+            }
+            else if (radioButton6.Checked == true)
+            {
+                int Rank;
+                try
+                {
+                    Rank = Convert.ToInt32(textBox4.Text);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Number required.");
+                    groupBox2.Enabled = true;
+                    return;
+                }
+                User newCowMan = webService.GetUser(webService.GetUserNameByRank(Rank), progressBar1);
+                if (cowMan == null)
+                {
+                    MessageBox.Show("No such cowMan.");
+                    groupBox2.Enabled = true;
+                    return;
+                }
+                newCowMan.Solve = webService.GetAccepted(newCowMan.Name, progressBar1);
+                recommandProblems = user.getProblemDiff(newCowMan.Solve);
+                label9.Text = String.Empty;
+                foreach (int i in recommandProblems)
+                {
+                    label9.Text += i.ToString() + " ";
+                }
+            }
+            groupBox2.Enabled = true;
         }
         private void button_wodexinxi_Click(object sender, EventArgs e)
         {
@@ -298,7 +348,6 @@ namespace Prototype2._0
         private void button_jiudehuiyi_Click(object sender, EventArgs e)
         {
             MenuClick(1);
-            //ShowPanel(1);
         }
 
         private void button_xuexiniuren_Click(object sender, EventArgs e)
@@ -342,10 +391,11 @@ namespace Prototype2._0
         {
             ShowPanel(7);
         }
-
+        
         private void button5_Click(object sender, EventArgs e)
         {
-            ShowPanel(7);
+            Thread t = new Thread(getCowMan);
+            t.Start();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -385,13 +435,13 @@ namespace Prototype2._0
 
         private void radioButton4_Click(object sender, EventArgs e)
         {
-            textBox3.Focus();
+
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            groupBox5.Visible = true;
-
+            Thread t = new Thread(getRecommand);
+            t.Start();
         }
 
         private void button_settings_Click(object sender, EventArgs e)
@@ -399,6 +449,19 @@ namespace Prototype2._0
             settings setting = new settings();
             setting.Show();
         }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            ShowPanel(9);
+            textBox3.Focus();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Thread t = new Thread(getUser);
+            t.Start();
+        }
+
         
     }
 }
