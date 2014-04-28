@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="66f37dbd-d14e-4bd4-aedb-efe0492c82c5" name="WGC@WGC-PC 2014-04-28 17:08:14" runUser="WGC-PC\WGC" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="本地" id="15eaff23-6fdd-4e4a-895b-27afa8f22191">
+    <Description>这些设置为本地测试运行的默认测试设置。</Description>
+    <Deployment enabled="false" runDeploymentRoot="WGC_WGC-PC 2014-04-28 17_08_14">
+      <DeploymentItem filename="D:\git_file\yuanxing3\Prototype2.0\Prototype2.0\bin\Debug\Prototype2.0.exe" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2014-04-28T17:08:14.8063496+08:00" queuing="2014-04-28T17:08:14.8219497+08:00" start="2014-04-28T17:08:14.8531497+08:00" finish="2014-04-28T17:08:15.2899505+08:00" />
+  <ResultSummary outcome="Warning">
+    <Counters total="1" executed="1" passed="1" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <RunInfos>
+      <RunInfo computerName="WGC-PC" outcome="Warning" timestamp="2014-04-28T17:08:14.8219497+08:00">
+        <Text>当前已禁用部署。未部署测试“UnitTest.mainTest.button_exit_ClickTest”中的部署项“Prototype2.0.exe”。</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="button_exit_ClickTest" storage="d:\git_file\yuanxing3\prototype2.0\unittest\bin\debug\unittest.dll" id="4da2c7b5-0149-9021-57fb-a840a852006f">
+      <DeploymentItems>
+        <DeploymentItem filename="Prototype2.0.exe" />
+      </DeploymentItems>
+      <Execution id="dbe6e4e1-f0ce-4f1c-bd4f-00fc88172993" />
+      <TestMethod codeBase="D:/git_file/yuanxing3/Prototype2.0/UnitTest/bin/Debug/UnitTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="UnitTest.mainTest, UnitTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="button_exit_ClickTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="列表中未列出的结果" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="所有已加载的结果" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="4da2c7b5-0149-9021-57fb-a840a852006f" executionId="dbe6e4e1-f0ce-4f1c-bd4f-00fc88172993" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="dbe6e4e1-f0ce-4f1c-bd4f-00fc88172993" testId="4da2c7b5-0149-9021-57fb-a840a852006f" testName="button_exit_ClickTest" computerName="WGC-PC" duration="00:00:00.1310859" startTime="2014-04-28T17:08:14.8687498+08:00" endTime="2014-04-28T17:08:15.2587504+08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="dbe6e4e1-f0ce-4f1c-bd4f-00fc88172993">
+    </UnitTestResult>
+  </Results>
+</TestRun>

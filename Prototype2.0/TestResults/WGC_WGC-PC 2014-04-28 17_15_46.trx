@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="6043742e-610b-4fa2-bd9b-ed556ac5411f" name="WGC@WGC-PC 2014-04-28 17:15:46" runUser="WGC-PC\WGC" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="本地" id="15eaff23-6fdd-4e4a-895b-27afa8f22191">
+    <Description>这些设置为本地测试运行的默认测试设置。</Description>
+    <Deployment enabled="false" runDeploymentRoot="WGC_WGC-PC 2014-04-28 17_15_46">
+      <DeploymentItem filename="D:\git_file\yuanxing3\Prototype2.0\Prototype2.0\bin\Debug\Prototype2.0.exe" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2014-04-28T17:15:46.2455661+08:00" queuing="2014-04-28T17:15:46.2767662+08:00" start="2014-04-28T17:15:46.2923662+08:00" finish="2014-04-28T17:15:46.7603670+08:00" />
+  <ResultSummary outcome="Warning">
+    <Counters total="6" executed="6" passed="6" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <RunInfos>
+      <RunInfo computerName="WGC-PC" outcome="Warning" timestamp="2014-04-28T17:15:46.2767662+08:00">
+        <Text>当前已禁用部署。未部署测试“UnitTest.mainTest.textBox1_ClickTest”中的部署项“Prototype2.0.exe”。</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="textBox1_ClickTest" storage="d:\git_file\yuanxing3\prototype2.0\unittest\bin\debug\unittest.dll" id="396203a5-4b10-40e7-323f-adae88038712">
+      <DeploymentItems>
+        <DeploymentItem filename="Prototype2.0.exe" />
+      </DeploymentItems>
+      <Execution id="7f3a9dd7-ceec-40c7-9712-7542d3c4f582" />
+      <TestMethod codeBase="D:/git_file/yuanxing3/Prototype2.0/UnitTest/bin/Debug/UnitTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="UnitTest.mainTest, UnitTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="textBox1_ClickTest" />
+    </UnitTest>
+    <UnitTest name="radioButton1_ClickTest" storage="d:\git_file\yuanxing3\prototype2.0\unittest\bin\debug\unittest.dll" id="5f2ec164-6e3d-62e9-64d3-848e7daa8992">
+      <DeploymentItems>
+        <DeploymentItem filename="Prototype2.0.exe" />
+      </DeploymentItems>
+      <Execution id="4aef4267-6793-41bb-b080-39187fa4f4a8" />
+      <TestMethod codeBase="D:/git_file/yuanxing3/Prototype2.0/UnitTest/bin/Debug/UnitTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="UnitTest.mainTest, UnitTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="radioButton1_ClickTest" />
+    </UnitTest>
+    <UnitTest name="radioButton2_MouseClickTest" storage="d:\git_file\yuanxing3\prototype2.0\unittest\bin\debug\unittest.dll" id="c6461bd6-e7fd-2527-36e4-a464ee80c6ae">
+      <DeploymentItems>
+        <DeploymentItem filename="Prototype2.0.exe" />
+      </DeploymentItems>
+      <Execution id="98e334df-a340-406d-bed0-52132d95b542" />
+      <TestMethod codeBase="D:/git_file/yuanxing3/Prototype2.0/UnitTest/bin/Debug/UnitTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="UnitTest.mainTest, UnitTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="radioButton2_MouseClickTest" />
+    </UnitTest>
+    <UnitTest name="textBox2_ClickTest" storage="d:\git_file\yuanxing3\prototype2.0\unittest\bin\debug\unittest.dll" id="84125334-a8a4-637d-925b-fe14b7eeda8c">
+      <DeploymentItems>
+        <DeploymentItem filename="Prototype2.0.exe" />
+      </DeploymentItems>
+      <Execution id="b3eb1010-9349-4fb8-b5f0-1804966511cf" />
+      <TestMethod codeBase="D:/git_file/yuanxing3/Prototype2.0/UnitTest/bin/Debug/UnitTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="UnitTest.mainTest, UnitTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="textBox2_ClickTest" />
+    </UnitTest>
+    <UnitTest name="radioButton6_ClickTest" storage="d:\git_file\yuanxing3\prototype2.0\unittest\bin\debug\unittest.dll" id="5b80aa54-786c-dd59-ef76-19ec562d3a6a">
+      <DeploymentItems>
+        <DeploymentItem filename="Prototype2.0.exe" />
+      </DeploymentItems>
+      <Execution id="2de54df5-07dc-48d0-82fd-25ee4965b11c" />
+      <TestMethod codeBase="D:/git_file/yuanxing3/Prototype2.0/UnitTest/bin/Debug/UnitTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="UnitTest.mainTest, UnitTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="radioButton6_ClickTest" />
+    </UnitTest>
+    <UnitTest name="radioButton4_ClickTest" storage="d:\git_file\yuanxing3\prototype2.0\unittest\bin\debug\unittest.dll" id="37129ad4-f498-d083-2893-9693eb2db1c4">
+      <DeploymentItems>
+        <DeploymentItem filename="Prototype2.0.exe" />
+      </DeploymentItems>
+      <Execution id="314c82de-8f2a-4716-9dc5-e667d67f79a3" />
+      <TestMethod codeBase="D:/git_file/yuanxing3/Prototype2.0/UnitTest/bin/Debug/UnitTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="UnitTest.mainTest, UnitTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="radioButton4_ClickTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="列表中未列出的结果" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="所有已加载的结果" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="5f2ec164-6e3d-62e9-64d3-848e7daa8992" executionId="4aef4267-6793-41bb-b080-39187fa4f4a8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c6461bd6-e7fd-2527-36e4-a464ee80c6ae" executionId="98e334df-a340-406d-bed0-52132d95b542" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="37129ad4-f498-d083-2893-9693eb2db1c4" executionId="314c82de-8f2a-4716-9dc5-e667d67f79a3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5b80aa54-786c-dd59-ef76-19ec562d3a6a" executionId="2de54df5-07dc-48d0-82fd-25ee4965b11c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="396203a5-4b10-40e7-323f-adae88038712" executionId="7f3a9dd7-ceec-40c7-9712-7542d3c4f582" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="84125334-a8a4-637d-925b-fe14b7eeda8c" executionId="b3eb1010-9349-4fb8-b5f0-1804966511cf" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="4aef4267-6793-41bb-b080-39187fa4f4a8" testId="5f2ec164-6e3d-62e9-64d3-848e7daa8992" testName="radioButton1_ClickTest" computerName="WGC-PC" duration="00:00:00.0988813" startTime="2014-04-28T17:15:46.2923662+08:00" endTime="2014-04-28T17:15:46.5887667+08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4aef4267-6793-41bb-b080-39187fa4f4a8">
+    </UnitTestResult>
+    <UnitTestResult executionId="98e334df-a340-406d-bed0-52132d95b542" testId="c6461bd6-e7fd-2527-36e4-a464ee80c6ae" testName="radioButton2_MouseClickTest" computerName="WGC-PC" duration="00:00:00.0227129" startTime="2014-04-28T17:15:46.5887667+08:00" endTime="2014-04-28T17:15:46.6199668+08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="98e334df-a340-406d-bed0-52132d95b542">
+    </UnitTestResult>
+    <UnitTestResult executionId="314c82de-8f2a-4716-9dc5-e667d67f79a3" testId="37129ad4-f498-d083-2893-9693eb2db1c4" testName="radioButton4_ClickTest" computerName="WGC-PC" duration="00:00:00.0226915" startTime="2014-04-28T17:15:46.6199668+08:00" endTime="2014-04-28T17:15:46.6511668+08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="314c82de-8f2a-4716-9dc5-e667d67f79a3">
+    </UnitTestResult>
+    <UnitTestResult executionId="2de54df5-07dc-48d0-82fd-25ee4965b11c" testId="5b80aa54-786c-dd59-ef76-19ec562d3a6a" testName="radioButton6_ClickTest" computerName="WGC-PC" duration="00:00:00.0234279" startTime="2014-04-28T17:15:46.6511668+08:00" endTime="2014-04-28T17:15:46.6823669+08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2de54df5-07dc-48d0-82fd-25ee4965b11c">
+    </UnitTestResult>
+    <UnitTestResult executionId="7f3a9dd7-ceec-40c7-9712-7542d3c4f582" testId="396203a5-4b10-40e7-323f-adae88038712" testName="textBox1_ClickTest" computerName="WGC-PC" duration="00:00:00.0232470" startTime="2014-04-28T17:15:46.6823669+08:00" endTime="2014-04-28T17:15:46.7135670+08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7f3a9dd7-ceec-40c7-9712-7542d3c4f582">
+    </UnitTestResult>
+    <UnitTestResult executionId="b3eb1010-9349-4fb8-b5f0-1804966511cf" testId="84125334-a8a4-637d-925b-fe14b7eeda8c" testName="textBox2_ClickTest" computerName="WGC-PC" duration="00:00:00.0230110" startTime="2014-04-28T17:15:46.7135670+08:00" endTime="2014-04-28T17:15:46.7447670+08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b3eb1010-9349-4fb8-b5f0-1804966511cf">
+    </UnitTestResult>
+  </Results>
+</TestRun>

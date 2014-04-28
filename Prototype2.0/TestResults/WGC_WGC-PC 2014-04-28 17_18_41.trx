@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="d32e9c1f-8f00-437e-95bc-937fb8aadcdd" name="WGC@WGC-PC 2014-04-28 17:18:41" runUser="WGC-PC\WGC" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="本地" id="15eaff23-6fdd-4e4a-895b-27afa8f22191">
+    <Description>这些设置为本地测试运行的默认测试设置。</Description>
+    <Deployment enabled="false" runDeploymentRoot="WGC_WGC-PC 2014-04-28 17_18_41">
+      <DeploymentItem filename="D:\git_file\yuanxing3\Prototype2.0\Prototype2.0\bin\Debug\Prototype2.0.exe" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2014-04-28T17:18:41.4987983+08:00" queuing="2014-04-28T17:18:41.5299984+08:00" start="2014-04-28T17:18:41.5455984+08:00" finish="2014-04-28T17:18:56.3962556+08:00" />
+  <ResultSummary outcome="Failed">
+    <Counters total="10" executed="10" passed="3" error="0" failed="7" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <RunInfos>
+      <RunInfo computerName="WGC-PC" outcome="Warning" timestamp="2014-04-28T17:18:41.5299984+08:00">
+        <Text>当前已禁用部署。未部署测试“UnitTest.settingsTest.RefleshPanelTest”中的部署项“Prototype2.0.exe”。</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="RefleshPanelTest" storage="d:\git_file\yuanxing3\prototype2.0\unittest\bin\debug\unittest.dll" id="0bec7b95-598d-e30a-9826-c2dbfc807e9a">
+      <DeploymentItems>
+        <DeploymentItem filename="Prototype2.0.exe" />
+      </DeploymentItems>
+      <Execution id="12016e74-6478-407d-8035-e7582b7fc5b9" />
+      <TestMethod codeBase="D:/git_file/yuanxing3/Prototype2.0/UnitTest/bin/Debug/UnitTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="UnitTest.settingsTest, UnitTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="RefleshPanelTest" />
+    </UnitTest>
+    <UnitTest name="MenuClickTest" storage="d:\git_file\yuanxing3\prototype2.0\unittest\bin\debug\unittest.dll" id="1727780a-0184-5124-3c6b-b791ff957e98">
+      <DeploymentItems>
+        <DeploymentItem filename="Prototype2.0.exe" />
+      </DeploymentItems>
+      <Execution id="fc9f16ad-bcfe-4fdb-8c6e-56df126b8697" />
+      <TestMethod codeBase="D:/git_file/yuanxing3/Prototype2.0/UnitTest/bin/Debug/UnitTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="UnitTest.settingsTest, UnitTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="MenuClickTest" />
+    </UnitTest>
+    <UnitTest name="button2_ClickTest" storage="d:\git_file\yuanxing3\prototype2.0\unittest\bin\debug\unittest.dll" id="8188cbd5-9e1d-e6ea-61e1-a8e279a8af1f">
+      <DeploymentItems>
+        <DeploymentItem filename="Prototype2.0.exe" />
+      </DeploymentItems>
+      <Execution id="de790e39-c71b-448f-b801-ef47d82f7cab" />
+      <TestMethod codeBase="D:/git_file/yuanxing3/Prototype2.0/UnitTest/bin/Debug/UnitTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="UnitTest.settingsTest, UnitTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="button2_ClickTest" />
+    </UnitTest>
+    <UnitTest name="OpenMenuTest" storage="d:\git_file\yuanxing3\prototype2.0\unittest\bin\debug\unittest.dll" id="79f09ef9-72a6-7af4-5e71-a833e3666c3c">
+      <DeploymentItems>
+        <DeploymentItem filename="Prototype2.0.exe" />
+      </DeploymentItems>
+      <Execution id="e5ec13e7-4e04-40a1-aacc-bae4ab037183" />
+      <TestMethod codeBase="D:/git_file/yuanxing3/Prototype2.0/UnitTest/bin/Debug/UnitTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="UnitTest.settingsTest, UnitTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="OpenMenuTest" />
+    </UnitTest>
+    <UnitTest name="button6_ClickTest" storage="d:\git_file\yuanxing3\prototype2.0\unittest\bin\debug\unittest.dll" id="cf5f5173-b7af-953d-baf5-73d11f9b913d">
+      <DeploymentItems>
+        <DeploymentItem filename="Prototype2.0.exe" />
+      </DeploymentItems>
+      <Execution id="e979cf27-eb7f-49b1-8001-28ce273d3714" />
+      <TestMethod codeBase="D:/git_file/yuanxing3/Prototype2.0/UnitTest/bin/Debug/UnitTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="UnitTest.settingsTest, UnitTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="button6_ClickTest" />
+    </UnitTest>
+    <UnitTest name="settings_LoadTest" storage="d:\git_file\yuanxing3\prototype2.0\unittest\bin\debug\unittest.dll" id="7ab3a32f-4dc9-ffea-ce42-a3a6b7d3b9be">
+      <DeploymentItems>
+        <DeploymentItem filename="Prototype2.0.exe" />
+      </DeploymentItems>
+      <Execution id="546964bd-981b-4540-ab24-d3450372df4f" />
+      <TestMethod codeBase="D:/git_file/yuanxing3/Prototype2.0/UnitTest/bin/Debug/UnitTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="UnitTest.settingsTest, UnitTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="settings_LoadTest" />
+    </UnitTest>
+    <UnitTest name="button1_ClickTest" storage="d:\git_file\yuanxing3\prototype2.0\unittest\bin\debug\unittest.dll" id="9a015f46-f306-e5d9-500e-c48020c9178b">
+      <DeploymentItems>
+        <DeploymentItem filename="Prototype2.0.exe" />
+      </DeploymentItems>
+      <Execution id="d44ac1e2-7a2a-4b16-ad03-312af7c6973d" />
+      <TestMethod codeBase="D:/git_file/yuanxing3/Prototype2.0/UnitTest/bin/Debug/UnitTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="UnitTest.settingsTest, UnitTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="button1_ClickTest" />
+    </UnitTest>
+    <UnitTest name="button3_ClickTest" storage="d:\git_file\yuanxing3\prototype2.0\unittest\bin\debug\unittest.dll" id="1ca25181-cb87-aa0c-08c6-c030eb0a44cc">
+      <DeploymentItems>
+        <DeploymentItem filename="Prototype2.0.exe" />
+      </DeploymentItems>
+      <Execution id="66428505-9f95-491b-85a7-db108635bf4f" />
+      <TestMethod codeBase="D:/git_file/yuanxing3/Prototype2.0/UnitTest/bin/Debug/UnitTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="UnitTest.settingsTest, UnitTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="button3_ClickTest" />
+    </UnitTest>
+    <UnitTest name="ShowPanelTest" storage="d:\git_file\yuanxing3\prototype2.0\unittest\bin\debug\unittest.dll" id="e47aada5-be4d-86ff-b3ec-e3c7d584464a">
+      <DeploymentItems>
+        <DeploymentItem filename="Prototype2.0.exe" />
+      </DeploymentItems>
+      <Execution id="cbbc8fcf-300d-461e-9f73-6e169d3213b4" />
+      <TestMethod codeBase="D:/git_file/yuanxing3/Prototype2.0/UnitTest/bin/Debug/UnitTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="UnitTest.settingsTest, UnitTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="ShowPanelTest" />
+    </UnitTest>
+    <UnitTest name="RefleshMenuTest" storage="d:\git_file\yuanxing3\prototype2.0\unittest\bin\debug\unittest.dll" id="851fadc4-eb68-7130-2e60-f8183f2faff9">
+      <DeploymentItems>
+        <DeploymentItem filename="Prototype2.0.exe" />
+      </DeploymentItems>
+      <Execution id="d7adbadf-3d49-40b8-acf6-c2f86838dcab" />
+      <TestMethod codeBase="D:/git_file/yuanxing3/Prototype2.0/UnitTest/bin/Debug/UnitTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="UnitTest.settingsTest, UnitTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="RefleshMenuTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="列表中未列出的结果" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="所有已加载的结果" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="1727780a-0184-5124-3c6b-b791ff957e98" executionId="fc9f16ad-bcfe-4fdb-8c6e-56df126b8697" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="79f09ef9-72a6-7af4-5e71-a833e3666c3c" executionId="e5ec13e7-4e04-40a1-aacc-bae4ab037183" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="851fadc4-eb68-7130-2e60-f8183f2faff9" executionId="d7adbadf-3d49-40b8-acf6-c2f86838dcab" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0bec7b95-598d-e30a-9826-c2dbfc807e9a" executionId="12016e74-6478-407d-8035-e7582b7fc5b9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e47aada5-be4d-86ff-b3ec-e3c7d584464a" executionId="cbbc8fcf-300d-461e-9f73-6e169d3213b4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9a015f46-f306-e5d9-500e-c48020c9178b" executionId="d44ac1e2-7a2a-4b16-ad03-312af7c6973d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8188cbd5-9e1d-e6ea-61e1-a8e279a8af1f" executionId="de790e39-c71b-448f-b801-ef47d82f7cab" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1ca25181-cb87-aa0c-08c6-c030eb0a44cc" executionId="66428505-9f95-491b-85a7-db108635bf4f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="cf5f5173-b7af-953d-baf5-73d11f9b913d" executionId="e979cf27-eb7f-49b1-8001-28ce273d3714" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7ab3a32f-4dc9-ffea-ce42-a3a6b7d3b9be" executionId="546964bd-981b-4540-ab24-d3450372df4f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="fc9f16ad-bcfe-4fdb-8c6e-56df126b8697" testId="1727780a-0184-5124-3c6b-b791ff957e98" testName="MenuClickTest" computerName="WGC-PC" duration="00:00:00.0703655" startTime="2014-04-28T17:18:41.5611984+08:00" endTime="2014-04-28T17:18:41.8263989+08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="fc9f16ad-bcfe-4fdb-8c6e-56df126b8697">
+      <Output>
+        <ErrorInfo>
+          <Message>测试方法 UnitTest.settingsTest.MenuClickTest 引发了异常: 
+System.ArgumentNullException: 值不能为 null。
+参数名: source</Message>
+          <StackTrace>   在 Prototype2._0.settings_Accessor.MenuClick(Int32 index)
+   在 UnitTest.settingsTest.MenuClickTest() 位置 D:\git_file\yuanxing3\Prototype2.0\UnitTest\settingsTest.cs:行号 132
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="e5ec13e7-4e04-40a1-aacc-bae4ab037183" testId="79f09ef9-72a6-7af4-5e71-a833e3666c3c" testName="OpenMenuTest" computerName="WGC-PC" duration="00:00:00.0133187" startTime="2014-04-28T17:18:41.8263989+08:00" endTime="2014-04-28T17:18:41.8419989+08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e5ec13e7-4e04-40a1-aacc-bae4ab037183">
+      <Output>
+        <ErrorInfo>
+          <Message>测试方法 UnitTest.settingsTest.OpenMenuTest 引发了异常: 
+System.ArgumentNullException: 值不能为 null。
+参数名: source</Message>
+          <StackTrace>   在 Prototype2._0.settings_Accessor.OpenMenu(Int32 index)
+   在 UnitTest.settingsTest.OpenMenuTest() 位置 D:\git_file\yuanxing3\Prototype2.0\UnitTest\settingsTest.cs:行号 145
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="d7adbadf-3d49-40b8-acf6-c2f86838dcab" testId="851fadc4-eb68-7130-2e60-f8183f2faff9" testName="RefleshMenuTest" computerName="WGC-PC" duration="00:00:00.0103795" startTime="2014-04-28T17:18:41.8419989+08:00" endTime="2014-04-28T17:18:41.8575989+08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d7adbadf-3d49-40b8-acf6-c2f86838dcab">
+    </UnitTestResult>
+    <UnitTestResult executionId="12016e74-6478-407d-8035-e7582b7fc5b9" testId="0bec7b95-598d-e30a-9826-c2dbfc807e9a" testName="RefleshPanelTest" computerName="WGC-PC" duration="00:00:00.0128983" startTime="2014-04-28T17:18:41.8731990+08:00" endTime="2014-04-28T17:18:41.8887990+08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="12016e74-6478-407d-8035-e7582b7fc5b9">
+      <Output>
+        <ErrorInfo>
+          <Message>测试方法 UnitTest.settingsTest.RefleshPanelTest 引发了异常: 
+System.ArgumentOutOfRangeException: 索引超出范围。必须为非负值并小于集合大小。
+参数名: index</Message>
+          <StackTrace>   在 Prototype2._0.settings_Accessor.RefleshPanel()
+   在 UnitTest.settingsTest.RefleshPanelTest() 位置 D:\git_file\yuanxing3\Prototype2.0\UnitTest\settingsTest.cs:行号 169
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="cbbc8fcf-300d-461e-9f73-6e169d3213b4" testId="e47aada5-be4d-86ff-b3ec-e3c7d584464a" testName="ShowPanelTest" computerName="WGC-PC" duration="00:00:00.0122983" startTime="2014-04-28T17:18:41.8887990+08:00" endTime="2014-04-28T17:18:41.9043990+08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cbbc8fcf-300d-461e-9f73-6e169d3213b4">
+      <Output>
+        <ErrorInfo>
+          <Message>测试方法 UnitTest.settingsTest.ShowPanelTest 引发了异常: 
+System.ArgumentOutOfRangeException: 索引超出范围。必须为非负值并小于集合大小。
+参数名: index</Message>
+          <StackTrace>   在 Prototype2._0.settings_Accessor.ShowPanel(Int32 index)
+   在 UnitTest.settingsTest.ShowPanelTest() 位置 D:\git_file\yuanxing3\Prototype2.0\UnitTest\settingsTest.cs:行号 182
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="d44ac1e2-7a2a-4b16-ad03-312af7c6973d" testId="9a015f46-f306-e5d9-500e-c48020c9178b" testName="button1_ClickTest" computerName="WGC-PC" duration="00:00:00.0122953" startTime="2014-04-28T17:18:41.9043990+08:00" endTime="2014-04-28T17:18:41.9199991+08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d44ac1e2-7a2a-4b16-ad03-312af7c6973d">
+      <Output>
+        <ErrorInfo>
+          <Message>测试方法 UnitTest.settingsTest.button1_ClickTest 引发了异常: 
+System.ArgumentNullException: 值不能为 null。
+参数名: source</Message>
+          <StackTrace>   在 Prototype2._0.settings_Accessor.button1_Click(Object sender, EventArgs e)
+   在 UnitTest.settingsTest.button1_ClickTest() 位置 D:\git_file\yuanxing3\Prototype2.0\UnitTest\settingsTest.cs:行号 196
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="de790e39-c71b-448f-b801-ef47d82f7cab" testId="8188cbd5-9e1d-e6ea-61e1-a8e279a8af1f" testName="button2_ClickTest" computerName="WGC-PC" duration="00:00:00.0117479" startTime="2014-04-28T17:18:41.9199991+08:00" endTime="2014-04-28T17:18:41.9355991+08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="de790e39-c71b-448f-b801-ef47d82f7cab">
+      <Output>
+        <ErrorInfo>
+          <Message>测试方法 UnitTest.settingsTest.button2_ClickTest 引发了异常: 
+System.ArgumentNullException: 值不能为 null。
+参数名: source</Message>
+          <StackTrace>   在 Prototype2._0.settings_Accessor.button2_Click(Object sender, EventArgs e)
+   在 UnitTest.settingsTest.button2_ClickTest() 位置 D:\git_file\yuanxing3\Prototype2.0\UnitTest\settingsTest.cs:行号 210
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="66428505-9f95-491b-85a7-db108635bf4f" testId="1ca25181-cb87-aa0c-08c6-c030eb0a44cc" testName="button3_ClickTest" computerName="WGC-PC" duration="00:00:00.0119588" startTime="2014-04-28T17:18:41.9511991+08:00" endTime="2014-04-28T17:18:41.9667991+08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="66428505-9f95-491b-85a7-db108635bf4f">
+      <Output>
+        <ErrorInfo>
+          <Message>测试方法 UnitTest.settingsTest.button3_ClickTest 引发了异常: 
+System.ArgumentNullException: 值不能为 null。
+参数名: source</Message>
+          <StackTrace>   在 Prototype2._0.settings_Accessor.button3_Click(Object sender, EventArgs e)
+   在 UnitTest.settingsTest.button3_ClickTest() 位置 D:\git_file\yuanxing3\Prototype2.0\UnitTest\settingsTest.cs:行号 224
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="e979cf27-eb7f-49b1-8001-28ce273d3714" testId="cf5f5173-b7af-953d-baf5-73d11f9b913d" testName="button6_ClickTest" computerName="WGC-PC" duration="00:00:14.3907586" startTime="2014-04-28T17:18:41.9667991+08:00" endTime="2014-04-28T17:18:56.3650555+08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e979cf27-eb7f-49b1-8001-28ce273d3714">
+    </UnitTestResult>
+    <UnitTestResult executionId="546964bd-981b-4540-ab24-d3450372df4f" testId="7ab3a32f-4dc9-ffea-ce42-a3a6b7d3b9be" testName="settings_LoadTest" computerName="WGC-PC" duration="00:00:00.0105360" startTime="2014-04-28T17:18:56.3650555+08:00" endTime="2014-04-28T17:18:56.3806556+08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="546964bd-981b-4540-ab24-d3450372df4f">
+    </UnitTestResult>
+  </Results>
+</TestRun>

@@ -49,3 +49,17 @@ D:\Documents\GitHub\TSP5\Prototype2.0\Prototype2.0\obj\x86\Debug\Prototype2.0.ex
 D:\Documents\GitHub\TSP5\Prototype2.0\Prototype2.0\obj\x86\Debug\Prototype2.0.application
 D:\Documents\GitHub\TSP5\Prototype2.0\Prototype2.0\obj\x86\Debug\Prototype2.0.exe
 D:\Documents\GitHub\TSP5\Prototype2.0\Prototype2.0\obj\x86\Debug\Prototype2.0.csprojResolveAssemblyReference.cache
+D:\git_file\yuanxing3\Prototype2.0\Prototype2.0\obj\x86\Debug\Prototype2.0.exe
+D:\git_file\yuanxing3\Prototype2.0\Prototype2.0\obj\x86\Debug\Prototype2.0.pdb
+D:\git_file\yuanxing3\Prototype2.0\Prototype2.0\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\git_file\yuanxing3\Prototype2.0\Prototype2.0\obj\x86\Debug\Prototype2._0.main.resources
+D:\git_file\yuanxing3\Prototype2.0\Prototype2.0\obj\x86\Debug\Prototype2._0.Properties.Resources.resources
+D:\git_file\yuanxing3\Prototype2.0\Prototype2.0\obj\x86\Debug\Prototype2._0.settings.resources
+D:\git_file\yuanxing3\Prototype2.0\Prototype2.0\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\git_file\yuanxing3\Prototype2.0\Prototype2.0\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\git_file\yuanxing3\Prototype2.0\Prototype2.0\bin\Debug\Prototype2.0.exe.manifest
+D:\git_file\yuanxing3\Prototype2.0\Prototype2.0\bin\Debug\Prototype2.0.application
+D:\git_file\yuanxing3\Prototype2.0\Prototype2.0\bin\Debug\Prototype2.0.exe
+D:\git_file\yuanxing3\Prototype2.0\Prototype2.0\bin\Debug\Prototype2.0.pdb
+D:\git_file\yuanxing3\Prototype2.0\Prototype2.0\obj\x86\Debug\Prototype2.0.exe.manifest
+D:\git_file\yuanxing3\Prototype2.0\Prototype2.0\obj\x86\Debug\Prototype2.0.application
