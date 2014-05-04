@@ -464,7 +464,7 @@ namespace Prototype2._0
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            chart1.Series.RemoveAt(0);
+            chart1.Series.Clear();
             if (comboBox1.SelectedIndex == 0)
                 user.ToLineChart(chart1, "day");
             else if (comboBox1.SelectedIndex == 1)
@@ -476,8 +476,7 @@ namespace Prototype2._0
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            chart3.Series.RemoveAt(0);
-            if(chart3.Series.Count==1)
+            while (chart3.Series.Count > 0)
                 chart3.Series.RemoveAt(0);
             if (comboBox2.SelectedIndex == 0)
             {
