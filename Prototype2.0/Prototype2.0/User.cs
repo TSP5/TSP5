@@ -52,36 +52,99 @@ namespace Prototype2._0
             get { return accepted; }
             set { accepted = value; }
         }
-        public void ToLineChart(Chart chart)
+        public void ToLineChart(Chart chart, String type)
         {
-            
-            chart.ChartAreas[0].AxisX.Title = "注册后月份";
-            chart.ChartAreas[0].AxisY.Title = "做题数";
-            chart.ChartAreas[0].AxisX.IsMarginVisible = false;
-            Series series = new Series();
-            series.ChartType = SeriesChartType.Line;
-            series.MarkerStyle = MarkerStyle.Square;
-            series.Label = "#VALY";
-            series.SmartLabelStyle.Enabled = true;
-            
-            series.LegendText = name + "\n注册时间: " + solve[solve.Count-1].AcTime.ToShortDateString();
-            
-            int totalMonth = this.getMonthdiff(solve[solve.Count - 1].AcTime, solve[0].AcTime);
-            Dictionary<int, int> monthAc = new Dictionary<int, int>();
-            for (int i = 0; i <= totalMonth; i++)
+            if (type == "month")
             {
-                monthAc[i] = 0;
-            }
-            for (int i = 0; i < solve.Count; i++)
-            {
-                monthAc[this.getMonthdiff(solve[solve.Count - 1].AcTime, solve[i].AcTime)]++;
-            }
+                chart.ChartAreas[0].AxisX.Title = "注册后月份";
+                chart.ChartAreas[0].AxisY.Title = "做题数";
+                chart.ChartAreas[0].AxisX.IsMarginVisible = false;
+                Series series = new Series();
+                series.ChartType = SeriesChartType.Line;
+                series.MarkerStyle = MarkerStyle.Square;
+                series.Label = "#VALY";
+                series.SmartLabelStyle.Enabled = true;
+                series.LegendText = name + "\n注册时间: " + solve[solve.Count - 1].AcTime.ToShortDateString();
+                int totalMonth = this.getMonthdiff(solve[solve.Count - 1].AcTime, solve[0].AcTime);
+                Dictionary<int, int> monthAc = new Dictionary<int, int>();
+                for (int i = 0; i <= totalMonth; i++)
+                {
+                    monthAc[i] = 0;
+                }
+                for (int i = 0; i < solve.Count; i++)
+                {
+                    monthAc[this.getMonthdiff(solve[solve.Count - 1].AcTime, solve[i].AcTime)]++;
+                }
 
-            for (int i = 0; i <= totalMonth; i++)
-            {
-                series.Points.Add(monthAc[i]);
+                for (int i = 0; i <= totalMonth; i++)
+                {
+                    series.Points.Add(monthAc[i]);
+                }
+                chart.Series.Add(series);
             }
-            chart.Series.Add(series);
+            else if (type == "day")
+            {
+                int dayDiff = (solve[0].AcTime - solve[solve.Count - 1].AcTime).Days;
+                chart.ChartAreas[0].AxisX.Title = "注册后天数";
+                chart.ChartAreas[0].AxisY.Title = "做题数";
+                chart.ChartAreas[0].AxisX.IsMarginVisible = false;
+                Series series = new Series();
+                series.ChartType = SeriesChartType.Line;
+                series.SmartLabelStyle.Enabled = true;
+                series.LegendText = name + "\n注册时间: " + solve[solve.Count - 1].AcTime.ToShortDateString();
+
+                Dictionary<int, Double> dayAc = new Dictionary<int, Double>();
+                for (int i = 0; i <= dayDiff; i++)
+                {
+                    dayAc[i] = 0;
+                }
+                for (int i = 0; i < solve.Count; i++)
+                {
+                    dayAc[(solve[i].AcTime - solve[solve.Count - 1].AcTime).Days]++;
+                }
+                for (int i = 0; i <= dayDiff; i++)
+                {
+                    if (dayAc[i] == 0)
+                    {
+                        dayAc[i] = Double.NaN;
+                    }
+                }
+                for (int i = 0; i <= dayDiff; i++)
+                {
+                    series.Points.Add(dayAc[i]);
+                }
+                chart.Series.Add(series);
+
+            }
+            
+            else if (type == "year")
+            {
+                int yearDiff = solve[0].AcTime.Year - solve[solve.Count - 1].AcTime.Year;
+                chart.ChartAreas[0].AxisX.Title = "注册后年数";
+                chart.ChartAreas[0].AxisY.Title = "做题数";
+                chart.ChartAreas[0].AxisX.IsMarginVisible = false;
+                Series series = new Series();
+                series.Label = "#VALY";
+                series.ChartType = SeriesChartType.Line;
+                series.MarkerStyle = MarkerStyle.Square;
+                series.SmartLabelStyle.Enabled = true;
+                series.LegendText = name + "\n注册时间: " + solve[solve.Count - 1].AcTime.ToShortDateString();
+                Dictionary<int, int> yearAc = new Dictionary<int, int>();
+                for (int i = 0; i <= yearDiff; i++)
+                {
+                    yearAc[i] = 0;
+                }
+                for (int i = 0; i < solve.Count; i++)
+                {
+                    yearAc[solve[i].AcTime.Year - solve[solve.Count - 1].AcTime.Year]++;
+                }
+
+                for (int i = 0; i <= yearDiff; i++)
+                {
+                    series.Points.Add(yearAc[i]);
+                }
+                chart.Series.Add(series);
+            }
         }
         public void ToPieChart(Chart chart)
         {

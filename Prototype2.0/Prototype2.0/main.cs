@@ -173,8 +173,8 @@ namespace Prototype2._0
         {
             chart1.Series.Clear();
             chart3.Series.Clear();
-            user.ToLineChart(chart1);
-            user.ToLineChart(chart3);
+            user.ToLineChart(chart1, "month");
+            user.ToLineChart(chart3, "month");
             user.ToPieChart(chart4);
         }
         //刷新做题分类panel
@@ -262,8 +262,8 @@ namespace Prototype2._0
                 listBox2.Items.Add(s);
             }
             chart3.Series.Clear();
-            user.ToLineChart(chart3);
-            cowMan.ToLineChart(chart3);
+            user.ToLineChart(chart3, "month");
+            cowMan.ToLineChart(chart3, "month");
             cowMan.ToPieChart(chart5);
             groupBox1.Enabled = true;
             label11.Text = cowMan.Name;
@@ -460,6 +460,41 @@ namespace Prototype2._0
         {
             Thread t = new Thread(getUser);
             t.Start();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            chart1.Series.RemoveAt(0);
+            if (comboBox1.SelectedIndex == 0)
+                user.ToLineChart(chart1, "day");
+            else if (comboBox1.SelectedIndex == 1)
+                user.ToLineChart(chart1, "month");
+            else if (comboBox1.SelectedIndex == 2)
+                user.ToLineChart(chart1, "year");
+
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            chart3.Series.RemoveAt(0);
+            if(chart3.Series.Count==1)
+                chart3.Series.RemoveAt(0);
+            if (comboBox2.SelectedIndex == 0)
+            {
+                user.ToLineChart(chart3, "day");
+                cowMan.ToLineChart(chart3, "day");
+            }
+            else if (comboBox2.SelectedIndex == 1)
+            {
+                user.ToLineChart(chart3, "month");
+                cowMan.ToLineChart(chart3, "month");
+
+            }
+            else if (comboBox2.SelectedIndex == 2)
+            {
+                user.ToLineChart(chart3, "year");
+                cowMan.ToLineChart(chart3, "year");
+            }
         }
 
         

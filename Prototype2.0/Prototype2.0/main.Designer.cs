@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(main));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea26 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend11 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea27 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series16 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea28 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series17 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea29 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series18 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea30 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend12 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             this.panel_menu = new System.Windows.Forms.Panel();
             this.button_jiantixitong = new System.Windows.Forms.Button();
             this.button_bingtuduibi = new System.Windows.Forms.Button();
@@ -127,6 +127,10 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label34 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.panel_menu.SuspendLayout();
             this.panel_wodexinxi.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -758,6 +762,8 @@
             // panel_fendoushi
             // 
             this.panel_fendoushi.BackColor = System.Drawing.Color.White;
+            this.panel_fendoushi.Controls.Add(this.label35);
+            this.panel_fendoushi.Controls.Add(this.comboBox1);
             this.panel_fendoushi.Controls.Add(this.chart1);
             this.panel_fendoushi.Location = new System.Drawing.Point(164, 38);
             this.panel_fendoushi.Margin = new System.Windows.Forms.Padding(2);
@@ -767,25 +773,27 @@
             // 
             // chart1
             // 
-            chartArea26.Area3DStyle.Inclination = 50;
-            chartArea26.Area3DStyle.PointDepth = 10;
-            chartArea26.Area3DStyle.Rotation = 20;
-            chartArea26.Area3DStyle.WallWidth = 0;
-            chartArea26.AxisX.MajorGrid.Enabled = false;
-            chartArea26.AxisY.MajorGrid.Enabled = false;
-            chartArea26.BackColor = System.Drawing.Color.Transparent;
-            chartArea26.BorderColor = System.Drawing.Color.Transparent;
-            chartArea26.CursorX.IsUserEnabled = true;
-            chartArea26.CursorX.IsUserSelectionEnabled = true;
-            chartArea26.CursorX.LineColor = System.Drawing.Color.Black;
-            chartArea26.CursorY.IsUserEnabled = true;
-            chartArea26.CursorY.IsUserSelectionEnabled = true;
-            chartArea26.CursorY.LineColor = System.Drawing.Color.Black;
-            chartArea26.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea26);
+            chartArea1.Area3DStyle.Inclination = 50;
+            chartArea1.Area3DStyle.PointDepth = 10;
+            chartArea1.Area3DStyle.Rotation = 20;
+            chartArea1.Area3DStyle.WallWidth = 0;
+            chartArea1.AxisX.MajorGrid.Enabled = false;
+            chartArea1.AxisY.MajorGrid.Enabled = false;
+            chartArea1.BackColor = System.Drawing.Color.Transparent;
+            chartArea1.BorderColor = System.Drawing.Color.Transparent;
+            chartArea1.CursorX.IsUserEnabled = true;
+            chartArea1.CursorX.IsUserSelectionEnabled = true;
+            chartArea1.CursorX.LineColor = System.Drawing.Color.Black;
+            chartArea1.CursorY.IsUserEnabled = true;
+            chartArea1.CursorY.IsUserSelectionEnabled = true;
+            chartArea1.CursorY.LineColor = System.Drawing.Color.Black;
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
             this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend11.Name = "Legend1";
-            this.chart1.Legends.Add(legend11);
+            legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend1.MaximumAutoSize = 10F;
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(0, 0);
             this.chart1.Margin = new System.Windows.Forms.Padding(2);
             this.chart1.Name = "chart1";
@@ -806,19 +814,19 @@
             // 
             // chart2
             // 
-            chartArea27.Area3DStyle.Enable3D = true;
-            chartArea27.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea27);
+            chartArea2.Area3DStyle.Enable3D = true;
+            chartArea2.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea2);
             this.chart2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chart2.Location = new System.Drawing.Point(0, 0);
             this.chart2.Margin = new System.Windows.Forms.Padding(2);
             this.chart2.Name = "chart2";
             this.chart2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SemiTransparent;
-            series16.ChartArea = "ChartArea1";
-            series16.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series16.IsValueShownAsLabel = true;
-            series16.Name = "Series1";
-            this.chart2.Series.Add(series16);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.IsValueShownAsLabel = true;
+            series1.Name = "Series1";
+            this.chart2.Series.Add(series1);
             this.chart2.Size = new System.Drawing.Size(725, 451);
             this.chart2.TabIndex = 2;
             this.chart2.Text = "chart2";
@@ -852,19 +860,19 @@
             // 
             this.chart5.BorderlineColor = System.Drawing.Color.LightGray;
             this.chart5.BorderlineWidth = 0;
-            chartArea28.Area3DStyle.Enable3D = true;
-            chartArea28.Name = "ChartArea1";
-            this.chart5.ChartAreas.Add(chartArea28);
+            chartArea3.Area3DStyle.Enable3D = true;
+            chartArea3.Name = "ChartArea1";
+            this.chart5.ChartAreas.Add(chartArea3);
             this.chart5.Dock = System.Windows.Forms.DockStyle.Top;
             this.chart5.Location = new System.Drawing.Point(0, 207);
             this.chart5.Margin = new System.Windows.Forms.Padding(2);
             this.chart5.Name = "chart5";
             this.chart5.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SemiTransparent;
-            series17.ChartArea = "ChartArea1";
-            series17.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series17.IsValueShownAsLabel = true;
-            series17.Name = "Series1";
-            this.chart5.Series.Add(series17);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series2.IsValueShownAsLabel = true;
+            series2.Name = "Series1";
+            this.chart5.Series.Add(series2);
             this.chart5.Size = new System.Drawing.Size(725, 215);
             this.chart5.TabIndex = 24;
             this.chart5.Text = "chart5";
@@ -873,19 +881,19 @@
             // 
             this.chart4.BorderlineColor = System.Drawing.Color.LightGray;
             this.chart4.BorderlineWidth = 0;
-            chartArea29.Area3DStyle.Enable3D = true;
-            chartArea29.Name = "ChartArea1";
-            this.chart4.ChartAreas.Add(chartArea29);
+            chartArea4.Area3DStyle.Enable3D = true;
+            chartArea4.Name = "ChartArea1";
+            this.chart4.ChartAreas.Add(chartArea4);
             this.chart4.Dock = System.Windows.Forms.DockStyle.Top;
             this.chart4.Location = new System.Drawing.Point(0, 0);
             this.chart4.Margin = new System.Windows.Forms.Padding(2);
             this.chart4.Name = "chart4";
             this.chart4.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SemiTransparent;
-            series18.ChartArea = "ChartArea1";
-            series18.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series18.IsValueShownAsLabel = true;
-            series18.Name = "Series1";
-            this.chart4.Series.Add(series18);
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series3.IsValueShownAsLabel = true;
+            series3.Name = "Series1";
+            this.chart4.Series.Add(series3);
             this.chart4.Size = new System.Drawing.Size(725, 207);
             this.chart4.TabIndex = 23;
             this.chart4.Text = "chart4";
@@ -893,6 +901,8 @@
             // panel_zhexiantuduibi
             // 
             this.panel_zhexiantuduibi.BackColor = System.Drawing.Color.White;
+            this.panel_zhexiantuduibi.Controls.Add(this.label36);
+            this.panel_zhexiantuduibi.Controls.Add(this.comboBox2);
             this.panel_zhexiantuduibi.Controls.Add(this.chart3);
             this.panel_zhexiantuduibi.Location = new System.Drawing.Point(164, 38);
             this.panel_zhexiantuduibi.Margin = new System.Windows.Forms.Padding(2);
@@ -903,25 +913,27 @@
             // chart3
             // 
             this.chart3.BackColor = System.Drawing.Color.Transparent;
-            chartArea30.Area3DStyle.Inclination = 50;
-            chartArea30.Area3DStyle.PointDepth = 10;
-            chartArea30.Area3DStyle.Rotation = 20;
-            chartArea30.Area3DStyle.WallWidth = 0;
-            chartArea30.AxisX.MajorGrid.Enabled = false;
-            chartArea30.AxisY.MajorGrid.Enabled = false;
-            chartArea30.BackColor = System.Drawing.Color.Transparent;
-            chartArea30.BorderColor = System.Drawing.Color.Transparent;
-            chartArea30.CursorX.IsUserEnabled = true;
-            chartArea30.CursorX.IsUserSelectionEnabled = true;
-            chartArea30.CursorX.LineColor = System.Drawing.Color.Black;
-            chartArea30.CursorY.IsUserEnabled = true;
-            chartArea30.CursorY.IsUserSelectionEnabled = true;
-            chartArea30.CursorY.LineColor = System.Drawing.Color.Black;
-            chartArea30.Name = "ChartArea1";
-            this.chart3.ChartAreas.Add(chartArea30);
+            chartArea5.Area3DStyle.Inclination = 50;
+            chartArea5.Area3DStyle.PointDepth = 10;
+            chartArea5.Area3DStyle.Rotation = 20;
+            chartArea5.Area3DStyle.WallWidth = 0;
+            chartArea5.AxisX.MajorGrid.Enabled = false;
+            chartArea5.AxisY.MajorGrid.Enabled = false;
+            chartArea5.BackColor = System.Drawing.Color.Transparent;
+            chartArea5.BorderColor = System.Drawing.Color.Transparent;
+            chartArea5.CursorX.IsUserEnabled = true;
+            chartArea5.CursorX.IsUserSelectionEnabled = true;
+            chartArea5.CursorX.LineColor = System.Drawing.Color.Black;
+            chartArea5.CursorY.IsUserEnabled = true;
+            chartArea5.CursorY.IsUserSelectionEnabled = true;
+            chartArea5.CursorY.LineColor = System.Drawing.Color.Black;
+            chartArea5.Name = "ChartArea1";
+            this.chart3.ChartAreas.Add(chartArea5);
             this.chart3.Dock = System.Windows.Forms.DockStyle.Top;
-            legend12.Name = "Legend1";
-            this.chart3.Legends.Add(legend12);
+            legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend2.MaximumAutoSize = 10F;
+            legend2.Name = "Legend1";
+            this.chart3.Legends.Add(legend2);
             this.chart3.Location = new System.Drawing.Point(0, 0);
             this.chart3.Margin = new System.Windows.Forms.Padding(2);
             this.chart3.Name = "chart3";
@@ -1357,6 +1369,54 @@
             this.label34.TabIndex = 4;
             this.label34.Text = "请输入你的账号";
             // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "每天",
+            "每月",
+            "每年"});
+            this.comboBox1.Location = new System.Drawing.Point(648, 414);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(66, 20);
+            this.comboBox1.TabIndex = 3;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label35.Location = new System.Drawing.Point(586, 418);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(56, 17);
+            this.label35.TabIndex = 4;
+            this.label35.Text = "时间跨度";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label36.Location = new System.Drawing.Point(584, 423);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(56, 17);
+            this.label36.TabIndex = 23;
+            this.label36.Text = "时间跨度";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "每天",
+            "每月",
+            "每年"});
+            this.comboBox2.Location = new System.Drawing.Point(646, 419);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(66, 20);
+            this.comboBox2.TabIndex = 22;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            // 
             // main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1364,6 +1424,8 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(900, 509);
+            this.Controls.Add(this.panel_zhexiantuduibi);
+            this.Controls.Add(this.panel_fendoushi);
             this.Controls.Add(this.panel_jiantixitong);
             this.Controls.Add(this.panel_xuexiniuren);
             this.Controls.Add(this.panel_Login);
@@ -1372,8 +1434,6 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.panel_wodexinxi);
             this.Controls.Add(this.progressBar1);
-            this.Controls.Add(this.panel_zhexiantuduibi);
-            this.Controls.Add(this.panel_fendoushi);
             this.Controls.Add(this.panel_jiudehuiyi);
             this.Controls.Add(this.panel_wodeliangdian);
             this.Controls.Add(this.pictureBox2);
@@ -1396,6 +1456,7 @@
             this.groupBox2.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.panel_fendoushi.ResumeLayout(false);
+            this.panel_fendoushi.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.panel_zuotifenlei.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
@@ -1406,6 +1467,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.chart5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart4)).EndInit();
             this.panel_zhexiantuduibi.ResumeLayout(false);
+            this.panel_zhexiantuduibi.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart3)).EndInit();
             this.panel_jiantixitong.ResumeLayout(false);
             this.panel_xuexiniuren.ResumeLayout(false);
@@ -1511,6 +1573,10 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.ComboBox comboBox2;
     }
 }
 
