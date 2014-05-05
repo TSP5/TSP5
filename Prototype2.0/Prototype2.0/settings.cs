@@ -16,6 +16,7 @@ namespace Prototype2._0
         private User user;
         private Chart chart2, chart5, chart4;
         main ma = new main();
+        string str2 = null;
 
         public settings()
         {
@@ -192,22 +193,27 @@ namespace Prototype2._0
             user.ToPieChart(chart5);
             chart4 = ma.CHART4;
             user.ToPieChart(chart4);
-
+            FenLei fl = new FenLei();
 
             if (checkBox1.Checked == true)
             {
                 string str;
                 StreamReader sr;
-                FenLei fl = new FenLei();
                 
-                sr = new StreamReader("分类副本.txt", Encoding.Default);
+                
+                sr = new StreamReader("分类.txt", Encoding.Default);
                 
                 while ((str = sr.ReadLine()) != null)
                 {
                     FenLei.textBox1.Text = FenLei.textBox1.Text + str + "\r\n";
                 }
                 sr.Close();
-
+                
+                fl.ShowDialog();
+            }
+            else
+            {
+                FenLei.textBox1.Text = str2;
                 fl.ShowDialog();
             }
         }
@@ -218,7 +224,7 @@ namespace Prototype2._0
             StreamWriter sw = new StreamWriter("分类副本.txt");
             //sw = new StreamWriter(ofd.OpenFile(), Encoding.Default);
 
-            string str, str2=null;
+            string str;
             StreamReader sr = new StreamReader(ofd.OpenFile(),Encoding.UTF8);
             //byte[] bytes = new byte[ofd.OpenFile().Length];
             
@@ -232,13 +238,21 @@ namespace Prototype2._0
 
         private void button4_Click(object sender, EventArgs e)
         {
-            //此条记录不存在则添加
+            //此条记录不存在则添加,并且只能在自定义分类上添加
 
-            /*
-            Dictionary<String, int> dic = new Dictionary<string, int>();
-            dic.Add(textBox2.Text, Convert.ToInt32(textBox1.Text));
-            chart2.Series[0].Points.DataBindXY(dic.Keys, dic.Values);
-             */
+            if (str2 == null)
+            {
+                MessageBox.Show("您还没有批量导入分类");
+            }
+            else if(!str2.Contains(textBox1.Text))
+            {
+                if (!str2.Contains(textBox2.Text))
+                {
+                    str2 = str2 + textBox2.Text + ":" + textBox1.Text + "\r\n";
+                }
+                int pos = str2.IndexOf(textBox2.Text);
+                str2.Insert(pos, textBox1.Text + " ");
+            }
         }
     }
 }
