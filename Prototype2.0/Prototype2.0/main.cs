@@ -498,6 +498,20 @@ namespace Prototype2._0
             }
         }
 
-        
+        public Chart CHART2
+        {
+            get { return chart2; }
+            set { chart2 = value; }
+        }
+        public Chart CHART5
+        {
+            get { return chart5; }
+            set { chart5 = value; }
+        }
+        public Chart CHART4
+        {
+            get { return chart4; }
+            set { chart4 = value; }
+        }
     }
 }

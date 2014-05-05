@@ -6,12 +6,16 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.IO;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace Prototype2._0
 {
     public partial class settings : Form
     {
         private User user;
+        private Chart chart2, chart5, chart4;
+        main ma = new main();
 
         public settings()
         {
@@ -141,7 +145,7 @@ namespace Prototype2._0
         {
             MessageBox.Show("已保存");
             this.Close();
-
+            ma.Refresh();
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -155,6 +159,7 @@ namespace Prototype2._0
             label4.Text = user.Name;
         }
 
+        //默认账号的更改
         private void button5_Click(object sender, EventArgs e)
         {
             if (button5.Text.Equals("更改"))
@@ -172,6 +177,68 @@ namespace Prototype2._0
                 label4.Visible = true;
                 button5.Text = "更改";
             }
+        }
+
+        //查看分类
+        private void button7_Click(object sender, EventArgs e)
+        {
+            //File FenLei = new File("分类.txt");
+            //FenLei.Open();
+            //FileStream fs = new FileStream("分类.txt", FileMode.Open);
+
+            chart2 = ma.CHART2;
+            user.ToPieChart(chart2);
+            chart5 = ma.CHART5;
+            user.ToPieChart(chart5);
+            chart4 = ma.CHART4;
+            user.ToPieChart(chart4);
+
+
+            if (checkBox1.Checked == true)
+            {
+                string str;
+                StreamReader sr;
+                FenLei fl = new FenLei();
+                
+                sr = new StreamReader("分类副本.txt", Encoding.Default);
+                
+                while ((str = sr.ReadLine()) != null)
+                {
+                    FenLei.textBox1.Text = FenLei.textBox1.Text + str + "\r\n";
+                }
+                sr.Close();
+
+                fl.ShowDialog();
+            }
+        }
+
+        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+            OpenFileDialog ofd = sender as OpenFileDialog;
+            StreamWriter sw = new StreamWriter("分类副本.txt");
+            //sw = new StreamWriter(ofd.OpenFile(), Encoding.Default);
+
+            string str, str2=null;
+            StreamReader sr = new StreamReader(ofd.OpenFile(),Encoding.UTF8);
+            //byte[] bytes = new byte[ofd.OpenFile().Length];
+            
+            while ((str = sr.ReadLine()) != null)
+            {
+                str2 = str2 + str + "\r\n";
+            }
+            sw.Write(str2);
+            sw.Close();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            //此条记录不存在则添加
+
+            /*
+            Dictionary<String, int> dic = new Dictionary<string, int>();
+            dic.Add(textBox2.Text, Convert.ToInt32(textBox1.Text));
+            chart2.Series[0].Points.DataBindXY(dic.Keys, dic.Values);
+             */
         }
     }
 }
