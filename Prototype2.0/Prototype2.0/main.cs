@@ -24,6 +24,7 @@ namespace Prototype2._0
         {
             InitializeComponent();
             this.AcceptButton = button3;
+            this.textBox3.Select();
         }
         //窗口载入时调用
         private void main_Load(object sender, EventArgs e)
@@ -447,7 +448,8 @@ namespace Prototype2._0
         private void button_settings_Click(object sender, EventArgs e)
         {
             settings setting = new settings();
-            setting.Show();
+            setting.setlabel4Name(user);
+            setting.ShowDialog();
         }
 
         private void button2_Click_1(object sender, EventArgs e)

@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="668620b9-c586-4e36-87fb-5218cb96b4c3" name="WGC@WGC-PC 2014-05-05 17:55:25" runUser="WGC-PC\WGC" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="本地" id="15eaff23-6fdd-4e4a-895b-27afa8f22191">
+    <Description>这些设置为本地测试运行的默认测试设置。</Description>
+    <Deployment enabled="false" runDeploymentRoot="WGC_WGC-PC 2014-05-05 17_55_25">
+      <DeploymentItem filename="D:\git_file\yuanxing5\Prototype2.0\Prototype2.0\bin\Debug\Prototype2.0.exe" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2014-05-05T17:55:25.1348653+08:00" queuing="2014-05-05T17:55:25.1504653+08:00" start="2014-05-05T17:55:25.1660654+08:00" finish="2014-05-05T17:55:25.8056665+08:00" />
+  <ResultSummary outcome="Warning">
+    <Counters total="12" executed="12" passed="12" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <RunInfos>
+      <RunInfo computerName="WGC-PC" outcome="Warning" timestamp="2014-05-05T17:55:25.1504653+08:00">
+        <Text>当前已禁用部署。未部署测试“UnitTest.mainTest.button1_ClickTest”中的部署项“Prototype2.0.exe”。</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="button1_ClickTest" storage="d:\git_file\yuanxing5\prototype2.0\unittest\bin\debug\unittest.dll" id="7e369f75-ca60-28a5-209b-ebfa6ffd65b1">
+      <DeploymentItems>
+        <DeploymentItem filename="Prototype2.0.exe" />
+      </DeploymentItems>
+      <Execution id="56676f29-3e7e-4137-baa1-c97f8b3a40dc" />
+      <TestMethod codeBase="D:/git_file/yuanxing5/Prototype2.0/UnitTest/bin/Debug/UnitTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="UnitTest.mainTest, UnitTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="button1_ClickTest" />
+    </UnitTest>
+    <UnitTest name="getRecommandTest" storage="d:\git_file\yuanxing5\prototype2.0\unittest\bin\debug\unittest.dll" id="5436548b-eea2-6bff-3495-eae5881c6993">
+      <DeploymentItems>
+        <DeploymentItem filename="Prototype2.0.exe" />
+      </DeploymentItems>
+      <Execution id="aa3e7f72-7d10-4976-be27-48e59bca2b5b" />
+      <TestMethod codeBase="D:/git_file/yuanxing5/Prototype2.0/UnitTest/bin/Debug/UnitTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="UnitTest.mainTest, UnitTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="getRecommandTest" />
+    </UnitTest>
+    <UnitTest name="DisposeTest" storage="d:\git_file\yuanxing5\prototype2.0\unittest\bin\debug\unittest.dll" id="cd7e107a-f302-34f2-b27f-f76c9a44e19a">
+      <DeploymentItems>
+        <DeploymentItem filename="Prototype2.0.exe" />
+      </DeploymentItems>
+      <Execution id="04c9764a-c8e0-4293-8fdf-d1d23d8df602" />
+      <TestMethod codeBase="D:/git_file/yuanxing5/Prototype2.0/UnitTest/bin/Debug/UnitTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="UnitTest.settingsTest, UnitTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="DisposeTest" />
+    </UnitTest>
+    <UnitTest name="button2_ClickTest" storage="d:\git_file\yuanxing5\prototype2.0\unittest\bin\debug\unittest.dll" id="0b28c363-cfc5-f5fd-9f67-bbc95cde2066">
+      <DeploymentItems>
+        <DeploymentItem filename="Prototype2.0.exe" />
+      </DeploymentItems>
+      <Execution id="f8d4b7d4-f078-4cc4-af67-ddfbfcf01fb0" />
+      <TestMethod codeBase="D:/git_file/yuanxing5/Prototype2.0/UnitTest/bin/Debug/UnitTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="UnitTest.mainTest, UnitTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="button2_ClickTest" />
+    </UnitTest>
+    <UnitTest name="button_exit_ClickTest" storage="d:\git_file\yuanxing5\prototype2.0\unittest\bin\debug\unittest.dll" id="4da2c7b5-0149-9021-57fb-a840a852006f">
+      <DeploymentItems>
+        <DeploymentItem filename="Prototype2.0.exe" />
+      </DeploymentItems>
+      <Execution id="3b0fcdc9-a883-4823-9b9e-1a8dfe0432cb" />
+      <TestMethod codeBase="D:/git_file/yuanxing5/Prototype2.0/UnitTest/bin/Debug/UnitTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="UnitTest.mainTest, UnitTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="button_exit_ClickTest" />
+    </UnitTest>
+    <UnitTest name="SendMessageTest" storage="d:\git_file\yuanxing5\prototype2.0\unittest\bin\debug\unittest.dll" id="6280871f-a36f-02b9-19c1-ae2bd4c915ce">
+      <Execution id="cda6d646-7f81-4748-b0cf-5a0adef5eb4f" />
+      <TestMethod codeBase="D:/git_file/yuanxing5/Prototype2.0/UnitTest/bin/Debug/UnitTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="UnitTest.mainTest, UnitTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="SendMessageTest" />
+    </UnitTest>
+    <UnitTest name="mainConstructorTest" storage="d:\git_file\yuanxing5\prototype2.0\unittest\bin\debug\unittest.dll" id="c7167a1f-f5b0-cae6-8d37-128f24b014c1">
+      <Execution id="d6d3877e-02e9-4eda-8234-110f25929716" />
+      <TestMethod codeBase="D:/git_file/yuanxing5/Prototype2.0/UnitTest/bin/Debug/UnitTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="UnitTest.mainTest, UnitTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="mainConstructorTest" />
+    </UnitTest>
+    <UnitTest name="button1_Click_1Test" storage="d:\git_file\yuanxing5\prototype2.0\unittest\bin\debug\unittest.dll" id="c161caaf-1757-fbd4-151f-e499d9aa44ff">
+      <DeploymentItems>
+        <DeploymentItem filename="Prototype2.0.exe" />
+      </DeploymentItems>
+      <Execution id="2697b56c-6011-487f-aecc-6bb8668a0d31" />
+      <TestMethod codeBase="D:/git_file/yuanxing5/Prototype2.0/UnitTest/bin/Debug/UnitTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="UnitTest.mainTest, UnitTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="button1_Click_1Test" />
+    </UnitTest>
+    <UnitTest name="settings_LoadTest" storage="d:\git_file\yuanxing5\prototype2.0\unittest\bin\debug\unittest.dll" id="7ab3a32f-4dc9-ffea-ce42-a3a6b7d3b9be">
+      <DeploymentItems>
+        <DeploymentItem filename="Prototype2.0.exe" />
+      </DeploymentItems>
+      <Execution id="285bc861-5f5f-442c-a6fa-0711e8d88dcc" />
+      <TestMethod codeBase="D:/git_file/yuanxing5/Prototype2.0/UnitTest/bin/Debug/UnitTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="UnitTest.settingsTest, UnitTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="settings_LoadTest" />
+    </UnitTest>
+    <UnitTest name="settingsConstructorTest" storage="d:\git_file\yuanxing5\prototype2.0\unittest\bin\debug\unittest.dll" id="8f2afcd6-2429-a959-7d0f-51c9c47ba0c4">
+      <Execution id="4d3341a4-0e98-413c-af9e-fc2c0e477b51" />
+      <TestMethod codeBase="D:/git_file/yuanxing5/Prototype2.0/UnitTest/bin/Debug/UnitTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="UnitTest.settingsTest, UnitTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="settingsConstructorTest" />
+    </UnitTest>
+    <UnitTest name="DisposeTest" storage="d:\git_file\yuanxing5\prototype2.0\unittest\bin\debug\unittest.dll" id="ce781e78-5754-4c40-2ec9-91d6709c1c43">
+      <DeploymentItems>
+        <DeploymentItem filename="Prototype2.0.exe" />
+      </DeploymentItems>
+      <Execution id="bc06ab1d-4af6-49a5-84cc-36fcd7f3cc4e" />
+      <TestMethod codeBase="D:/git_file/yuanxing5/Prototype2.0/UnitTest/bin/Debug/UnitTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="UnitTest.mainTest, UnitTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="DisposeTest" />
+    </UnitTest>
+    <UnitTest name="RefleshMenuTest" storage="d:\git_file\yuanxing5\prototype2.0\unittest\bin\debug\unittest.dll" id="851fadc4-eb68-7130-2e60-f8183f2faff9">
+      <DeploymentItems>
+        <DeploymentItem filename="Prototype2.0.exe" />
+      </DeploymentItems>
+      <Execution id="adc8349a-358f-4619-9010-a858f88ef8d2" />
+      <TestMethod codeBase="D:/git_file/yuanxing5/Prototype2.0/UnitTest/bin/Debug/UnitTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="UnitTest.settingsTest, UnitTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="RefleshMenuTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="列表中未列出的结果" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="所有已加载的结果" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="4da2c7b5-0149-9021-57fb-a840a852006f" executionId="3b0fcdc9-a883-4823-9b9e-1a8dfe0432cb" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="851fadc4-eb68-7130-2e60-f8183f2faff9" executionId="adc8349a-358f-4619-9010-a858f88ef8d2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7e369f75-ca60-28a5-209b-ebfa6ffd65b1" executionId="56676f29-3e7e-4137-baa1-c97f8b3a40dc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ce781e78-5754-4c40-2ec9-91d6709c1c43" executionId="bc06ab1d-4af6-49a5-84cc-36fcd7f3cc4e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="cd7e107a-f302-34f2-b27f-f76c9a44e19a" executionId="04c9764a-c8e0-4293-8fdf-d1d23d8df602" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6280871f-a36f-02b9-19c1-ae2bd4c915ce" executionId="cda6d646-7f81-4748-b0cf-5a0adef5eb4f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c161caaf-1757-fbd4-151f-e499d9aa44ff" executionId="2697b56c-6011-487f-aecc-6bb8668a0d31" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7ab3a32f-4dc9-ffea-ce42-a3a6b7d3b9be" executionId="285bc861-5f5f-442c-a6fa-0711e8d88dcc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c7167a1f-f5b0-cae6-8d37-128f24b014c1" executionId="d6d3877e-02e9-4eda-8234-110f25929716" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8f2afcd6-2429-a959-7d0f-51c9c47ba0c4" executionId="4d3341a4-0e98-413c-af9e-fc2c0e477b51" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0b28c363-cfc5-f5fd-9f67-bbc95cde2066" executionId="f8d4b7d4-f078-4cc4-af67-ddfbfcf01fb0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5436548b-eea2-6bff-3495-eae5881c6993" executionId="aa3e7f72-7d10-4976-be27-48e59bca2b5b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="3b0fcdc9-a883-4823-9b9e-1a8dfe0432cb" testId="4da2c7b5-0149-9021-57fb-a840a852006f" testName="button_exit_ClickTest" computerName="WGC-PC" duration="00:00:00.1025043" startTime="2014-05-05T17:55:25.1660654+08:00" endTime="2014-05-05T17:55:25.4780659+08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3b0fcdc9-a883-4823-9b9e-1a8dfe0432cb">
+    </UnitTestResult>
+    <UnitTestResult executionId="adc8349a-358f-4619-9010-a858f88ef8d2" testId="851fadc4-eb68-7130-2e60-f8183f2faff9" testName="RefleshMenuTest" computerName="WGC-PC" duration="00:00:00.0184774" startTime="2014-05-05T17:55:25.4936659+08:00" endTime="2014-05-05T17:55:25.5092660+08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="adc8349a-358f-4619-9010-a858f88ef8d2">
+    </UnitTestResult>
+    <UnitTestResult executionId="56676f29-3e7e-4137-baa1-c97f8b3a40dc" testId="7e369f75-ca60-28a5-209b-ebfa6ffd65b1" testName="button1_ClickTest" computerName="WGC-PC" duration="00:00:00.0245813" startTime="2014-05-05T17:55:25.5092660+08:00" endTime="2014-05-05T17:55:25.5404660+08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="56676f29-3e7e-4137-baa1-c97f8b3a40dc">
+    </UnitTestResult>
+    <UnitTestResult executionId="bc06ab1d-4af6-49a5-84cc-36fcd7f3cc4e" testId="ce781e78-5754-4c40-2ec9-91d6709c1c43" testName="DisposeTest" computerName="WGC-PC" duration="00:00:00.0251300" startTime="2014-05-05T17:55:25.5404660+08:00" endTime="2014-05-05T17:55:25.5716661+08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="bc06ab1d-4af6-49a5-84cc-36fcd7f3cc4e">
+    </UnitTestResult>
+    <UnitTestResult executionId="04c9764a-c8e0-4293-8fdf-d1d23d8df602" testId="cd7e107a-f302-34f2-b27f-f76c9a44e19a" testName="DisposeTest" computerName="WGC-PC" duration="00:00:00.0097106" startTime="2014-05-05T17:55:25.5872661+08:00" endTime="2014-05-05T17:55:25.6028661+08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="04c9764a-c8e0-4293-8fdf-d1d23d8df602">
+    </UnitTestResult>
+    <UnitTestResult executionId="cda6d646-7f81-4748-b0cf-5a0adef5eb4f" testId="6280871f-a36f-02b9-19c1-ae2bd4c915ce" testName="SendMessageTest" computerName="WGC-PC" duration="00:00:00.0007351" startTime="2014-05-05T17:55:25.6028661+08:00" endTime="2014-05-05T17:55:25.6028661+08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cda6d646-7f81-4748-b0cf-5a0adef5eb4f">
+    </UnitTestResult>
+    <UnitTestResult executionId="2697b56c-6011-487f-aecc-6bb8668a0d31" testId="c161caaf-1757-fbd4-151f-e499d9aa44ff" testName="button1_Click_1Test" computerName="WGC-PC" duration="00:00:00.0250012" startTime="2014-05-05T17:55:25.6028661+08:00" endTime="2014-05-05T17:55:25.6340662+08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2697b56c-6011-487f-aecc-6bb8668a0d31">
+    </UnitTestResult>
+    <UnitTestResult executionId="285bc861-5f5f-442c-a6fa-0711e8d88dcc" testId="7ab3a32f-4dc9-ffea-ce42-a3a6b7d3b9be" testName="settings_LoadTest" computerName="WGC-PC" duration="00:00:00.0105522" startTime="2014-05-05T17:55:25.6340662+08:00" endTime="2014-05-05T17:55:25.6496662+08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="285bc861-5f5f-442c-a6fa-0711e8d88dcc">
+    </UnitTestResult>
+    <UnitTestResult executionId="d6d3877e-02e9-4eda-8234-110f25929716" testId="c7167a1f-f5b0-cae6-8d37-128f24b014c1" testName="mainConstructorTest" computerName="WGC-PC" duration="00:00:00.0234574" startTime="2014-05-05T17:55:25.6652662+08:00" endTime="2014-05-05T17:55:25.6964663+08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d6d3877e-02e9-4eda-8234-110f25929716">
+    </UnitTestResult>
+    <UnitTestResult executionId="4d3341a4-0e98-413c-af9e-fc2c0e477b51" testId="8f2afcd6-2429-a959-7d0f-51c9c47ba0c4" testName="settingsConstructorTest" computerName="WGC-PC" duration="00:00:00.0087865" startTime="2014-05-05T17:55:25.6964663+08:00" endTime="2014-05-05T17:55:25.7120663+08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4d3341a4-0e98-413c-af9e-fc2c0e477b51">
+    </UnitTestResult>
+    <UnitTestResult executionId="f8d4b7d4-f078-4cc4-af67-ddfbfcf01fb0" testId="0b28c363-cfc5-f5fd-9f67-bbc95cde2066" testName="button2_ClickTest" computerName="WGC-PC" duration="00:00:00.0241819" startTime="2014-05-05T17:55:25.7120663+08:00" endTime="2014-05-05T17:55:25.7432664+08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f8d4b7d4-f078-4cc4-af67-ddfbfcf01fb0">
+    </UnitTestResult>
+    <UnitTestResult executionId="aa3e7f72-7d10-4976-be27-48e59bca2b5b" testId="5436548b-eea2-6bff-3495-eae5881c6993" testName="getRecommandTest" computerName="WGC-PC" duration="00:00:00.0241070" startTime="2014-05-05T17:55:25.7432664+08:00" endTime="2014-05-05T17:55:25.7744664+08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="aa3e7f72-7d10-4976-be27-48e59bca2b5b">
+    </UnitTestResult>
+  </Results>
+</TestRun>

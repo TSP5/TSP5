@@ -221,7 +221,6 @@ namespace UnitTest
         /// <summary>
         ///button6_Click 的测试
         ///</summary>
-        [TestMethod()]
         [DeploymentItem("Prototype2.0.exe")]
         public void button6_ClickTest()
         {

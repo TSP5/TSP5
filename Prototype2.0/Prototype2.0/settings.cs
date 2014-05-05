@@ -11,6 +11,8 @@ namespace Prototype2._0
 {
     public partial class settings : Form
     {
+        private User user;
+
         public settings()
         {
             InitializeComponent();
@@ -140,6 +142,36 @@ namespace Prototype2._0
             MessageBox.Show("已保存");
             this.Close();
 
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.ShowDialog();
+        }
+
+        internal void setlabel4Name(User user)
+        {
+            this.user = user;
+            label4.Text = user.Name;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (button5.Text.Equals("更改"))
+            {
+                label4.Visible = false;
+                textBox3.Visible = true;
+                textBox3.Select();
+                textBox3.SelectAll();
+                button5.Text = "确定";
+            }
+            else
+            {   
+                label4.Text = textBox3.Text;
+                textBox3.Visible = false;
+                label4.Visible = true;
+                button5.Text = "更改";
+            }
         }
     }
 }

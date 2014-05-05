@@ -143,8 +143,8 @@ namespace UnitTest
         public void GetUserNameByRankTest()
         {
             WebService target = new WebService(); // TODO: 初始化为适当的值
-            int rank = 1333; // TODO: 初始化为适当的值
-            string expected = "liucs116"; // TODO: 初始化为适当的值
+            int rank = 1; // TODO: 初始化为适当的值
+            string expected = "bluebird"; // TODO: 初始化为适当的值
             string actual;
             actual = target.GetUserNameByRank(rank);
             Assert.AreEqual(expected, actual);

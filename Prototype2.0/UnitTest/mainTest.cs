@@ -299,7 +299,6 @@ namespace UnitTest
         /// <summary>
         ///button3_Click 的测试
         ///</summary>
-        [TestMethod()]
         [DeploymentItem("Prototype2.0.exe")]
         public void button3_ClickTest()
         {
@@ -313,7 +312,6 @@ namespace UnitTest
         /// <summary>
         ///button5_Click 的测试
         ///</summary>
-        [TestMethod()]
         [DeploymentItem("Prototype2.0.exe")]
         public void button5_ClickTest()
         {
@@ -393,7 +391,6 @@ namespace UnitTest
         /// <summary>
         ///button_settings_Click 的测试
         ///</summary>
-        [TestMethod()]
         [DeploymentItem("Prototype2.0.exe")]
         public void button_settings_ClickTest()
         {
@@ -472,7 +469,6 @@ namespace UnitTest
         /// <summary>
         ///getCowMan 的测试
         ///</summary>
-        [TestMethod()]
         [DeploymentItem("Prototype2.0.exe")]
         public void getCowManTest()
         {
@@ -496,7 +492,6 @@ namespace UnitTest
         /// <summary>
         ///getUser 的测试
         ///</summary>
-        [TestMethod()]
         [DeploymentItem("Prototype2.0.exe")]
         public void getUserTest()
         {
