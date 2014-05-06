@@ -20,6 +20,7 @@ namespace Prototype2._0
         private User cowMan = new User();
         private List<int> recommandProblems = new List<int>();
         private WebService webService = new WebService();
+        private bool flag;
         public main()
         {
             InitializeComponent();
@@ -36,6 +37,7 @@ namespace Prototype2._0
             RefleshPanel();
             ShowPanel(9);
             panel_menu.Enabled = false;
+            
         }
         //无边框窗口拖动代码
         [DllImport("user32.dll")]
@@ -176,15 +178,15 @@ namespace Prototype2._0
             chart3.Series.Clear();
             user.ToLineChart(chart1, "month");
             user.ToLineChart(chart3, "month");
-            user.ToPieChart(chart4);
+            user.ToPieChart(chart4, flag);
         }
         //刷新做题分类panel
         private void RefleshZuotifenleiPanel()
         {
-            user.ToPieChart(chart2);
+            user.ToPieChart(chart2, flag);
         }
         //获取默认用户
-        private void getUser()
+        public void getUser()
         {
             panel_Login.Enabled = false;
             panel_menu.Enabled = false;
@@ -195,13 +197,15 @@ namespace Prototype2._0
                 return;
             }
             user.Solve = webService.GetAccepted(user.Name, progressBar1);
+
             RefleshWodexinxiPanel();
             RefleshFendoushiPanel();
             RefleshZuotifenleiPanel();
             panel_menu.Enabled = true;
+                
             ShowPanel(0);
-            panel_Login.Enabled = true;
         }
+        
         //获取牛人
         private void getCowMan()
         {
@@ -265,7 +269,7 @@ namespace Prototype2._0
             chart3.Series.Clear();
             user.ToLineChart(chart3, "month");
             cowMan.ToLineChart(chart3, "month");
-            cowMan.ToPieChart(chart5);
+            cowMan.ToPieChart(chart5, flag);
             groupBox1.Enabled = true;
             label11.Text = cowMan.Name;
             radioButton4.Checked = true;
@@ -449,7 +453,7 @@ namespace Prototype2._0
         {
             settings setting = new settings();
             setting.setlabel4Name(user);
-            setting.ShowDialog();
+            setting.ShowDialog(this);
         }
 
         private void button2_Click_1(object sender, EventArgs e)
@@ -460,7 +464,9 @@ namespace Prototype2._0
 
         private void button3_Click(object sender, EventArgs e)
         {
+            FLAG = true;
             Thread t = new Thread(getUser);
+            panel_Login.Enabled = FLAG;
             t.Start();
         }
 
@@ -512,6 +518,11 @@ namespace Prototype2._0
         {
             get { return chart4; }
             set { chart4 = value; }
+        }
+        public bool FLAG
+        {
+            get { return flag; }
+            set { flag = value; }
         }
     }
 }

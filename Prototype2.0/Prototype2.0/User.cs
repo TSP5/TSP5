@@ -146,7 +146,7 @@ namespace Prototype2._0
                 chart.Series.Add(series);
             }
         }
-        public void ToPieChart(Chart chart)
+        public void ToPieChart(Chart chart, bool selectFlag)
         {
             Dictionary<String, int> dic = new Dictionary<string, int>();
             string str = "";
@@ -155,7 +155,11 @@ namespace Prototype2._0
             StreamReader sr;
             try
             {
-                sr = new StreamReader("分类.txt", Encoding.Default);
+                if(selectFlag == true)
+                    sr = new StreamReader("分类.txt", Encoding.Default);
+                else
+                    sr = new StreamReader("分类副本.txt", Encoding.Default);
+                
             }
             catch (Exception e)
             {

@@ -15,12 +15,14 @@ namespace Prototype2._0
     {
         private User user;
         private Chart chart2, chart5, chart4;
-        main ma = new main();
+        private main ma;
         string str2 = null;
+        private List<Problem> solve;
 
         public settings()
         {
             InitializeComponent();
+            //ma = f1;
         }
         private void settings_Load(object sender, EventArgs e)
         {
@@ -140,13 +142,71 @@ namespace Prototype2._0
             ShowPanel(2);
         }
 
-        
+        public Chart ToPieChart(Chart chart)
+        {
+            solve = user.Solve;
+            Dictionary<String, int> dic = new Dictionary<string, int>();
+            int othernum = 0;
+            List<String> list = new List<String>();
+            string[] ContentLines = str2.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
+            
+            foreach (string al in ContentLines)
+            {
+                dic.Add(al.Substring(0, al.IndexOf(':')), 0);
+            }
+            //遍历
+            foreach (Problem problem in solve)
+            {
+                bool isOther = true;
+                for (int i = 0; i < ContentLines.Length; i++)
+                {
+                    if (ContentLines[i].Contains(problem.Id.ToString()))
+                    {
+                        //listnum++;
+                        dic[ContentLines[i].Substring(0, ContentLines[i].IndexOf(':'))]++;
+                        isOther = false;
+                        break;
+                    }
+                }
+                //新题目，其他类型
+                if (isOther)
+                {
+                    othernum++;
+                }
+            }
+
+            dic.Add("其他", othernum);
+            chart.Series[0].Label = "#VALX, #VALY[#PERCENT]";
+            chart.Series[0].Points.DataBindXY(dic.Keys, dic.Values);
+            chart.Series[0]["PieLabelStyle"] = "Outside";
+
+            return chart;
+        }
 
         private void button6_Click(object sender, EventArgs e)
         {
             MessageBox.Show("已保存");
+
+            if (!checkBox1.Checked)
+            {
+                ma = (main)this.Owner;
+            chart2 = ma.CHART2;
+            chart2 = ToPieChart(chart2);
+            //chart5 = ma.CHART5;
+            //chart5 = ToPieChart(chart5);
+            chart4 = ma.CHART4;
+            chart4 = ToPieChart(chart4);
+
+            ma.CHART2 = chart2;
+            //ma.CHART5 = chart5;
+            ma.CHART4 = chart4;
             this.Close();
-            ma.Refresh();
+            //bool flag = false;
+            ma.FLAG = false;
+            ma.getUser();
+            //ma.RefleshZuotifenleiPanel();
+            }
+            this.Close();
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -182,17 +242,7 @@ namespace Prototype2._0
 
         //查看分类
         private void button7_Click(object sender, EventArgs e)
-        {
-            //File FenLei = new File("分类.txt");
-            //FenLei.Open();
-            //FileStream fs = new FileStream("分类.txt", FileMode.Open);
-
-            chart2 = ma.CHART2;
-            user.ToPieChart(chart2);
-            chart5 = ma.CHART5;
-            user.ToPieChart(chart5);
-            chart4 = ma.CHART4;
-            user.ToPieChart(chart4);
+        {            
             FenLei fl = new FenLei();
 
             if (checkBox1.Checked == true)
@@ -250,8 +300,12 @@ namespace Prototype2._0
                 {
                     str2 = str2 + textBox2.Text + ":" + textBox1.Text + "\r\n";
                 }
-                int pos = str2.IndexOf(textBox2.Text);
-                str2.Insert(pos, textBox1.Text + " ");
+                else
+                {
+                    int pos = str2.IndexOf(textBox2.Text + ":");
+                    str2 = str2.Insert(pos + textBox2.Text.Length + 1, textBox1.Text + " ");
+                }
+                
             }
         }
     }
