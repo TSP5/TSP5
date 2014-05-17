@@ -16,11 +16,12 @@ namespace Prototype2._0
 {
     public partial class main : Form
     {
+
         private User user = new User();
-        private User cowMan = new User();
+        private List<User> cowMans = new List<User>();
         private List<int> recommandProblems = new List<int>();
         private WebService webService = new WebService();
-        private bool flag;
+        private bool flag = true;
         public main()
         {
             InitializeComponent();
@@ -35,9 +36,9 @@ namespace Prototype2._0
             RefleshMenu();
             InitPanel();
             RefleshPanel();
-            ShowPanel(9);
+            ShowPanel(7);
             panel_menu.Enabled = false;
-            
+
         }
         //无边框窗口拖动代码
         [DllImport("user32.dll")]
@@ -72,8 +73,6 @@ namespace Prototype2._0
             this.menu[this.button_jiudehuiyi].Add(this.button_fendoushi);
             this.menu[this.button_jiudehuiyi].Add(this.button_zuotifenlei);
             this.menu[this.button_jiudehuiyi].Add(this.button_wodeliangdian);
-            this.menu[this.button_xuexiniuren].Add(this.button_zhexiantuduibi);
-            this.menu[this.button_xuexiniuren].Add(this.button_bingtuduibi);
             firstMenu = this.menu.Keys;
         }
         //初始化Panel
@@ -85,9 +84,7 @@ namespace Prototype2._0
             this.panel.Add(this.panel_fendoushi);       //Index:3      
             this.panel.Add(this.panel_zuotifenlei);     //Index:4
             this.panel.Add(this.panel_wodeliangdian);   //Index:5
-            this.panel.Add(this.panel_bingtuduibi);     //Index:6
-            this.panel.Add(this.panel_zhexiantuduibi);  //Index:7
-            this.panel.Add(this.panel_jiantixitong);    //Index:8
+            this.panel.Add(this.panel_jiantixitong);    //Index:6
             this.panel.Add(this.panel_Login);
         }
         //刷新左侧菜单项
@@ -149,11 +146,13 @@ namespace Prototype2._0
         //显示index指定的panel
         private void ShowPanel(int index)
         {
-            foreach (Panel panel in this.panel)
-            {
-                panel.Hide();
-            }
+            this.panel[index].Enabled = true;
             this.panel[index].Show();
+            for (int i = 0; i < this.panel.Count; i++)
+            {
+                if (i != index)
+                    this.panel[i].Hide();
+            }
         }
         //刷新我的信息panel
         private void RefleshWodexinxiPanel()
@@ -175,40 +174,36 @@ namespace Prototype2._0
         private void RefleshFendoushiPanel()
         {
             chart1.Series.Clear();
-            chart3.Series.Clear();
             user.ToLineChart(chart1, "month");
-            user.ToLineChart(chart3, "month");
-            user.ToPieChart(chart4, flag);
         }
         //刷新做题分类panel
         private void RefleshZuotifenleiPanel()
         {
-            user.ToPieChart(chart2, flag);
+            user.ToPieChart(chart2, flag, true);
         }
         //获取默认用户
         public void getUser()
         {
             panel_Login.Enabled = false;
-            panel_menu.Enabled = false;
             user = webService.GetUser(textBox3.Text, progressBar1);
             if (user == null)
             {
                 MessageBox.Show("No such user.");
+                panel_Login.Enabled = true;
                 return;
             }
             user.Solve = webService.GetAccepted(user.Name, progressBar1);
-
             RefleshWodexinxiPanel();
             RefleshFendoushiPanel();
             RefleshZuotifenleiPanel();
             panel_menu.Enabled = true;
-                
             ShowPanel(0);
         }
         
         //获取牛人
         private void getCowMan()
         {
+            User cowMan = new User();
             groupBox1.Enabled = false;
             if (radioButton1.Checked == true)
             {
@@ -216,6 +211,7 @@ namespace Prototype2._0
                 if (cowMan == null)
                 {
                     MessageBox.Show("No such cowMan.");
+                    groupBox1.Enabled = true;
                     return;
                 }
             }
@@ -229,12 +225,14 @@ namespace Prototype2._0
                 catch (Exception)
                 {
                     MessageBox.Show("Number required.");
+                    groupBox1.Enabled = true;
                     return;
                 }
                 cowMan = webService.GetUser(webService.GetUserNameByRank(Rank), progressBar1);
                 if (cowMan == null)
                 {
                     MessageBox.Show("No such cowMan.");
+                    groupBox1.Enabled = true;
                     return;
                 }
             }
@@ -252,26 +250,10 @@ namespace Prototype2._0
                 }
             }
             cowMan.Solve = webService.GetAccepted(cowMan.Name, progressBar1);
-            if (cowMan.Solve == null)
-                return;
-            label33.Text = cowMan.Name;
-            label19.Text = cowMan.Rank.ToString();
-            label17.Text = cowMan.ProblemsSubmitted.ToString();
-            label12.Text = cowMan.ProblemsSolved.ToString();
-            label24.Text = cowMan.Submissions.ToString();
-            label23.Text = cowMan.Accepted.ToString();
-            listBox2.Items.Clear();
-            foreach (Problem problem in cowMan.Solve)
-            {
-                String s = problem.Id + "  " + problem.AcTime.ToString();
-                listBox2.Items.Add(s);
-            }
-            chart3.Series.Clear();
-            user.ToLineChart(chart3, "month");
-            cowMan.ToLineChart(chart3, "month");
-            cowMan.ToPieChart(chart5, flag);
+            cowMans.Add(cowMan);
+            label1.Text += user.Name + "   ->   " + cowMan.Name + "\n";
             groupBox1.Enabled = true;
-            label11.Text = cowMan.Name;
+            comboBox2.Items.Add(cowMan.Name);
             radioButton4.Checked = true;
         }
         //获取荐题
@@ -282,7 +264,14 @@ namespace Prototype2._0
             {
                 try
                 {
-                    recommandProblems = user.getProblemDiff(cowMan.Solve);
+                    foreach (User cowMan in cowMans)
+                    {
+                        if (cowMan.Name == comboBox2.SelectedItem.ToString())
+                        {
+                            recommandProblems = user.getProblemDiff(cowMan.Solve);
+                            break;
+                        }
+                    }
                     label9.Text = String.Empty;
                     foreach (int i in recommandProblems)
                     {
@@ -292,6 +281,10 @@ namespace Prototype2._0
                 catch (Exception)
                 {
                     MessageBox.Show("获取默认牛人失败。");
+                }
+                finally
+                {
+                    groupBox2.Enabled = true;
                 }
             }
             else if (radioButton5.Checked == true)
@@ -328,7 +321,7 @@ namespace Prototype2._0
                     return;
                 }
                 User newCowMan = webService.GetUser(webService.GetUserNameByRank(Rank), progressBar1);
-                if (cowMan == null)
+                if (newCowMan == null)
                 {
                     MessageBox.Show("No such cowMan.");
                     groupBox2.Enabled = true;
@@ -374,12 +367,13 @@ namespace Prototype2._0
         private void button_niurenduibi_Click(object sender, EventArgs e)
         {
             ShowPanel(6);
+            
         }
 
         private void button_jiantixitong_Click(object sender, EventArgs e)
         {
             MenuClick(3);
-            ShowPanel(8);
+            ShowPanel(6);
         }
 
         private void button_zuotifenlei_Click(object sender, EventArgs e)
@@ -464,9 +458,9 @@ namespace Prototype2._0
 
         private void button3_Click(object sender, EventArgs e)
         {
-            FLAG = true;
+
             Thread t = new Thread(getUser);
-            panel_Login.Enabled = FLAG;
+            panel_Login.Enabled = false;
             t.Start();
         }
 
@@ -482,47 +476,67 @@ namespace Prototype2._0
 
         }
 
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            while (chart3.Series.Count > 0)
-                chart3.Series.RemoveAt(0);
-            if (comboBox2.SelectedIndex == 0)
-            {
-                user.ToLineChart(chart3, "day");
-                cowMan.ToLineChart(chart3, "day");
-            }
-            else if (comboBox2.SelectedIndex == 1)
-            {
-                user.ToLineChart(chart3, "month");
-                cowMan.ToLineChart(chart3, "month");
-
-            }
-            else if (comboBox2.SelectedIndex == 2)
-            {
-                user.ToLineChart(chart3, "year");
-                cowMan.ToLineChart(chart3, "year");
-            }
-        }
+        
 
         public Chart CHART2
         {
             get { return chart2; }
             set { chart2 = value; }
         }
-        public Chart CHART5
-        {
-            get { return chart5; }
-            set { chart5 = value; }
-        }
-        public Chart CHART4
-        {
-            get { return chart4; }
-            set { chart4 = value; }
-        }
+        
         public bool FLAG
         {
             get { return flag; }
             set { flag = value; }
+        }
+
+        private void 登录ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowPanel(7);
+            textBox3.Focus();
+        }
+
+        private void 设置ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            settings setting = new settings();
+            setting.setlabel4Name(user);
+            setting.ShowDialog(this);
+        }
+
+        private void button2_Click_2(object sender, EventArgs e)
+        {
+            if (cowMans.Count == 0)
+            {
+                MessageBox.Show("查看对比结果前至少添加一个牛人。");
+                return;
+            }
+            RefleshPanel();
+            foreach (Form form in this.MdiChildren)
+            {
+                form.Dispose();
+            }
+            foreach (User cowMan in cowMans)
+            {
+                Compare compare = new Compare(user, cowMan);
+                compare.MdiParent = this;
+                compare.Show();
+            }
+        }
+
+        private void label35_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            user.ToPieChart(chart2, true, checkBox2.Checked);
+        }
+
+        private void 关于ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            About about = new About();
+            about.ShowDialog();
         }
     }
 }

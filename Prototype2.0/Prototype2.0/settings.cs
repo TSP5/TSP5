@@ -14,7 +14,7 @@ namespace Prototype2._0
     public partial class settings : Form
     {
         private User user;
-        private Chart chart2, chart5, chart4;
+        private Chart chart2;
         private main ma;
         string str2 = null;
         private List<Problem> solve;
@@ -192,19 +192,10 @@ namespace Prototype2._0
                 ma = (main)this.Owner;
             chart2 = ma.CHART2;
             chart2 = ToPieChart(chart2);
-            //chart5 = ma.CHART5;
-            //chart5 = ToPieChart(chart5);
-            chart4 = ma.CHART4;
-            chart4 = ToPieChart(chart4);
-
             ma.CHART2 = chart2;
-            //ma.CHART5 = chart5;
-            ma.CHART4 = chart4;
             this.Close();
-            //bool flag = false;
             ma.FLAG = false;
             ma.getUser();
-            //ma.RefleshZuotifenleiPanel();
             }
             this.Close();
         }

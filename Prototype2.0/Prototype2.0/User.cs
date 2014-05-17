@@ -146,7 +146,7 @@ namespace Prototype2._0
                 chart.Series.Add(series);
             }
         }
-        public void ToPieChart(Chart chart, bool selectFlag)
+        public void ToPieChart(Chart chart, bool selectFlag, bool showElse)
         {
             Dictionary<String, int> dic = new Dictionary<string, int>();
             string str = "";
@@ -155,11 +155,11 @@ namespace Prototype2._0
             StreamReader sr;
             try
             {
-                if(selectFlag == true)
+                if (selectFlag == true)
                     sr = new StreamReader("分类.txt", Encoding.Default);
                 else
                     sr = new StreamReader("分类副本.txt", Encoding.Default);
-                
+
             }
             catch (Exception e)
             {
@@ -195,13 +195,13 @@ namespace Prototype2._0
                     othernum++;
                 }
             }
-
-            dic.Add("其他", othernum);
+            if (showElse)
+                dic.Add("其他", othernum);
             chart.Series[0].Label = "#VALX, #VALY[#PERCENT]";
             chart.Series[0].Points.DataBindXY(dic.Keys, dic.Values);
             chart.Series[0]["PieLabelStyle"] = "Outside";
-            
-        }
+        }    
+        
         private int getMonthdiff(DateTime date1, DateTime date2)
         {
             int year1 = date1.Year;
