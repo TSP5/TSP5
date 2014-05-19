@@ -218,18 +218,7 @@ namespace UnitTest
             //Assert.Inconclusive("无法验证不返回值的方法。");
         }
 
-        /// <summary>
-        ///button6_Click 的测试
-        ///</summary>
-        [DeploymentItem("Prototype2.0.exe")]
-        public void button6_ClickTest()
-        {
-            settings_Accessor target = new settings_Accessor(); // TODO: 初始化为适当的值
-            object sender = null; // TODO: 初始化为适当的值
-            EventArgs e = null; // TODO: 初始化为适当的值
-            target.button6_Click(sender, e);
-            //Assert.Inconclusive("无法验证不返回值的方法。");
-        }
+        
 
         /// <summary>
         ///settings_Load 的测试

@@ -16,13 +16,17 @@ namespace Prototype2._0
         private User user;
         private Chart chart2;
         private main ma;
-        string str2 = null;
+        private string str2 = null;
+        private StreamReader sr;
         private List<Problem> solve;
+        TreeNode flRoot = new TreeNode();
 
         public settings()
         {
             InitializeComponent();
-            //ma = f1;
+            sr = new StreamReader("分类.txt", Encoding.Default);
+            flRoot.Text = "默认分类";
+            initFenLei(sr, flRoot);
         }
         private void settings_Load(object sender, EventArgs e)
         {
@@ -57,6 +61,49 @@ namespace Prototype2._0
             this.panel.Add(this.panel3);
             this.panel.Add(this.panel4);
         }
+
+        private void initFenLei(StreamReader sr, TreeNode flRoot)
+        {
+            int i = 0;
+            string str, LeiName = string.Empty;
+            Dictionary<string, List<string>> dict = new Dictionary<string, List<string>>();
+
+            //读取文件
+            while ((str = sr.ReadLine()) != null)
+            {
+                if (str.Contains(':'))
+                {
+                    i = str.IndexOf(':') + 2;
+                    LeiName = str.Substring(0, str.IndexOf(':'));
+                    dict.Add(LeiName, new List<string>());
+                }
+
+                for (int j = 0; j < str.Length; )
+                {
+                    dict[LeiName].Add(str.Substring(i, 4));
+                    i = i + 5;
+                    j = i + 7;
+                }
+            }
+            sr.Close();
+
+            //把分类添加到分类树上
+            treeView1.Nodes.Add(flRoot);
+
+            foreach (string key in dict.Keys)
+            {
+                TreeNode lei = new TreeNode();
+                lei.Text = key;
+                flRoot.Nodes.Add(lei);
+                foreach (string value in dict[key])
+                {
+                    TreeNode id = new TreeNode();
+                    id.Text = value;
+                    lei.Nodes.Add(id);
+                }
+            }
+        }
+
         //刷新左侧菜单项
         private void RefleshMenu()
         {
@@ -124,6 +171,7 @@ namespace Prototype2._0
             this.panel[index].Show();
         }
 
+        //分类管理菜单按钮的单击事件
         private void button1_Click(object sender, EventArgs e)
         {
             MenuClick(0);
@@ -183,27 +231,7 @@ namespace Prototype2._0
             return chart;
         }
 
-        private void button6_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("已保存");
-
-            if (!checkBox1.Checked)
-            {
-                ma = (main)this.Owner;
-            chart2 = ma.CHART2;
-            chart2 = ToPieChart(chart2);
-            ma.CHART2 = chart2;
-            this.Close();
-            ma.FLAG = false;
-            ma.getUser();
-            }
-            this.Close();
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-            openFileDialog1.ShowDialog();
-        }
+        
 
         internal void setlabel4Name(User user)
         {
@@ -231,73 +259,98 @@ namespace Prototype2._0
             }
         }
 
-        //查看分类
-        private void button7_Click(object sender, EventArgs e)
-        {            
-            FenLei fl = new FenLei();
-
-            if (checkBox1.Checked == true)
-            {
-                string str;
-                StreamReader sr;
-                
-                
-                sr = new StreamReader("分类.txt", Encoding.Default);
-                
-                while ((str = sr.ReadLine()) != null)
-                {
-                    FenLei.textBox1.Text = FenLei.textBox1.Text + str + "\r\n";
-                }
-                sr.Close();
-                
-                fl.ShowDialog();
-            }
-            else
-            {
-                FenLei.textBox1.Text = str2;
-                fl.ShowDialog();
-            }
-        }
+        
 
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
             OpenFileDialog ofd = sender as OpenFileDialog;
-            StreamWriter sw = new StreamWriter("分类副本.txt");
-            //sw = new StreamWriter(ofd.OpenFile(), Encoding.Default);
-
-            string str;
-            StreamReader sr = new StreamReader(ofd.OpenFile(),Encoding.UTF8);
-            //byte[] bytes = new byte[ofd.OpenFile().Length];
-            
-            while ((str = sr.ReadLine()) != null)
-            {
-                str2 = str2 + str + "\r\n";
-            }
-            sw.Write(str2);
-            sw.Close();
+            StreamReader sr = new StreamReader(ofd.OpenFile(), Encoding.UTF8);
+            TreeNode flRoot = new TreeNode();
+            flRoot.Text = "自定义分类";
+            initFenLei(sr, flRoot);
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            //此条记录不存在则添加,并且只能在自定义分类上添加
+        
 
-            if (str2 == null)
+        private void button12_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.ShowDialog();
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            if (treeView1.SelectedNode == null)
             {
-                MessageBox.Show("您还没有批量导入分类");
+                MessageBox.Show("请先选择分类");
+                return;
             }
-            else if(!str2.Contains(textBox1.Text))
+            saveFileDialog1.ShowDialog();
+        }
+
+        private void saveFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+            System.IO.FileStream fs = (System.IO.FileStream)saveFileDialog1.OpenFile();
+            TreeNode node = treeView1.SelectedNode;
+            string str = string.Empty;
+
+            foreach (TreeNode tn in node.Nodes)
             {
-                if (!str2.Contains(textBox2.Text))
+                str = str + tn.Text + ":";
+                foreach (TreeNode tnChild in tn.Nodes)
                 {
-                    str2 = str2 + textBox2.Text + ":" + textBox1.Text + "\r\n";
+                    str = str + " " + tnChild.Text;
                 }
-                else
-                {
-                    int pos = str2.IndexOf(textBox2.Text + ":");
-                    str2 = str2.Insert(pos + textBox2.Text.Length + 1, textBox1.Text + " ");
-                }
-                
+                str += "\r\n";
             }
+
+            //获得字节数组
+            byte[] data = new UTF8Encoding().GetBytes(str);
+            //开始写入
+            fs.Write(data, 0, data.Length);
+            //清空缓冲区、关闭流
+            fs.Flush();
+            fs.Close();
+        }
+
+        //添加子节点
+        private void button10_Click(object sender, EventArgs e)
+        {
+            if (treeView1.SelectedNode == null)
+            {
+                MessageBox.Show("请先选择分类");
+                return;
+            }
+            TreeNode newNode = new TreeNode();
+            newNode.Text = "新节点";
+            treeView1.SelectedNode.Nodes.Add(newNode);
+        }
+
+        //删除子节点
+        private void button11_Click(object sender, EventArgs e)
+        {
+            if (treeView1.SelectedNode == null)
+            {
+                MessageBox.Show("请先选择分类");
+                return;
+            }
+            treeView1.SelectedNode.Remove();
+        }
+
+        //编辑子节点
+        private void button9_Click(object sender, EventArgs e)
+        {
+            if (treeView1.SelectedNode == null)
+            {
+                MessageBox.Show("请先选择分类");
+                return;
+            }
+            treeView1.SelectedNode.BeginEdit();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("已保存");
+            this.Close();
         }
     }
 }

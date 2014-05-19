@@ -16,3 +16,12 @@ D:\git_file\yuanxing5\Prototype2.0\UnitTest\bin\Debug\Prototype2.0_Accessor.pdb
 D:\git_file\yuanxing5\Prototype2.0\UnitTest\obj\Debug\ResolveAssemblyReference.cache
 D:\git_file\yuanxing5\Prototype2.0\UnitTest\obj\Debug\UnitTest.dll
 D:\git_file\yuanxing5\Prototype2.0\UnitTest\obj\Debug\UnitTest.pdb
+D:\git_file\yuanxing7\Prototype2.0\UnitTest\bin\Debug\UnitTest.dll
+D:\git_file\yuanxing7\Prototype2.0\UnitTest\bin\Debug\UnitTest.pdb
+D:\git_file\yuanxing7\Prototype2.0\UnitTest\bin\Debug\Prototype2.0.exe
+D:\git_file\yuanxing7\Prototype2.0\UnitTest\bin\Debug\Prototype2.0.pdb
+D:\git_file\yuanxing7\Prototype2.0\UnitTest\bin\Debug\Prototype2.0_Accessor.exe
+D:\git_file\yuanxing7\Prototype2.0\UnitTest\bin\Debug\Prototype2.0_Accessor.pdb
+D:\git_file\yuanxing7\Prototype2.0\UnitTest\obj\Debug\ResolveAssemblyReference.cache
+D:\git_file\yuanxing7\Prototype2.0\UnitTest\obj\Debug\UnitTest.dll
+D:\git_file\yuanxing7\Prototype2.0\UnitTest\obj\Debug\UnitTest.pdb
