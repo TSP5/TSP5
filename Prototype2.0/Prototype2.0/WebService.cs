@@ -11,14 +11,14 @@ namespace Prototype2._0
     class WebService
     {
         //获取整个网页
-        public  String GetWebContent(String Url, Encoding encode)
+        public String GetWebContent(String Url, Encoding encode)
         {
             try
             {
                 if (Url.Equals("about:blank")) return null;
                 if (!Url.StartsWith("http://") && !Url.StartsWith("https://"))
-                { 
-                    Url = "http://" + Url; 
+                {
+                    Url = "http://" + Url;
                 }
 
 

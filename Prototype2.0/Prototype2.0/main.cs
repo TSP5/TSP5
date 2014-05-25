@@ -16,9 +16,9 @@ namespace Prototype2._0
 {
     public partial class main : Form
     {
-
-        private User user = new User();
-        private List<User> cowMans = new List<User>();
+        public List<User> cowMans = new List<User>();
+        //public Dictionary<User, List<User>> compare = new Dictionary<User, List<User>>();
+        private User user = null;
         private List<int> recommandProblems = new List<int>();
         private WebService webService = new WebService();
         private bool flag = true;
@@ -27,6 +27,7 @@ namespace Prototype2._0
             InitializeComponent();
             this.AcceptButton = button3;
             this.textBox3.Select();
+            this.ContextMenuStrip = contextMenuStrip1;
         }
         //窗口载入时调用
         private void main_Load(object sender, EventArgs e)
@@ -40,19 +41,7 @@ namespace Prototype2._0
             panel_menu.Enabled = false;
 
         }
-        //无边框窗口拖动代码
-        [DllImport("user32.dll")]
-        public static extern bool ReleaseCapture();
-        [DllImport("user32.dll")]
-        public static extern bool SendMessage(IntPtr hwnd, int wMsg, int wParam, int lParam);
-        public const int WM_SYSCOMMAND = 0x0112;
-        public const int SC_MOVE = 0xF010;
-        public const int HTCAPTION = 0x0002;
-        private void main_MouseDown(object sender, MouseEventArgs e)
-        {
-            ReleaseCapture();
-            SendMessage(this.Handle, WM_SYSCOMMAND, SC_MOVE + HTCAPTION, 0);
-        }
+        
         
         //左侧菜单项集合
         private Dictionary<Button, List<Button>> menu = new Dictionary<Button, List<Button>>();
@@ -134,7 +123,21 @@ namespace Prototype2._0
                 button.Show();
             }
         }
-        
+        //刷新对比
+        public void RefleshCompare()
+        {
+            foreach (Form form in this.MdiChildren)
+            {
+                form.Dispose();
+            }
+            foreach (User cowman in cowMans)
+            {
+                Compare cp = new Compare(user, cowman);
+                cp.MdiParent = this;
+                cp.Show();
+            }
+        }
+
         //刷新Panel
         private void RefleshPanel()
         {
@@ -142,6 +145,7 @@ namespace Prototype2._0
             {
                 panel.Hide();
             }
+            
         }
         //显示index指定的panel
         private void ShowPanel(int index)
@@ -184,34 +188,34 @@ namespace Prototype2._0
         //获取默认用户
         public void getUser()
         {
-            panel_Login.Enabled = false;
+            this.Enabled = false;
             user = webService.GetUser(textBox3.Text, progressBar1);
             if (user == null)
             {
                 MessageBox.Show("No such user.");
-                panel_Login.Enabled = true;
+                this.Enabled = true;
                 return;
             }
             user.Solve = webService.GetAccepted(user.Name, progressBar1);
             RefleshWodexinxiPanel();
             RefleshFendoushiPanel();
             RefleshZuotifenleiPanel();
-            panel_menu.Enabled = true;
+            this.Enabled = true;
+            this.panel_menu.Enabled = true;
             ShowPanel(0);
         }
-        
-        //获取牛人
+
         private void getCowMan()
         {
             User cowMan = new User();
-            groupBox1.Enabled = false;
+            this.Enabled = false;
             if (radioButton1.Checked == true)
             {
-                cowMan = webService.GetUser(textBox1.Text, progressBar1);
+                cowMan = webService.GetUser(textBox5.Text, progressBar1);
                 if (cowMan == null)
                 {
                     MessageBox.Show("No such cowMan.");
-                    groupBox1.Enabled = true;
+                    this.Enabled = true;
                     return;
                 }
             }
@@ -225,14 +229,14 @@ namespace Prototype2._0
                 catch (Exception)
                 {
                     MessageBox.Show("Number required.");
-                    groupBox1.Enabled = true;
+                    this.Enabled = true;
                     return;
                 }
                 cowMan = webService.GetUser(webService.GetUserNameByRank(Rank), progressBar1);
                 if (cowMan == null)
                 {
                     MessageBox.Show("No such cowMan.");
-                    groupBox1.Enabled = true;
+                    this.Enabled = true;
                     return;
                 }
             }
@@ -250,11 +254,9 @@ namespace Prototype2._0
                 }
             }
             cowMan.Solve = webService.GetAccepted(cowMan.Name, progressBar1);
+            this.Enabled = true;
             cowMans.Add(cowMan);
-            label1.Text += user.Name + "   ->   " + cowMan.Name + "\n";
-            groupBox1.Enabled = true;
-            comboBox2.Items.Add(cowMan.Name);
-            radioButton4.Checked = true;
+
         }
         //获取荐题
         private void getRecommand()
@@ -351,7 +353,8 @@ namespace Prototype2._0
         private void button_xuexiniuren_Click(object sender, EventArgs e)
         {
             MenuClick(2);
-            ShowPanel(2);
+            RefleshPanel();
+            RefleshCompare();
         }
 
         private void button_exit_Click(object sender, EventArgs e)
@@ -372,6 +375,9 @@ namespace Prototype2._0
 
         private void button_jiantixitong_Click(object sender, EventArgs e)
         {
+            comboBox2.Items.Clear();
+            foreach (User cowman in cowMans)
+                comboBox2.Items.Add(cowman.Name);
             MenuClick(3);
             ShowPanel(6);
         }
@@ -393,8 +399,7 @@ namespace Prototype2._0
         
         private void button5_Click(object sender, EventArgs e)
         {
-            Thread t = new Thread(getCowMan);
-            t.Start();
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -458,10 +463,7 @@ namespace Prototype2._0
 
         private void button3_Click(object sender, EventArgs e)
         {
-
-            Thread t = new Thread(getUser);
-            panel_Login.Enabled = false;
-            t.Start();
+            getUser();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -499,7 +501,8 @@ namespace Prototype2._0
         private void 设置ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             settings setting = new settings();
-            setting.setlabel4Name(user);
+            if (user != null)
+                setting.setlabel4Name(user);
             setting.ShowDialog(this);
         }
 
@@ -538,5 +541,61 @@ namespace Prototype2._0
             About about = new About();
             about.ShowDialog();
         }
+
+        private void test1ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (user == null)
+            {
+                MessageBox.Show("请先登录。");
+                return;
+            }
+            textBox1.Text = user.Name;
+            listBox2.Items.Clear();
+            foreach (User c in cowMans)
+                listBox2.Items.Add(c.Name);
+            ShowPanel(2);
+        }
+
+        private void 刷新ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RefleshPanel();
+            RefleshCompare();
+        }
+
+        private void 退出ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button5_Click_1(object sender, EventArgs e)
+        {
+            getCowMan();
+            RefleshPanel();
+            RefleshCompare();
+        }
+
+        private void button2_Click_3(object sender, EventArgs e)
+        {
+            if (listBox2.Items.Count == 0)
+                return;
+
+            foreach (User c in cowMans)
+            {
+                if (c.Name == listBox2.SelectedItem.ToString())
+                {
+                    cowMans.Remove(c);
+                    break;
+                }
+            }
+            listBox2.Items.RemoveAt(listBox2.SelectedIndex);
+        }
+
+
+
+
+
+
+
+
     }
 }
