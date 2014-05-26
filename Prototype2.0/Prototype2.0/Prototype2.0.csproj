@@ -117,6 +117,12 @@
     <Compile Include="settings.Designer.cs">
       <DependentUpon>settings.cs</DependentUpon>
     </Compile>
+    <Compile Include="Submit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Submit.Designer.cs">
+      <DependentUpon>Submit.cs</DependentUpon>
+    </Compile>
     <Compile Include="User.cs" />
     <Compile Include="WebService.cs" />
     <EmbeddedResource Include="About.resx">
@@ -143,6 +149,9 @@
     </Compile>
     <EmbeddedResource Include="settings.resx">
       <DependentUpon>settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Submit.resx">
+      <DependentUpon>Submit.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="Properties\DataSources\User.datasource" />

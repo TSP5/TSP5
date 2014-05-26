@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(main));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel_menu = new System.Windows.Forms.Panel();
             this.button_jiantixitong = new System.Windows.Forms.Button();
             this.button_wodeliangdian = new System.Windows.Forms.Button();
@@ -79,6 +79,8 @@
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel_wodeliangdian = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.panel_jiantixitong = new System.Windows.Forms.Panel();
             this.panel_xuexiniuren = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
@@ -112,6 +114,7 @@
             this.退出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.退出ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.button4 = new System.Windows.Forms.Button();
             this.panel_menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel_wodexinxi.SuspendLayout();
@@ -595,7 +598,7 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label15.ForeColor = System.Drawing.Color.Gray;
-            this.label15.Location = new System.Drawing.Point(49, 79);
+            this.label15.Location = new System.Drawing.Point(134, 162);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(378, 22);
             this.label15.TabIndex = 1;
@@ -606,26 +609,26 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label14.ForeColor = System.Drawing.Color.Gray;
-            this.label14.Location = new System.Drawing.Point(49, 50);
+            this.label14.Location = new System.Drawing.Point(134, 123);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(602, 22);
+            this.label14.Size = new System.Drawing.Size(42, 22);
             this.label14.TabIndex = 0;
-            this.label14.Text = "题目总共做了1000多道，其中某个月做了120道，各种题目类型都有，AC率达85%";
+            this.label14.Text = "text";
             // 
             // panel_jiudehuiyi
             // 
             this.panel_jiudehuiyi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel_jiudehuiyi.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_jiudehuiyi.Location = new System.Drawing.Point(138, 25);
+            this.panel_jiudehuiyi.Location = new System.Drawing.Point(0, 25);
             this.panel_jiudehuiyi.Margin = new System.Windows.Forms.Padding(2);
             this.panel_jiudehuiyi.Name = "panel_jiudehuiyi";
-            this.panel_jiudehuiyi.Size = new System.Drawing.Size(1126, 643);
+            this.panel_jiudehuiyi.Size = new System.Drawing.Size(1264, 643);
             this.panel_jiudehuiyi.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(259, 170);
+            this.label2.Location = new System.Drawing.Point(344, 243);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(0, 12);
@@ -638,10 +641,10 @@
             this.panel_fendoushi.Controls.Add(this.comboBox1);
             this.panel_fendoushi.Controls.Add(this.chart1);
             this.panel_fendoushi.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_fendoushi.Location = new System.Drawing.Point(138, 25);
+            this.panel_fendoushi.Location = new System.Drawing.Point(0, 25);
             this.panel_fendoushi.Margin = new System.Windows.Forms.Padding(2);
             this.panel_fendoushi.Name = "panel_fendoushi";
-            this.panel_fendoushi.Size = new System.Drawing.Size(1126, 643);
+            this.panel_fendoushi.Size = new System.Drawing.Size(1264, 643);
             this.panel_fendoushi.TabIndex = 1;
             // 
             // label35
@@ -649,7 +652,7 @@
             this.label35.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label35.AutoSize = true;
             this.label35.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label35.Location = new System.Drawing.Point(913, 606);
+            this.label35.Location = new System.Drawing.Point(1051, 606);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(56, 17);
             this.label35.TabIndex = 4;
@@ -665,7 +668,7 @@
             "每天",
             "每月",
             "每年"});
-            this.comboBox1.Location = new System.Drawing.Point(975, 606);
+            this.comboBox1.Location = new System.Drawing.Point(1113, 606);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(139, 20);
             this.comboBox1.TabIndex = 3;
@@ -673,32 +676,32 @@
             // 
             // chart1
             // 
-            chartArea5.Area3DStyle.Inclination = 50;
-            chartArea5.Area3DStyle.PointDepth = 10;
-            chartArea5.Area3DStyle.Rotation = 20;
-            chartArea5.Area3DStyle.WallWidth = 0;
-            chartArea5.AxisX.MajorGrid.Enabled = false;
-            chartArea5.AxisY.MajorGrid.Enabled = false;
-            chartArea5.BackColor = System.Drawing.Color.Transparent;
-            chartArea5.BorderColor = System.Drawing.Color.Transparent;
-            chartArea5.CursorX.IsUserEnabled = true;
-            chartArea5.CursorX.IsUserSelectionEnabled = true;
-            chartArea5.CursorX.LineColor = System.Drawing.Color.Black;
-            chartArea5.CursorY.IsUserEnabled = true;
-            chartArea5.CursorY.IsUserSelectionEnabled = true;
-            chartArea5.CursorY.LineColor = System.Drawing.Color.Black;
-            chartArea5.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea5);
+            chartArea1.Area3DStyle.Inclination = 50;
+            chartArea1.Area3DStyle.PointDepth = 10;
+            chartArea1.Area3DStyle.Rotation = 20;
+            chartArea1.Area3DStyle.WallWidth = 0;
+            chartArea1.AxisX.MajorGrid.Enabled = false;
+            chartArea1.AxisY.MajorGrid.Enabled = false;
+            chartArea1.BackColor = System.Drawing.Color.Transparent;
+            chartArea1.BorderColor = System.Drawing.Color.Transparent;
+            chartArea1.CursorX.IsUserEnabled = true;
+            chartArea1.CursorX.IsUserSelectionEnabled = true;
+            chartArea1.CursorX.LineColor = System.Drawing.Color.Black;
+            chartArea1.CursorY.IsUserEnabled = true;
+            chartArea1.CursorY.IsUserSelectionEnabled = true;
+            chartArea1.CursorY.LineColor = System.Drawing.Color.Black;
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
             this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend3.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            legend3.MaximumAutoSize = 10F;
-            legend3.Name = "Legend1";
-            this.chart1.Legends.Add(legend3);
+            legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend1.MaximumAutoSize = 10F;
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(0, 0);
             this.chart1.Margin = new System.Windows.Forms.Padding(2);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SemiTransparent;
-            this.chart1.Size = new System.Drawing.Size(1126, 643);
+            this.chart1.Size = new System.Drawing.Size(1264, 643);
             this.chart1.TabIndex = 2;
             this.chart1.Text = "chart1";
             // 
@@ -708,10 +711,10 @@
             this.panel_zuotifenlei.Controls.Add(this.checkBox2);
             this.panel_zuotifenlei.Controls.Add(this.chart2);
             this.panel_zuotifenlei.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_zuotifenlei.Location = new System.Drawing.Point(138, 25);
+            this.panel_zuotifenlei.Location = new System.Drawing.Point(0, 25);
             this.panel_zuotifenlei.Margin = new System.Windows.Forms.Padding(2);
             this.panel_zuotifenlei.Name = "panel_zuotifenlei";
-            this.panel_zuotifenlei.Size = new System.Drawing.Size(1126, 643);
+            this.panel_zuotifenlei.Size = new System.Drawing.Size(1264, 643);
             this.panel_zuotifenlei.TabIndex = 1;
             // 
             // checkBox2
@@ -720,7 +723,7 @@
             this.checkBox2.AutoSize = true;
             this.checkBox2.Checked = true;
             this.checkBox2.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox2.Location = new System.Drawing.Point(1012, 610);
+            this.checkBox2.Location = new System.Drawing.Point(1150, 610);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(84, 16);
             this.checkBox2.TabIndex = 3;
@@ -730,26 +733,28 @@
             // 
             // chart2
             // 
-            chartArea6.Area3DStyle.Enable3D = true;
-            chartArea6.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea6);
+            chartArea2.Area3DStyle.Enable3D = true;
+            chartArea2.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea2);
             this.chart2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chart2.Location = new System.Drawing.Point(0, 0);
             this.chart2.Margin = new System.Windows.Forms.Padding(2);
             this.chart2.Name = "chart2";
             this.chart2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SemiTransparent;
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series3.IsValueShownAsLabel = true;
-            series3.Name = "Series1";
-            this.chart2.Series.Add(series3);
-            this.chart2.Size = new System.Drawing.Size(1126, 643);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.IsValueShownAsLabel = true;
+            series1.Name = "Series1";
+            this.chart2.Series.Add(series1);
+            this.chart2.Size = new System.Drawing.Size(1264, 643);
             this.chart2.TabIndex = 2;
             this.chart2.Text = "chart2";
             // 
             // panel_wodeliangdian
             // 
             this.panel_wodeliangdian.BackColor = System.Drawing.Color.White;
+            this.panel_wodeliangdian.Controls.Add(this.label10);
+            this.panel_wodeliangdian.Controls.Add(this.label8);
             this.panel_wodeliangdian.Controls.Add(this.label2);
             this.panel_wodeliangdian.Controls.Add(this.label14);
             this.panel_wodeliangdian.Controls.Add(this.label15);
@@ -760,9 +765,32 @@
             this.panel_wodeliangdian.Size = new System.Drawing.Size(1126, 643);
             this.panel_wodeliangdian.TabIndex = 1;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label10.ForeColor = System.Drawing.Color.Gray;
+            this.label10.Location = new System.Drawing.Point(134, 244);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(378, 22);
+            this.label10.TabIndex = 3;
+            this.label10.Text = "基本上题目都做得很顺，发现题目有点越来越简单了";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label8.ForeColor = System.Drawing.Color.Gray;
+            this.label8.Location = new System.Drawing.Point(134, 203);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(378, 22);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "基本上题目都做得很顺，发现题目有点越来越简单了";
+            // 
             // panel_jiantixitong
             // 
             this.panel_jiantixitong.BackColor = System.Drawing.Color.White;
+            this.panel_jiantixitong.Controls.Add(this.button4);
             this.panel_jiantixitong.Controls.Add(this.groupBox5);
             this.panel_jiantixitong.Controls.Add(this.groupBox2);
             this.panel_jiantixitong.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -788,10 +816,10 @@
             this.panel_xuexiniuren.Controls.Add(this.radioButton3);
             this.panel_xuexiniuren.Controls.Add(this.radioButton2);
             this.panel_xuexiniuren.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_xuexiniuren.Location = new System.Drawing.Point(138, 25);
+            this.panel_xuexiniuren.Location = new System.Drawing.Point(0, 25);
             this.panel_xuexiniuren.Margin = new System.Windows.Forms.Padding(2);
             this.panel_xuexiniuren.Name = "panel_xuexiniuren";
-            this.panel_xuexiniuren.Size = new System.Drawing.Size(1126, 643);
+            this.panel_xuexiniuren.Size = new System.Drawing.Size(1264, 643);
             this.panel_xuexiniuren.TabIndex = 1;
             // 
             // button2
@@ -1113,6 +1141,20 @@
             this.progressBar1.Size = new System.Drawing.Size(1264, 14);
             this.progressBar1.TabIndex = 13;
             // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.DimGray;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.Location = new System.Drawing.Point(975, 45);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(96, 37);
+            this.button4.TabIndex = 37;
+            this.button4.Text = "做题";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1120,15 +1162,15 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1264, 682);
-            this.Controls.Add(this.panel_xuexiniuren);
             this.Controls.Add(this.panel_jiantixitong);
-            this.Controls.Add(this.panel_zuotifenlei);
-            this.Controls.Add(this.panel_fendoushi);
+            this.Controls.Add(this.panel_wodeliangdian);
             this.Controls.Add(this.panel_wodexinxi);
             this.Controls.Add(this.panel_Login);
-            this.Controls.Add(this.panel_jiudehuiyi);
-            this.Controls.Add(this.panel_wodeliangdian);
             this.Controls.Add(this.panel_menu);
+            this.Controls.Add(this.panel_xuexiniuren);
+            this.Controls.Add(this.panel_zuotifenlei);
+            this.Controls.Add(this.panel_fendoushi);
+            this.Controls.Add(this.panel_jiudehuiyi);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.progressBar1);
             this.DoubleBuffered = true;
@@ -1249,6 +1291,9 @@
         private System.Windows.Forms.ToolStripMenuItem 登录切换账号ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 添加对比ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 退出ToolStripMenuItem2;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button button4;
     }
 }
 

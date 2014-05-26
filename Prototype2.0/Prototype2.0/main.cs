@@ -180,6 +180,42 @@ namespace Prototype2._0
             chart1.Series.Clear();
             user.ToLineChart(chart1, "month");
         }
+        // 刷新我的亮点panel
+        private void RefleshWodeliangdian()
+        {
+            List<String> shark = new List<string>();
+            String tmp = "至今为止你已经做了"+ user.ProblemsSolved +"道题啦！AC率达"+ user.Accepted*100/user.Submissions +"%！你就是明日大牛！";
+            shark.Add(tmp);
+            if (100 < user.Rank && user.Rank <= 1000)
+            {
+                tmp = "你的目前排名是第"+user.Rank+"名，不错哦，你已杀入前1000名啦！";
+                shark.Add(tmp);
+            }
+
+            if ((user.Accepted - user.ProblemsSolved) * 10 > user.ProblemsSolved)
+            {
+                tmp = "同一道题目经常被你AC几次，看来你是一个追求极致的人！";
+                shark.Add(tmp);
+            }
+
+            if (user.Rank <= 100)
+            {
+                tmp = "你目前排名第"+ user.Rank +",你已经进入大牛行列啦！实在是太厉害啦！";
+                shark.Add(tmp);
+            }
+            if (shark.Count < 4)
+            {
+                for (int i = shark.Count; i <= 4; i++)
+                {
+                    tmp = "";
+                    shark.Add(tmp);
+                }
+            }
+            label14.Text = shark[0];
+            label15.Text = shark[1];
+            label8.Text = shark[2];
+            label10.Text = shark[3];
+        }
         //刷新做题分类panel
         private void RefleshZuotifenleiPanel()
         {
@@ -199,6 +235,7 @@ namespace Prototype2._0
             user.Solve = webService.GetAccepted(user.Name, progressBar1);
             RefleshWodexinxiPanel();
             RefleshFendoushiPanel();
+            RefleshWodeliangdian();
             RefleshZuotifenleiPanel();
             this.Enabled = true;
             this.panel_menu.Enabled = true;
@@ -588,6 +625,11 @@ namespace Prototype2._0
                 }
             }
             listBox2.Items.RemoveAt(listBox2.SelectedIndex);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            new Submit().Show();
         }
 
 
