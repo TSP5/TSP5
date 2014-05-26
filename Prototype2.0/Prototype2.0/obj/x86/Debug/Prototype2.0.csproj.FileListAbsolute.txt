@@ -102,7 +102,6 @@ D:\git_file\yuanxing7\Prototype2.0\Prototype2.0\obj\x86\Debug\Prototype2._0.Comp
 D:\git_file\yuanxing7\Prototype2.0\Prototype2.0\obj\x86\Debug\Prototype2._0.FenLei.resources
 D:\git_file\yuanxing7\Prototype2.0\Prototype2.0\obj\x86\Debug\Prototype2.0.exe.manifest
 D:\git_file\yuanxing7\Prototype2.0\Prototype2.0\obj\x86\Debug\Prototype2.0.application
-D:\Documents\GitHub\TSP5\Prototype2.0\Prototype2.0\obj\x86\Debug\Prototype2._0.CompareInput.resources
 D:\Documents\GitHub\TSP5fb\Prototype2.0\Prototype2.0\obj\x86\Debug\Prototype2.0.exe
 D:\Documents\GitHub\TSP5fb\Prototype2.0\Prototype2.0\obj\x86\Debug\Prototype2.0.pdb
 D:\Documents\GitHub\TSP5fb\Prototype2.0\Prototype2.0\bin\Debug\Prototype2.0.exe.manifest
@@ -120,3 +119,5 @@ D:\Documents\GitHub\TSP5fb\Prototype2.0\Prototype2.0\obj\x86\Debug\Prototype2.0.
 D:\Documents\GitHub\TSP5fb\Prototype2.0\Prototype2.0\obj\x86\Debug\Prototype2.0.exe.manifest
 D:\Documents\GitHub\TSP5fb\Prototype2.0\Prototype2.0\obj\x86\Debug\Prototype2.0.application
 D:\Documents\GitHub\TSP5fb\Prototype2.0\Prototype2.0\bin\Debug\Prototype2.0.exe.config
+D:\Documents\GitHub\TSP5\Prototype2.0\Prototype2.0\bin\Debug\Prototype2.0.exe.config
+D:\Documents\GitHub\TSP5\Prototype2.0\Prototype2.0\obj\x86\Debug\Prototype2._0.Submit.resources

@@ -80,14 +80,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Prototype2.0.exe" size="554496">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Prototype2.0.exe" size="464896">
       <assemblyIdentity name="Prototype2.0" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>3xU41jzxX7/OeIA1iYOFTekZtss=</dsig:DigestValue>
+        <dsig:DigestValue>3VbIp6OULdj2155g4za3yMswZvU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
