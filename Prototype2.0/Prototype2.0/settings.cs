@@ -14,8 +14,6 @@ namespace Prototype2._0
     public partial class settings : Form
     {
         private User user;
-        private Chart chart2;
-        private main ma;
         private string str2 = null;
         private StreamReader sr;
         private List<Problem> solve;
@@ -73,7 +71,7 @@ namespace Prototype2._0
             {
                 if (str.Contains(':'))
                 {
-                    i = str.IndexOf(':') + 2;
+                    i = str.IndexOf(':') + 1;
                     LeiName = str.Substring(0, str.IndexOf(':'));
                     dict.Add(LeiName, new List<string>());
                 }
