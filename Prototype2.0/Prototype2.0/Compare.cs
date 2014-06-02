@@ -11,30 +11,46 @@ namespace Prototype2._0
 {
     public partial class Compare : Form
     {
+        private main parent;
         private User user = new User();
-        private User cowMan = new User();
-        public Compare(User user, User cowMan)
+        public User cowMan = new User();
+        public Compare(User user, User cowMan, main parent)
         {
             this.user = user;
             this.cowMan = cowMan;
+            this.parent = parent;
             InitializeComponent();
-            this.Text = user.Name + "   ->   " + cowMan.Name;
+            showUpdate();
+        }
+
+        public bool showUpdate()
+        {
+            if (chart1.Series.Count != 0)
+                chart1.Series.Clear();
+
             label301.Text = user.Name;
             label25.Text = user.Rank.ToString();
             label27.Text = user.ProblemsSubmitted.ToString();
             label29.Text = user.ProblemsSolved.ToString();
             label5.Text = user.Submissions.ToString();
             label6.Text = user.Accepted.ToString();
-            label9.Text = cowMan.Name;
-            label3.Text = cowMan.Rank.ToString();
-            label2.Text = cowMan.ProblemsSubmitted.ToString();
-            label1.Text = cowMan.ProblemsSolved.ToString();
-            label8.Text = cowMan.Submissions.ToString();
-            label7.Text = cowMan.Accepted.ToString();
             user.ToLineChart(chart1, "month");
-            cowMan.ToLineChart(chart1, "month");
             user.ToPieChart(chart2, true, true);
-            cowMan.ToPieChart(chart3, true, true);
+            this.Text = user.Name;
+
+            if (cowMan != null)
+            {
+                this.Text = user.Name + "   ->   " + cowMan.Name;
+                label9.Text = cowMan.Name;
+                label3.Text = cowMan.Rank.ToString();
+                label2.Text = cowMan.ProblemsSubmitted.ToString();
+                label1.Text = cowMan.ProblemsSolved.ToString();
+                label8.Text = cowMan.Submissions.ToString();
+                label7.Text = cowMan.Accepted.ToString();
+                cowMan.ToLineChart(chart1, "month");
+                cowMan.ToPieChart(chart3, true, true);
+            }
+            return true;
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -65,6 +81,17 @@ namespace Prototype2._0
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             cowMan.ToPieChart(chart3, true, checkBox1.Checked);
+        }
+
+        private void 添加对比ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            parent.tmpForm = this;
+            parent.showXuexiniuren(user.Name);
+        }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+
         }
     }
 }

@@ -8,7 +8,7 @@ using System.IO;
 using System.Windows.Forms;
 namespace Prototype2._0
 {
-    class WebService
+    public class WebService
     {
         //获取整个网页
         public String GetWebContent(String Url, Encoding encode)

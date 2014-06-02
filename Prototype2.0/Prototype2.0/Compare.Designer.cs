@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
@@ -65,6 +66,8 @@
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.chart3 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.添加对比ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -73,6 +76,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart3)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPage2
@@ -128,90 +132,84 @@
             // 
             this.label9.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.DimGray;
-            this.label9.Location = new System.Drawing.Point(369, 65);
+            this.label9.Location = new System.Drawing.Point(476, 65);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(294, 54);
+            this.label9.Size = new System.Drawing.Size(282, 54);
             this.label9.TabIndex = 77;
-            this.label9.Text = "Login Required";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.label9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label301
             // 
             this.label301.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label301.ForeColor = System.Drawing.Color.DimGray;
-            this.label301.Location = new System.Drawing.Point(66, 65);
+            this.label301.Location = new System.Drawing.Point(187, 65);
             this.label301.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label301.Name = "label301";
-            this.label301.Size = new System.Drawing.Size(294, 54);
+            this.label301.Size = new System.Drawing.Size(299, 54);
             this.label301.TabIndex = 76;
             this.label301.Text = "Login Required";
-            this.label301.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.label301.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(624, 246);
+            this.label1.Location = new System.Drawing.Point(595, 246);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 28);
+            this.label1.Size = new System.Drawing.Size(0, 28);
             this.label1.TabIndex = 75;
-            this.label1.Text = "???";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(624, 206);
+            this.label2.Location = new System.Drawing.Point(595, 206);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(39, 28);
+            this.label2.Size = new System.Drawing.Size(0, 28);
             this.label2.TabIndex = 74;
-            this.label2.Text = "???";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DimGray;
-            this.label3.Location = new System.Drawing.Point(624, 166);
+            this.label3.Location = new System.Drawing.Point(595, 166);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(39, 28);
+            this.label3.Size = new System.Drawing.Size(0, 28);
             this.label3.TabIndex = 73;
-            this.label3.Text = "???";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.DimGray;
-            this.label7.Location = new System.Drawing.Point(624, 326);
+            this.label7.Location = new System.Drawing.Point(595, 326);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(39, 28);
+            this.label7.Size = new System.Drawing.Size(0, 28);
             this.label7.TabIndex = 72;
-            this.label7.Text = "???";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.DimGray;
-            this.label8.Location = new System.Drawing.Point(624, 286);
+            this.label8.Location = new System.Drawing.Point(595, 286);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(39, 28);
+            this.label8.Size = new System.Drawing.Size(0, 28);
             this.label8.TabIndex = 71;
-            this.label8.Text = "???";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label29
             // 
@@ -224,7 +222,7 @@
             this.label29.Size = new System.Drawing.Size(39, 28);
             this.label29.TabIndex = 70;
             this.label29.Text = "???";
-            this.label29.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label28
             // 
@@ -249,7 +247,7 @@
             this.label27.Size = new System.Drawing.Size(39, 28);
             this.label27.TabIndex = 68;
             this.label27.Text = "???";
-            this.label27.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label26
             // 
@@ -274,7 +272,7 @@
             this.label25.Size = new System.Drawing.Size(39, 28);
             this.label25.TabIndex = 66;
             this.label25.Text = "???";
-            this.label25.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label22
             // 
@@ -299,7 +297,7 @@
             this.label6.Size = new System.Drawing.Size(39, 28);
             this.label6.TabIndex = 64;
             this.label6.Text = "???";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label5
             // 
@@ -312,7 +310,7 @@
             this.label5.Size = new System.Drawing.Size(39, 28);
             this.label5.TabIndex = 63;
             this.label5.Text = "???";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label4
             // 
@@ -502,12 +500,28 @@
             this.chart3.TabIndex = 29;
             this.chart3.Text = "chart5";
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.添加对比ToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(125, 26);
+            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
+            // 
+            // 添加对比ToolStripMenuItem
+            // 
+            this.添加对比ToolStripMenuItem.Name = "添加对比ToolStripMenuItem";
+            this.添加对比ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.添加对比ToolStripMenuItem.Text = "添加对比";
+            this.添加对比ToolStripMenuItem.Click += new System.EventHandler(this.添加对比ToolStripMenuItem_Click);
+            // 
             // Compare
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(785, 499);
+            this.ContextMenuStrip = this.contextMenuStrip1;
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Compare";
@@ -524,6 +538,7 @@
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart3)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -560,6 +575,8 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem 添加对比ToolStripMenuItem;
 
     }
 }
