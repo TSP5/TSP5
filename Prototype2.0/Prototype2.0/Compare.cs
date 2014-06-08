@@ -85,8 +85,8 @@ namespace Prototype2._0
 
         private void 添加对比ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            parent.tmpForm = this;
-            parent.showXuexiniuren(user.Name);
+            InputCompare input = new InputCompare(user.Name, this);
+            input.ShowDialog();
         }
 
         private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)

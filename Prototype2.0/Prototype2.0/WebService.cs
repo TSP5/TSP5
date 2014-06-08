@@ -6,6 +6,7 @@ using System.Net;
 using System.Net.NetworkInformation;
 using System.IO;
 using System.Windows.Forms;
+using System.Web;
 namespace Prototype2._0
 {
     public class WebService
@@ -179,6 +180,185 @@ namespace Prototype2._0
             {
                 MessageBox.Show(e.ToString());
                 return null;
+            }
+        }
+
+        int getStatu(String Page)
+        {
+            int WT = 0, AC = 1, TLE = 2, RE = 3, WA = 4, CE = 5;
+            int begin = Page.IndexOf("<input type=submit value=Go");
+            for (int i = 0; i < 12; i++)
+            {
+                begin = Page.IndexOf(">",begin);
+                begin++;
+            }
+            char c = Page[begin];
+            switch (c)
+            {
+                case 'Q': return WT;
+                case 'A': return AC;
+                case 'T': return TLE;
+                case 'R': return RE;
+                case 'W': return WA;
+            }
+            return CE;
+        }
+
+        // httpPost方法
+        private CookieContainer m_cookieContainer;
+        public void loginAccount(string userID, string password)
+        {
+            HttpWebRequest request = null;
+            HttpWebResponse response = null;
+
+            try
+            {
+                request = (HttpWebRequest)WebRequest.Create("http://acm.hdu.edu.cn/userloginex.php?action=login");//实例化web访问类  
+                request.Credentials = CredentialCache.DefaultCredentials;
+                request.Method = "POST";//数据提交方式为POST  
+                request.ContentType = "application/x-www-form-urlencoded";    //模拟头  
+                request.AllowAutoRedirect = false;   // 不用需自动跳转
+
+                string postdata = "username=" + userID + "&userpass=" + password + "&login=Sign+In";//////////////////////////
+
+                request.Accept = "text/html, application/xhtml+xml,*/*";
+                request.Referer = "http://acm.hdu.edu.cn/status.php";
+                request.ContentLength = postdata.Length;////////////////////////////////////
+                request.ContentType = "application/x-www-form-urlencoded";
+
+
+                Cookie c1 = new Cookie("exesubmitlang", "2");
+                c1.Domain = "acm.hdu.edu.cn";
+                c1.Path = "/";
+                //c1.Expires = "2015/6/1 星期一 23:48:34";
+
+                m_cookieContainer = request.CookieContainer = new System.Net.CookieContainer();
+                request.CookieContainer.Add(c1);
+
+                request.KeepAlive = true;
+                //提交请求  
+                byte[] postdatabytes = Encoding.UTF8.GetBytes(postdata);
+                request.ContentLength = postdatabytes.Length;
+                Stream stream;
+                stream = request.GetRequestStream();
+                //设置POST 数据
+                stream.Write(postdatabytes, 0, postdatabytes.Length);
+                stream.Close();
+                //接收响应  
+                response = (HttpWebResponse)request.GetResponse();
+                Stream WebStream = response.GetResponseStream();
+                StreamReader Sreader = new StreamReader(WebStream, Encoding.Default);
+                String Page = Sreader.ReadToEnd();
+
+                if (Page.Contains("No such user or wrong password"))
+                    MessageBox.Show("No such user");
+
+                CookieCollection responseCookie = response.Cookies;
+                m_cookieContainer.Add(responseCookie);
+            }
+            catch (System.Exception ex)
+            {
+                string msg = "网页请求异常，详细信息：" + ex.ToString();
+                MessageBox.Show(msg);
+            }
+        }
+
+        public string SubmitResult(string userID)
+        {
+            string result = string.Empty;
+
+            return result;
+        }
+
+        public void submitProblem(string userID, string problemid, string language, string usercode)
+        {
+
+            HttpWebRequest request = null;
+            HttpWebResponse response = null;
+
+            try
+            {
+                request = (HttpWebRequest)WebRequest.Create("http://acm.hdu.edu.cn/submit.php?action=submit");//实例化web访问类  
+
+                request.Credentials = CredentialCache.DefaultCredentials;
+                request.Method = "POST";//数据提交方式为POST  
+                request.ContentType = "application/x-www-form-urlencoded";    //模拟头  
+                request.AllowAutoRedirect = false;   // 不用需自动跳转
+                
+                request.CookieContainer = m_cookieContainer;//////
+                usercode = HttpUtility.UrlEncode(usercode, Encoding.UTF8);
+                string postdata = "check=0&problemid=" + problemid + "&language=" + language + "&usercode="+usercode;
+
+                request.Accept = "text/html, application/xhtml+xml,*/*";
+                request.Referer = "http://acm.hdu.edu.cn/submit.php?pid=1000";
+                request.ContentLength = postdata.Length;////////////
+
+                request.KeepAlive = true;
+                //提交请求
+                byte[] postdatabytes1 = Encoding.UTF8.GetBytes(postdata);
+                int leng = postdata.Length;
+                request.ContentLength = postdatabytes1.Length;
+                Stream stream;
+                stream = request.GetRequestStream();
+                //设置POST 数据
+                stream.Write(postdatabytes1, 0, postdatabytes1.Length);
+                stream.Close();
+                //接收响应  
+                response = (HttpWebResponse)request.GetResponse();
+
+                Stream stream2;
+                stream2 = response.GetResponseStream();
+                byte[] responseBytes = new byte[1024];
+
+                if (usercode.Length < 50 || usercode.Length > 65536)
+                {
+                    MessageBox.Show("Code length is improper! Make sure your code length is longer than 50 and not exceed 65536 Bytes.");
+                }
+                else
+                {
+                    String url = "http://acm.hdu.edu.cn/status.php?user=" + userID;
+                    Encoding encode = Encoding.GetEncoding("gb2312");
+
+                    SubmitResult sr = new SubmitResult();
+                    sr.Show();
+                    sr.label1.Text = "Waiting";
+                    sr.Update();
+                    String WT,AC,TLE,RE,WA,CE;
+                    WT = "Waiting";
+                    AC = "Accepted";
+                    TLE = "Time Limit Exceeded";
+                    RE = "Runtime Error";
+                    WA = "Wrong Answer";
+                    CE = "Compilation Error";
+                    int statu;
+                    int times = 0;
+                    while ((statu = getStatu(this.GetWebContent(url, encode))) == 0)
+                    {
+                        String tmp = WT;
+                        for (int i = 0; i < times; i++)
+                            tmp += ".";
+                        sr.label1.Text = tmp;
+                        sr.Update();
+                        times++;
+                        times %= 6;
+                        System.Threading.Thread.Sleep(500);
+                    }
+
+                    switch (statu)
+                    {
+                        case 1: sr.label1.Text = AC; sr.label1.ForeColor = System.Drawing.Color.SeaGreen; ; break;
+                        case 2: sr.label1.Text = TLE; sr.label1.ForeColor = System.Drawing.Color.Red; break;
+                        case 3: sr.label1.Text = RE; sr.label1.ForeColor = System.Drawing.Color.Red;  break;
+                        case 4: sr.label1.Text = WA; sr.label1.ForeColor = System.Drawing.Color.Red; break;
+                        case 5: sr.label1.Text = CE; sr.label1.ForeColor = System.Drawing.Color.Red; break;
+                    }
+                    sr.Update();
+                }
+            }
+            catch (System.Exception ex)
+            {
+                string msg = "网页请求异常，详细信息：" + ex.ToString();
+                MessageBox.Show(msg);
             }
         }
     }

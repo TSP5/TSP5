@@ -13,15 +13,42 @@ namespace Prototype2._0
     public partial class Recommend : Form
     {
         main parent = null;
+        List<String> problemsID = new List<String>();
         public Recommend(main parent)
         {
             this.parent = parent;
             InitializeComponent();
         }
+        private void label_Click(object sender, EventArgs e)
+        {
+            Label tmp = (Label)sender;
+
+            Submit sub = new Submit(tmp.Text,parent);
+            sub.MdiParent = parent;
+            sub.Show();
+        }
+
+        private Boolean addProblemID(String text)
+        {
+            problemsID.Add(text);
+            return true;
+        }
+
+        Boolean lockGroup()
+        {
+            groupBox1.Enabled = false;
+            return true;
+        }
+
+        Boolean unlockGroup()
+        {
+            groupBox1.Enabled = true;
+            return true;
+        }
 
         private void getRecommand()
         {
-            groupBox2.Enabled = false;
+            lockGroup();
             if (radioButton4.Checked == true)
             {
                 try
@@ -34,10 +61,9 @@ namespace Prototype2._0
                             break;
                         }
                     }
-                    label9.Text = String.Empty;
                     foreach (int i in parent.recommandProblems)
                     {
-                        label9.Text += i.ToString() + " ";
+                        addProblemID(i.ToString());
                     }
                 }
                 catch (Exception)
@@ -46,7 +72,7 @@ namespace Prototype2._0
                 }
                 finally
                 {
-                    groupBox2.Enabled = true;
+                    unlockGroup();
                 }
             }
             else if (radioButton5.Checked == true)
@@ -54,19 +80,18 @@ namespace Prototype2._0
                 Random random = new Random();
                 int rank = random.Next(99);
                 rank += 1;
-                User newCowMan = parent.webService.GetUser(parent.webService.GetUserNameByRank(rank), parent.getProgressBar());
+                User newCowMan = parent.webService.GetUser(parent.webService.GetUserNameByRank(rank), progressBar1);
                 while (newCowMan.Submissions / newCowMan.ProblemsSolved > 20)
                 {
                     rank = random.Next(99);
                     rank += 1;
-                    newCowMan = parent.webService.GetUser(parent.webService.GetUserNameByRank(rank), parent.getProgressBar());
+                    newCowMan = parent.webService.GetUser(parent.webService.GetUserNameByRank(rank), progressBar1);
                 }
-                newCowMan.Solve = parent.webService.GetAccepted(newCowMan.Name, parent.getProgressBar());
+                newCowMan.Solve = parent.webService.GetAccepted(newCowMan.Name, progressBar1);
                 parent.recommandProblems = parent.user.getProblemDiff(newCowMan.Solve);
-                label9.Text = String.Empty;
                 foreach (int i in parent.recommandProblems)
                 {
-                    label9.Text += i.ToString() + " ";
+                    addProblemID(i.ToString());
                 }
             }
             else if (radioButton6.Checked == true)
@@ -79,38 +104,54 @@ namespace Prototype2._0
                 catch (Exception)
                 {
                     MessageBox.Show("Number required.");
-                    groupBox2.Enabled = true;
+                    unlockGroup();
                     return;
                 }
-                User newCowMan = parent.webService.GetUser(parent.webService.GetUserNameByRank(Rank), parent.getProgressBar());
+                User newCowMan = parent.webService.GetUser(parent.webService.GetUserNameByRank(Rank), progressBar1);
                 if (newCowMan == null)
                 {
                     MessageBox.Show("No such cowMan.");
-                    groupBox2.Enabled = true;
+                    unlockGroup();
                     return;
                 }
-                newCowMan.Solve = parent.webService.GetAccepted(newCowMan.Name, parent.getProgressBar());
+                newCowMan.Solve = parent.webService.GetAccepted(newCowMan.Name, progressBar1);
                 parent.recommandProblems = parent.user.getProblemDiff(newCowMan.Solve);
-                label9.Text = String.Empty;
+
                 foreach (int i in parent.recommandProblems)
                 {
-                    label9.Text += i.ToString() + " ";
+                    addProblemID(i.ToString());
                 }
             }
-            groupBox2.Enabled = true;
+            unlockGroup();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Recommend_Load(object sender, EventArgs e)
         {
-            Thread t = new Thread(getRecommand);
-            t.Start();
+            Control.CheckForIllegalCrossThreadCalls = false;
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void doProblembutton_Click(object sender, EventArgs e)
         {
             Submit sb = new Submit();
             sb.MdiParent = parent;
             sb.Show();
+        }
+
+        private void getCowManbutton_Click(object sender, EventArgs e)
+        {
+            problemsID.Clear();
+            flowLayoutPanel1.Controls.Clear();
+            Thread t = new Thread(getRecommand);
+            t.Start();
+            t.Join();
+            foreach (var c in problemsID)
+            {
+                Label tmp = new Label();
+                tmp.AutoSize = true;
+                tmp.Text = c;
+                tmp.Click += label_Click;
+                flowLayoutPanel1.Controls.Add(tmp);
+            }
         }
     }
 }

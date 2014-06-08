@@ -139,3 +139,5 @@ G:\Works\GitHub\TSP5\Prototype2.0\Prototype2.0\obj\x86\Debug\Prototype2.0.exe
 G:\Works\GitHub\TSP5\Prototype2.0\Prototype2.0\obj\x86\Debug\Prototype2.0.pdb
 G:\Works\GitHub\TSP5\Prototype2.0\Prototype2.0\obj\x86\Debug\Prototype2.0.csprojResolveAssemblyReference.cache
 G:\Works\GitHub\TSP5\Prototype2.0\Prototype2.0\obj\x86\Debug\Prototype2._0.Recommend.resources
+G:\Works\GitHub\TSP5\Prototype2.0\Prototype2.0\obj\x86\Debug\Prototype2._0.InputCompare.resources
+G:\Works\GitHub\TSP5\Prototype2.0\Prototype2.0\obj\x86\Debug\Prototype2._0.SubmitResult.resources

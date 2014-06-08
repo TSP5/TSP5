@@ -14,6 +14,15 @@ namespace Prototype2._0
     public partial class Submit : Form
     {
         String account, password;
+        main parent = null;
+        public Submit(String proID, main parent)
+        {
+            this.parent = parent;
+            InitializeComponent();
+            accounttextBox.Text = parent.user.Name;
+            proIDtextBox.Text = proID;
+        }
+
         public Submit()
         {
             InitializeComponent();
@@ -21,7 +30,8 @@ namespace Prototype2._0
 
         private void Submit_Load(object sender, EventArgs e)
         {
-            Navigate(webBrowser1, "http://acm.hdu.edu.cn/userloginex.php");
+            String id = proIDtextBox.Text;
+            Navigate(webBrowser1, "http://acm.hdu.edu.cn/showproblem.php?pid="+id);
         }
 
         // Navigates to the given URL if it is valid.
@@ -45,113 +55,83 @@ namespace Prototype2._0
 
         }
 
-        #region 自动登录
-        private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
-        {
-            HtmlDocument log_auto = webBrowser1.Document;
-            HtmlElement log_btn = null;
+        //#region 自动登录
+        //private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        //{
+        //    HtmlDocument log_auto = webBrowser1.Document;
+        //    HtmlElement log_btn = null;
 
-            foreach (HtmlElement em in log_auto.All) //轮循  
-            {
-                string str = em.Name;
-                string id = em.Id;
+        //    foreach (HtmlElement em in log_auto.All) //轮循  
+        //    {
+        //        string str = em.Name;
+        //        string id = em.Id;
 
-                if ((str == "username") || (str == "userpass") || (str == "login")) //减少处理  
-                {
-                    switch (str)
-                    {
-                        case "username": em.SetAttribute("value", "ChangChang");
-                            break; //赋用户名  
-                        case "userpass": em.SetAttribute("value", "13823353176");
-                            break; //赋密码  
-                        case "login": log_btn = em;
-                            break; //获取submit按钮  
-                        default:
-                            break;
-                    }
-                }
+        //        if ((str == "username") || (str == "userpass") || (str == "login")) //减少处理  
+        //        {
+        //            switch (str)
+        //            {
+        //                case "username": em.SetAttribute("value", "ChangChang");
+        //                    break; //赋用户名  
+        //                case "userpass": em.SetAttribute("value", "13823353176");
+        //                    break; //赋密码  
+        //                case "login": log_btn = em;
+        //                    break; //获取submit按钮  
+        //                default:
+        //                    break;
+        //            }
+        //        }
 
-            }
-            log_btn.InvokeMember("click"); //触发submit事件
-        }
-        #endregion
+        //    }
+        //    log_btn.InvokeMember("click"); //触发submit事件
+        //}
+        //#endregion
 
-        private void button2_Click(object sender, EventArgs e)
+        private void addcodebutton_Click(object sender, EventArgs e)
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                textBox4.Text = openFileDialog1.FileName;
+                codepathtextBox.Text = openFileDialog1.FileName;
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void submitbutton_Click(object sender, EventArgs e)
         {
             int language;
-            String account,password,path,problemid,code;
-            code = "#include <cstdio> int main(void) {int a;scanf(\"%d\",&a);printf(\"%d\n\");return 0;}";
-            account = textBox2.Text;
-            password = textBox1.Text;
-            path = textBox4.Text;
-            problemid = textBox3.Text;
-            language = comboBox1.SelectedIndex;
+            String account, password, path, problemid, code;
+            account = accounttextBox.Text;
+            password = passwordtextBox.Text;
+            path = codepathtextBox.Text;
+            problemid = proIDtextBox.Text;
+            language = languagecomboBox.SelectedIndex;
+            code = getCode(path);
 
-            #region 登录
-            HtmlDocument log_auto = webBrowser1.Document;
-            HtmlElement log_btn = null;
+            Navigate(webBrowser1, "http://acm.hdu.edu.cn/showproblem.php?pid=" + problemid);
 
-            foreach (HtmlElement em in log_auto.All) //轮循  
+            WebService ws = new WebService();
+            ws.loginAccount(account, password);
+            ws.submitProblem(account, problemid, language.ToString(), code);
+        }
+
+        private String getCode(String path)
+        {
+            String ret = String.Empty;
+            try
             {
-                string str = em.Name;
-                string id = em.Id;
-
-                if ((str == "username") || (str == "userpass") || (str == "login")) //减少处理  
+                FileStream aFile = new FileStream(path, FileMode.Open);
+                StreamReader sr = new StreamReader(aFile);
+                String tmp = sr.ReadLine();
+                while (tmp != null)
                 {
-                    switch (str)
-                    {
-                        case "username": em.SetAttribute("value", account);
-                            break; //赋用户名  
-                        case "userpass": em.SetAttribute("value", password);
-                            break; //赋密码  
-                        case "login": log_btn = em;
-                            break; //获取submit按钮  
-                        default:
-                            break;
-                    }
+                    ret += (tmp+'\n');
+                    tmp = sr.ReadLine();
                 }
-
+                sr.Close();
             }
-            log_btn.InvokeMember("click"); //触发submit事件
-            #endregion
-
-            Navigate(webBrowser1, "http://acm.hdu.edu.cn/submit.php?pid=" + problemid);
-
-
-            #region 提交
-            HtmlDocument submit_html = webBrowser1.Document;
-            foreach (HtmlElement em in submit_html.All) //轮循  
+            catch (IOException ex)
             {
-                string str = em.Name;
-                string id = em.Id;
-
-                if ((str == "problemid") || (str == "language") || (str == "usercode")) //减少处理  
-                {
-                    switch (str)
-                    {
-                        case "problemid": em.SetAttribute("value", problemid.ToString());
-                            break; //赋用户名  
-                        case "language": em.SetAttribute("value", language.ToString());
-                            break; //赋密码
-                        case "usercode": em.SetAttribute("value", code);
-                            break;
-                        default:
-                            break;
-                    }
-                }
-
+                MessageBox.Show(ex.ToString());
             }
-
-            webBrowser1.Document.InvokeScript("submit");
-            #endregion
+            return ret;
         }
     }
 }

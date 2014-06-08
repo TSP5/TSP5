@@ -38,29 +38,18 @@
             this.关于ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButtonInfo = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonJianti = new System.Windows.Forms.ToolStripButton();
             this.panel_Login = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label34 = new System.Windows.Forms.Label();
-            this.panel_xuexiniuren = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.添加查看ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripButtonInfo = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonJianti = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.panel_Login.SuspendLayout();
-            this.panel_xuexiniuren.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -133,26 +122,6 @@
             this.toolStrip1.TabIndex = 19;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // toolStripButtonInfo
-            // 
-            this.toolStripButtonInfo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButtonInfo.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonInfo.Image")));
-            this.toolStripButtonInfo.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonInfo.Name = "toolStripButtonInfo";
-            this.toolStripButtonInfo.Size = new System.Drawing.Size(60, 22);
-            this.toolStripButtonInfo.Text = "做题信息";
-            this.toolStripButtonInfo.Click += new System.EventHandler(this.toolStripButtonInfo_Click);
-            // 
-            // toolStripButtonJianti
-            // 
-            this.toolStripButtonJianti.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButtonJianti.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonJianti.Image")));
-            this.toolStripButtonJianti.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonJianti.Name = "toolStripButtonJianti";
-            this.toolStripButtonJianti.Size = new System.Drawing.Size(60, 22);
-            this.toolStripButtonJianti.Text = "荐题系统";
-            this.toolStripButtonJianti.Click += new System.EventHandler(this.toolStripButtonJianti_Click);
-            // 
             // panel_Login
             // 
             this.panel_Login.Controls.Add(this.button3);
@@ -210,135 +179,9 @@
             this.label34.ForeColor = System.Drawing.Color.DimGray;
             this.label34.Location = new System.Drawing.Point(281, 161);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(152, 27);
+            this.label34.Size = new System.Drawing.Size(112, 27);
             this.label34.TabIndex = 4;
-            this.label34.Text = "请输入你的账号";
-            // 
-            // panel_xuexiniuren
-            // 
-            this.panel_xuexiniuren.BackColor = System.Drawing.Color.White;
-            this.panel_xuexiniuren.Controls.Add(this.textBox1);
-            this.panel_xuexiniuren.Controls.Add(this.label1);
-            this.panel_xuexiniuren.Controls.Add(this.label3);
-            this.panel_xuexiniuren.Controls.Add(this.button5);
-            this.panel_xuexiniuren.Controls.Add(this.textBox2);
-            this.panel_xuexiniuren.Controls.Add(this.textBox5);
-            this.panel_xuexiniuren.Controls.Add(this.radioButton1);
-            this.panel_xuexiniuren.Controls.Add(this.radioButton3);
-            this.panel_xuexiniuren.Controls.Add(this.radioButton2);
-            this.panel_xuexiniuren.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_xuexiniuren.Location = new System.Drawing.Point(0, 50);
-            this.panel_xuexiniuren.Margin = new System.Windows.Forms.Padding(2);
-            this.panel_xuexiniuren.Name = "panel_xuexiniuren";
-            this.panel_xuexiniuren.Size = new System.Drawing.Size(950, 618);
-            this.panel_xuexiniuren.TabIndex = 23;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox1.Location = new System.Drawing.Point(220, 89);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(181, 23);
-            this.textBox1.TabIndex = 30;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(127, 154);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 17);
-            this.label1.TabIndex = 29;
-            this.label1.Text = "账号2";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.ForeColor = System.Drawing.Color.DimGray;
-            this.label3.Location = new System.Drawing.Point(127, 95);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(39, 17);
-            this.label3.TabIndex = 28;
-            this.label3.Text = "账号1";
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.DimGray;
-            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(246, 286);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(162, 30);
-            this.button5.TabIndex = 27;
-            this.button5.Text = "Go";
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox2.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox2.Location = new System.Drawing.Point(300, 190);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(101, 23);
-            this.textBox2.TabIndex = 26;
-            this.textBox2.Tag = "";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox5.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox5.Location = new System.Drawing.Point(300, 154);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(101, 23);
-            this.textBox5.TabIndex = 25;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Checked = true;
-            this.radioButton1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.radioButton1.ForeColor = System.Drawing.Color.DimGray;
-            this.radioButton1.Location = new System.Drawing.Point(220, 156);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(74, 21);
-            this.radioButton1.TabIndex = 22;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "自己选择";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton3
-            // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.radioButton3.ForeColor = System.Drawing.Color.DimGray;
-            this.radioButton3.Location = new System.Drawing.Point(220, 231);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(74, 21);
-            this.radioButton3.TabIndex = 24;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "系统选择";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.radioButton2.ForeColor = System.Drawing.Color.DimGray;
-            this.radioButton2.Location = new System.Drawing.Point(220, 193);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(50, 21);
-            this.radioButton2.TabIndex = 23;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "排名";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.label34.Text = "请输入账号";
             // 
             // contextMenuStrip1
             // 
@@ -350,9 +193,29 @@
             // 添加查看ToolStripMenuItem
             // 
             this.添加查看ToolStripMenuItem.Name = "添加查看ToolStripMenuItem";
-            this.添加查看ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.添加查看ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.添加查看ToolStripMenuItem.Text = "添加查看";
             this.添加查看ToolStripMenuItem.Click += new System.EventHandler(this.添加查看ToolStripMenuItem_Click);
+            // 
+            // toolStripButtonInfo
+            // 
+            this.toolStripButtonInfo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButtonInfo.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonInfo.Image")));
+            this.toolStripButtonInfo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonInfo.Name = "toolStripButtonInfo";
+            this.toolStripButtonInfo.Size = new System.Drawing.Size(60, 22);
+            this.toolStripButtonInfo.Text = "做题信息";
+            this.toolStripButtonInfo.Click += new System.EventHandler(this.toolStripButtonInfo_Click);
+            // 
+            // toolStripButtonJianti
+            // 
+            this.toolStripButtonJianti.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButtonJianti.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonJianti.Image")));
+            this.toolStripButtonJianti.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonJianti.Name = "toolStripButtonJianti";
+            this.toolStripButtonJianti.Size = new System.Drawing.Size(60, 22);
+            this.toolStripButtonJianti.Text = "荐题系统";
+            this.toolStripButtonJianti.Click += new System.EventHandler(this.toolStripButtonJianti_Click);
             // 
             // main
             // 
@@ -362,7 +225,6 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(950, 682);
             this.ContextMenuStrip = this.contextMenuStrip1;
-            this.Controls.Add(this.panel_xuexiniuren);
             this.Controls.Add(this.panel_Login);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
@@ -382,8 +244,6 @@
             this.toolStrip1.PerformLayout();
             this.panel_Login.ResumeLayout(false);
             this.panel_Login.PerformLayout();
-            this.panel_xuexiniuren.ResumeLayout(false);
-            this.panel_xuexiniuren.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -407,16 +267,6 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.Panel panel_xuexiniuren;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 添加查看ToolStripMenuItem;
     }

@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.passwordtextBox = new System.Windows.Forms.TextBox();
+            this.languagecomboBox = new System.Windows.Forms.ComboBox();
+            this.submitbutton = new System.Windows.Forms.Button();
+            this.accounttextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.proIDtextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.codepathtextBox = new System.Windows.Forms.TextBox();
+            this.addcodebutton = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.SuspendLayout();
@@ -52,49 +52,49 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "密码：";
             // 
-            // textBox1
+            // passwordtextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(221, 24);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 21);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.UseSystemPasswordChar = true;
+            this.passwordtextBox.Location = new System.Drawing.Point(221, 24);
+            this.passwordtextBox.Name = "passwordtextBox";
+            this.passwordtextBox.Size = new System.Drawing.Size(100, 21);
+            this.passwordtextBox.TabIndex = 1;
+            this.passwordtextBox.UseSystemPasswordChar = true;
             // 
-            // comboBox1
+            // languagecomboBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.languagecomboBox.FormattingEnabled = true;
+            this.languagecomboBox.Items.AddRange(new object[] {
             "G++",
             "GCC",
             "C++",
             "C",
             "Pascal",
             "Java"});
-            this.comboBox1.Location = new System.Drawing.Point(837, 136);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(76, 20);
-            this.comboBox1.TabIndex = 2;
+            this.languagecomboBox.Location = new System.Drawing.Point(837, 136);
+            this.languagecomboBox.Name = "languagecomboBox";
+            this.languagecomboBox.Size = new System.Drawing.Size(76, 20);
+            this.languagecomboBox.TabIndex = 2;
             // 
-            // button1
+            // submitbutton
             // 
-            this.button1.BackColor = System.Drawing.Color.DimGray;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(816, 252);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(88, 27);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Submit";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.submitbutton.BackColor = System.Drawing.Color.DimGray;
+            this.submitbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.submitbutton.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.submitbutton.ForeColor = System.Drawing.Color.White;
+            this.submitbutton.Location = new System.Drawing.Point(816, 252);
+            this.submitbutton.Name = "submitbutton";
+            this.submitbutton.Size = new System.Drawing.Size(88, 27);
+            this.submitbutton.TabIndex = 3;
+            this.submitbutton.Text = "Submit";
+            this.submitbutton.UseVisualStyleBackColor = false;
+            this.submitbutton.Click += new System.EventHandler(this.submitbutton_Click);
             // 
-            // textBox2
+            // accounttextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(66, 24);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 21);
-            this.textBox2.TabIndex = 5;
+            this.accounttextBox.Location = new System.Drawing.Point(66, 24);
+            this.accounttextBox.Name = "accounttextBox";
+            this.accounttextBox.Size = new System.Drawing.Size(100, 21);
+            this.accounttextBox.TabIndex = 5;
             // 
             // label2
             // 
@@ -105,12 +105,12 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "账号：";
             // 
-            // textBox3
+            // proIDtextBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(838, 95);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 21);
-            this.textBox3.TabIndex = 6;
+            this.proIDtextBox.Location = new System.Drawing.Point(838, 95);
+            this.proIDtextBox.Name = "proIDtextBox";
+            this.proIDtextBox.Size = new System.Drawing.Size(100, 21);
+            this.proIDtextBox.TabIndex = 6;
             // 
             // label3
             // 
@@ -130,26 +130,26 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "语言：";
             // 
-            // textBox4
+            // codepathtextBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(432, 24);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(385, 21);
-            this.textBox4.TabIndex = 9;
+            this.codepathtextBox.Location = new System.Drawing.Point(432, 24);
+            this.codepathtextBox.Name = "codepathtextBox";
+            this.codepathtextBox.Size = new System.Drawing.Size(385, 21);
+            this.codepathtextBox.TabIndex = 9;
             // 
-            // button2
+            // addcodebutton
             // 
-            this.button2.BackColor = System.Drawing.Color.DimGray;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(825, 22);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(88, 25);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "添加代码";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.addcodebutton.BackColor = System.Drawing.Color.DimGray;
+            this.addcodebutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addcodebutton.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.addcodebutton.ForeColor = System.Drawing.Color.White;
+            this.addcodebutton.Location = new System.Drawing.Point(825, 22);
+            this.addcodebutton.Name = "addcodebutton";
+            this.addcodebutton.Size = new System.Drawing.Size(88, 25);
+            this.addcodebutton.TabIndex = 10;
+            this.addcodebutton.Text = "添加代码";
+            this.addcodebutton.UseVisualStyleBackColor = false;
+            this.addcodebutton.Click += new System.EventHandler(this.addcodebutton_Click);
             // 
             // openFileDialog1
             // 
@@ -170,16 +170,16 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(962, 666);
             this.Controls.Add(this.webBrowser1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.addcodebutton);
+            this.Controls.Add(this.codepathtextBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.proIDtextBox);
+            this.Controls.Add(this.accounttextBox);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.submitbutton);
+            this.Controls.Add(this.languagecomboBox);
+            this.Controls.Add(this.passwordtextBox);
             this.Controls.Add(this.label1);
             this.Name = "Submit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -193,16 +193,16 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox passwordtextBox;
+        private System.Windows.Forms.ComboBox languagecomboBox;
+        private System.Windows.Forms.Button submitbutton;
+        private System.Windows.Forms.TextBox accounttextBox;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox proIDtextBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox codepathtextBox;
+        private System.Windows.Forms.Button addcodebutton;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.WebBrowser webBrowser1;
     }

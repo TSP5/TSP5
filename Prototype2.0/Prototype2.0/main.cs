@@ -31,7 +31,6 @@ namespace Prototype2._0
         //窗口载入时调用
         private void main_Load(object sender, EventArgs e)
         {
-            panel_xuexiniuren.SendToBack();
         }
 
 
@@ -51,59 +50,7 @@ namespace Prototype2._0
             return ret;
         }
 
-        private User getCowMan()
-        {
-            User cowMan = new User();
-            this.Enabled = false;
-            if (radioButton1.Checked == true)
-            {
-                cowMan = webService.GetUser(textBox5.Text, progressBar1);
-                if (cowMan == null)
-                {
-                    MessageBox.Show("No such cowMan.");
-                    this.Enabled = true;
-                    return null;
-                }
-            }
-            else if (radioButton2.Checked == true)
-            {
-                int Rank;
-                try
-                {
-                    Rank = Convert.ToInt32(textBox2.Text);
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Number required.");
-                    this.Enabled = true;
-                    return null;
-                }
-                cowMan = webService.GetUser(webService.GetUserNameByRank(Rank), progressBar1);
-                if (cowMan == null)
-                {
-                    MessageBox.Show("No such cowMan.");
-                    this.Enabled = true;
-                    return null;
-                }
-            }
-            else if (radioButton3.Checked == true)
-            {
-                Random random = new Random();
-                int rank = random.Next(99);
-                rank += 1;
-                cowMan = webService.GetUser(webService.GetUserNameByRank(rank), progressBar1);
-                while (cowMan.Submissions / cowMan.ProblemsSolved > 20)
-                {
-                    rank = random.Next(99);
-                    rank += 1;
-                    cowMan = webService.GetUser(webService.GetUserNameByRank(rank), progressBar1);
-                }
-            }
-            cowMan.Solve = webService.GetAccepted(cowMan.Name, progressBar1);
-            this.Enabled = true;
-            return cowMan;
-
-        }
+        
 
         private void button2_Click_1(object sender, EventArgs e)
         {
@@ -138,7 +85,6 @@ namespace Prototype2._0
 
         private void toolStripButtonInfo_Click(object sender, EventArgs e)
         {
-            panel_xuexiniuren.SendToBack();
             panel_Login.SendToBack();
         }
 
@@ -158,19 +104,6 @@ namespace Prototype2._0
             Compare cp = new Compare(tmp, null, this);
             cp.MdiParent = this;
             cp.Show();
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            tmpForm.cowMan = getCowMan();
-            tmpForm.showUpdate();
-            this.panel_xuexiniuren.SendToBack();
-        }
-
-        public void showXuexiniuren(String cowName)
-        {
-            this.panel_xuexiniuren.BringToFront();
-            this.textBox1.Text = cowName;
         }
 
         public void showLogin()

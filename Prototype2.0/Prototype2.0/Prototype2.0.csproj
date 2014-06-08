@@ -39,6 +39,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -71,6 +72,9 @@
     <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web">
+      <HintPath>C:\Windows\Microsoft.NET\Framework\v2.0.50727\System.Web.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
@@ -96,6 +100,12 @@
       <DependentUpon>Compare.cs</DependentUpon>
     </Compile>
     <Compile Include="Display.cs" />
+    <Compile Include="InputCompare.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InputCompare.Designer.cs">
+      <DependentUpon>InputCompare.cs</DependentUpon>
+    </Compile>
     <Compile Include="main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +133,12 @@
     <Compile Include="Submit.Designer.cs">
       <DependentUpon>Submit.cs</DependentUpon>
     </Compile>
+    <Compile Include="SubmitResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubmitResult.Designer.cs">
+      <DependentUpon>SubmitResult.cs</DependentUpon>
+    </Compile>
     <Compile Include="User.cs" />
     <Compile Include="WebService.cs" />
     <EmbeddedResource Include="About.resx">
@@ -130,6 +146,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Compare.resx">
       <DependentUpon>Compare.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InputCompare.resx">
+      <DependentUpon>InputCompare.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="main.resx">
       <DependentUpon>main.cs</DependentUpon>
@@ -152,6 +171,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Submit.resx">
       <DependentUpon>Submit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubmitResult.resx">
+      <DependentUpon>SubmitResult.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="Properties\DataSources\User.datasource" />
